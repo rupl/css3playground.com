@@ -19,28 +19,31 @@ include('_header.php');
 			
 			-moz-transform: rotate(200deg);
 			-moz-perspective: 500;
-			-webkit-transform: rotate(200deg);
+			-webkit-transform: rotate(0);
 			-webkit-perspective: 500;
 		}
 		/* -- make sure to declare a default for every property that you want animated -- */
 		.panel .segment {
 			float: none;
 			position: absolute;
-			top: 0;
-			left: 1px;
+			top: -5px;
+			left: -5px;
 			z-index: 900;
 			width: 100px;
 			height: 100px;
-			border: 1px solid #ccc;
+			border: 5px solid #ccc;
 			
 			-o-transform-origin: 0 80%;
 			-moz-transform-origin: 0 80%;
-			-webkit-transform-origin: 0 80%;
+			-webkit-transform-origin: 0 85%;
 
 			border-radius: 60px;
 			-moz-border-radius: 60px;
 			-webkit-border-radius: 60px;
 			
+			-webkit-transform:
+				rotateX(-105deg) rotateY(0) rotateZ(0deg)
+				translateX(0) translateY(0) translateZ(2px);
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: visible;
 
@@ -52,11 +55,15 @@ include('_header.php');
 		.panel:hover .segment {
 		}
 		.panel .segment .segment {
-			-webkit-transform: scale(.995);
+			-webkit-transform:
+				rotateX(0) rotateY(0) rotateZ(0)
+				translateX(0) translateY(0) translateZ(-1px);
 		}
 		.panel:hover .segment .segment {
 			-moz-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
-			-webkit-transform: rotateZ(6.5deg) skewX(-1deg) rotateY(4deg);
+			-webkit-transform:
+				rotateX(0) rotateY(5.1deg) rotateZ(0)
+				translateX(-1px) translateY(-1px) translateZ(-1px);
 		}
 	</style>
 </head>
