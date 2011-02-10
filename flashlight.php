@@ -94,7 +94,7 @@ include('_header.php');
 				XX = e.clientX - offset.left;
 				YY = e.clientY - offset.top;
 				fade = .75 + 25/hyp;
-				var spotSize = 50;
+				var spotSize = 36;
 				
 				if ($('#lightType').val() == 'flashlight') {
 				  var spotlight;
