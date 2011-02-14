@@ -31,7 +31,7 @@ include('_header.php');
 			z-index: 900;
 			width: 100px;
 			height: 100px;
-			border: 5px solid #ccc;
+			border: 5px solid #bbb;
 			
 			-o-transform-origin: 0 80%;
 			-moz-transform-origin: 0 80%;
@@ -85,7 +85,9 @@ include('_header.php');
 		As of <abbr title="<?= date("Y-m-d") ?>"><?= date("F jS, Y") ?></abbr> the 3D transforms in this demo only work using <a href="http://www.apple.com/safari/">Safari 5</a> or the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>.
 		Chrome supports 3D transforms, but only after you type "about:flags" in the address bar and enable "GPU Accelerated Compositing." Browsers without 3D acceleration just make a circular pattern.
 	</p>
-	
+
+	<p class="instructions">This slinky uses <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>.</p>
+
 	<div class="panel">
 		<div class="segment">
 			<div class="segment">
