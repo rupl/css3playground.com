@@ -41,12 +41,19 @@ include('_header.php');
 			-moz-border-radius: 60px;
 			-webkit-border-radius: 60px;
 			
-			-webkit-transform:
-				rotateX(-105deg) rotateY(0) rotateZ(0deg)
-				translateX(0) translateY(0) translateZ(2px);
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: visible;
 
+			/* initial slinky position */
+			-webkit-transform:
+				rotateX(-105deg) rotateY(0) rotateZ(50deg)
+				translateX(0) translateY(0) translateZ(0);
+				
+			/* shadows really help define the layers */
+			-moz-box-shadow: 0 0 3px #000;
+			-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+			box-shadow: 0 0 3px rgba(0,0,0,0.5);
+			
 			/* -- transition is the magic sauce for animation -- */
 			transition: all .5s ease-in-out;
 			-moz-transition: all .5s ease-in-out;
@@ -63,8 +70,10 @@ include('_header.php');
 			-moz-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
 			-webkit-transform:
 				rotateX(0) rotateY(5.1deg) rotateZ(0)
-				translateX(-1px) translateY(-1px) translateZ(-1px);
+				translateX(-1px) translateY(0) translateZ(-1px);
 		}
+		
+		#rotate .slider {display: inline-block; width: 200px; position: relative; top: 3px; left: 12px; }
 	</style>
 </head>
 
@@ -72,7 +81,10 @@ include('_header.php');
 
 <div id="container">
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
-	<? include('_browsers.php') ?>
+	<p class="warning">
+		As of <abbr title="<?= date("Y-m-d") ?>"><?= date("F jS, Y") ?></abbr> the 3D transforms in this demo only work using <a href="http://www.apple.com/safari/">Safari 5</a> or the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>.
+		Chrome supports 3D transforms, but only after you type "about:flags" in the address bar and enable "GPU Accelerated Compositing." Browsers without 3D acceleration just make a circular pattern.
+	</p>
 	
 	<div class="panel">
 		<div class="segment">
@@ -146,5 +158,26 @@ include('_header.php');
 		</div>
 	</div>
 </div>
+
+<div id="rotate">
+	Rotate the slinky a bit:
+	<div class="slider"></div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#rotate .slider').slider({
+			animate: 'fast',
+			min: 0,
+			max: 360,
+			orientation: 'horizontal',
+			value: 30,
+			slide: function(e, ui){
+				// console.log(ui);
+				$('.panel > .segment').css('-webkit-transform','rotateX(-105deg) rotateY(0) rotateZ('+ui.value+'deg) translateX(0) translateY(0) translateZ(2px)');
+			}
+		});
+	});
+</script>
 
 <? include('_footer.php') ?>
