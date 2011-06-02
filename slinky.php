@@ -73,7 +73,23 @@ include('_header.php');
 				translateX(-1px) translateY(0) translateZ(-1px);
 		}
 		
-		#rotate .slider {display: inline-block; width: 200px; position: relative; top: 3px; left: 12px; }
+		#rotate .slider {display: inline-block; width: 200px; margin-right: 16px; position: relative; top: 3px; left: 12px; }
+		
+		.panel .rotate {
+			-webkit-animation-name: rotate;
+			-webkit-animation-duration: 4s;
+			-webkit-animation-iteration-count: 10;
+			-webkit-animation-direction: alternate;
+		}
+		
+		@-webkit-keyframes rotate {
+			0% {
+				-webkit-transform: rotateZ(0deg);
+			}
+			100% {
+				-webkit-transform: rotateZ(360deg);
+			}
+		}
 	</style>
 </head>
 
@@ -162,8 +178,11 @@ include('_header.php');
 </div>
 
 <div id="rotate">
-	Rotate the slinky a bit:
+	Rotate the slinky manually:
 	<div class="slider"></div>
+	<!--
+	<input type="checkbox" name="auto" /> Auto-rotate
+	-->
 </div>
 
 <script type="text/javascript">
@@ -177,6 +196,12 @@ include('_header.php');
 			slide: function(e, ui){
 				// console.log(ui);
 				$('.panel > .segment').css('-webkit-transform','rotateX(-105deg) rotateY(0) rotateZ('+ui.value+'deg) translateX(0) translateY(0) translateZ(2px)');
+			}
+		}).find('input[name=auto]').change(function(){
+			if ($(this).checked()){
+				$('.panel > .segment').addClass('rotate');
+			} else {
+				$('.panel > .segment').removeClass('rotate');
 			}
 		});
 	});
