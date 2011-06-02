@@ -121,6 +121,8 @@ include('_header.php');
 		.block ol li {text-align: left; margin: 0 0 0 28px; }
 		.block .action {display: block; padding: 3px; background: #333; text-align: right; font-size: .8em; opacity: 0; position: absolute; cursor: pointer; -webkit-transition: opacity .2s linear; }
 		.block:hover .action {opacity: .7; }
+		.circle div {border-radius: 100px; }
+		.circle div h2 {padding-top: 3em; text-align: center; }
 		
 	</style>
 	<script type="text/javascript">
@@ -195,14 +197,12 @@ include('_header.php');
 		</div>
 	</div>
 	
-	<div class="click panel">
+	<div class="click panel circle">
 		<div class="front">
-			<h2>Click/Tap Me!</h2>
+			<h2>Click or tap this circle!</h2>
 		</div>
 		<div class="back">
-			<div class="pad">
-				<h2>Tap Again!</h2>
-			</div>
+			<h2>Tap Again!</h2>
 		</div>
 	</div>
 
