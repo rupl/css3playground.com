@@ -102,7 +102,7 @@ include('_header.php');
 		Browsers without 3D acceleration just make a circular pattern. Not as fun :(
 	</p>
 
-	<p class="instructions">This slinky uses <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>.</p>
+	<p class="instructions">This slinky uses <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>. It also uses <code>-webkit-animation</code> and <code>-webkit-keyframe</code>.</p>
 
 	<div class="panel">
 		<div class="segment">
