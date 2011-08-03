@@ -16,10 +16,6 @@ include('_header.php');
 
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
 	<? include('_browsers.php') ?>
-<pre>
-click a demo |
-             |
-             <span style="font-family: arial, sans-serif; ">v</span>
-</pre>
+  <p style="font-style: italic; ">choose your destination on the right</p>
 
 <? include('_footer.php') ?>
