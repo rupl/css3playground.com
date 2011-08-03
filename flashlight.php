@@ -10,10 +10,12 @@ include('_header.php');
 		#sandbox {
 			width: 720px;
 			height: 300px;
+			margin-bottom: 1em; 
 			overflow: hidden;
 			position: relative;
 			border: 1px solid #888;
 			background: rgb(36,36,36);
+			box-shadow: inset 0 0 20px rgba(0,0,0,.6);
 		}
 		#text {
 			width: 320px;
@@ -69,48 +71,49 @@ include('_header.php');
 			    
 		    	if ($('#lightType').val() == 'flashlight') {
 		    		shadows += -XX +'px '+ -YY +'px '+ blur +'px rgba(0,0,0,'+ fade +')';
-  			    } else {
-  			    	shadows += -XX/90 +'px '+ -YY/90 +'px 0 #000, ';
-  			    	shadows += -XX/70 +'px '+ -YY/70 +'px 0 #000, ';
-  			    	shadows += -XX/55 +'px '+ -YY/55 +'px 0 #000, ';
-  			    	shadows += -XX/45 +'px '+ -YY/45 +'px 0 #000 ';
-  			    }
+			    } else {
+			    	shadows += -XX/70 +'px '+ -YY/70 +'px 0 #000, ';
+			    	shadows += -XX/60 +'px '+ -YY/60 +'px 0 #000, ';
+			    	shadows += -XX/50 +'px '+ -YY/50 +'px 0 #000, ';
+			    	shadows += -XX/40 +'px '+ -YY/40 +'px 0 #000, ';
+			    	shadows += -XX/30 +'px '+ -YY/30 +'px 0 #000 ';
+			    }
 			    
 			    // apply text shadow(s)
 			    $('#text').css('text-shadow', shadows);
 
-				/*
-				// debug
-	    		$('#data .xx .val').text(XX);
-	    		$('#data .yy .val').text(YY);
-	    		$('#data .hyp .val').text(hyp);
-		    	$('#data .blur .val').text(blur);
-	    		$('#data .fade .val').text(fade);
-	    		$('#data .shadows .val').text(shadows);
-				//*/
+				<?php /*
+  				// debug
+  	    		$('#data .xx .val').text(XX);
+  	    		$('#data .yy .val').text(YY);
+  	    		$('#data .hyp .val').text(hyp);
+  		    	$('#data .blur .val').text(blur);
+  	    		$('#data .fade .val').text(fade);
+  	    		$('#data .shadows .val').text(shadows);
+  				//*/ ?>
 																				    
 			    // calculate the spotlight
 			    offset = $('#spot').offset();
-				XX = e.clientX - offset.left;
-				YY = e.clientY - offset.top;
-				fade = .75 + 25/hyp;
-				var spotSize = 36;
-				
-				if ($('#lightType').val() == 'flashlight') {
-				  var spotlight;
-				  spotlight = '-webkit-gradient(radial, 350 150, 110, '+ XX +' '+ YY +', '+ spotSize +', from(rgba(36,36,36,0)), to(rgba(255,255,255,'+fade+')))';
-				} else {
-				  spotlight = '';
-				}
-				
-				// apply spotlight CSS
-				$('#spot').css('background-image', spotlight);
-				
-				/*
-				// debug
-				$('#data .spotlight .val').text(spotlight);
-				//*/
-				
+  				XX = e.clientX - offset.left;
+  				YY = e.clientY - offset.top;
+  				fade = .75 + 25/hyp;
+  				var spotSize = 30;
+
+  				if ($('#lightType').val() == 'flashlight') {
+  				  var spotlight;
+  				  spotlight = '-webkit-gradient(radial, 350 150, 110, '+ XX +' '+ YY +', '+ spotSize +', from(rgba(36,36,36,0)), to(rgba(255,255,255,'+fade+')))';
+  				} else {
+  				  spotlight = '';
+  				}
+
+  				// apply spotlight CSS
+  				$('#spot').css('background-image', spotlight);
+
+  				/*
+  				// debug
+  				$('#data .spotlight .val').text(spotlight);
+  				//*/
+
 		    });
 		    
 		    // update text as it's typed
@@ -126,7 +129,7 @@ include('_header.php');
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
 	<? include('_browsers.php') ?>
 	
-	<p>This demo uses a combination of <code>text-shadow</code> and <code>-webkit-gradient</code>.</p>
+	<p>This CSS3 flashlight demo uses a combination of <code>text-shadow</code> and <code>-webkit-gradient</code> along with some JavaScript for mouse tracking.</p>
 	
 	<div id="sandbox">
 		<h2 id="text">CSS3 Rocks!</h2>
