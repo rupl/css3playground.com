@@ -17,10 +17,13 @@ include('_header.php');
 			left:  200px;
 			font-size: .8em;
 			
+			-o-transform: rotate(200deg);
 			-moz-transform: rotate(200deg);
-			-moz-perspective: 500;
 			-webkit-transform: rotate(0);
+			transform: rotate(200deg);
+
 			-webkit-perspective: 500;
+
 		}
 		/* -- make sure to declare a default for every property that you want animated -- */
 		.panel .segment {
@@ -36,10 +39,11 @@ include('_header.php');
 			-o-transform-origin: 0 80%;
 			-moz-transform-origin: 0 80%;
 			-webkit-transform-origin: 0 85%;
+			transform-origin: 0 80%;
 
-			border-radius: 60px;
 			-moz-border-radius: 60px;
 			-webkit-border-radius: 60px;
+			border-radius: 60px;
 			
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: visible;
@@ -55,9 +59,9 @@ include('_header.php');
 			box-shadow: 0 0 3px rgba(0,0,0,0.5);
 			
 			/* -- transition is the magic sauce for animation -- */
-			transition: all .5s ease-in-out;
 			-moz-transition: all .5s ease-in-out;
 			-webkit-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
 		}
 		.panel:hover .segment {
 		}
@@ -67,10 +71,13 @@ include('_header.php');
 				translateX(0) translateY(0) translateZ(-1px);
 		}
 		.panel:hover .segment .segment {
+			-o-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
 			-moz-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
 			-webkit-transform:
 				rotateX(0) rotateY(5.1deg) rotateZ(0)
 				translateX(-1px) translateY(0) translateZ(-1px);
+			transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
+
 		}
 		
 		#rotate .slider {display: inline-block; width: 200px; margin-right: 16px; position: relative; top: 3px; left: 12px; }
