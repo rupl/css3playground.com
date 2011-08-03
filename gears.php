@@ -23,22 +23,23 @@ include('_header.php');
 			text-align: center;
 			
 			/* -- transition is the magic sauce for animation -- */
-			transition: all 3s ease-in-out;
+			-o-transition: all 3s ease-in-out;
 			-moz-transition: all 3s ease-in-out;
 			-webkit-transition: all 3s ease-in-out;
+			transition: all 3s ease-in-out;
 		}
 		
 		p.skinny {
-			transition: all .7s linear; 
 			-o-transition: all .7s linear; 
 			-moz-transition: all .7s linear;
 			-webkit-transition: all .7s linear;
+			transition: all .7s linear;
 		}
 		p.wide {
-			transition: all .7s linear; 
 			-o-transition: all .7s linear; 
 			-moz-transition: all .7s linear;
 			-webkit-transition: all .7s linear;
+			transition: all .7s linear;
 		}		
 
 		/* -- Desktops -- */
@@ -76,18 +77,18 @@ include('_header.php');
 		/* -- iPad -- */
 		@media (orientation: portrait) and (device-width: 768px) {
 			.big {
-				transform: rotate(0deg) scale(0.8);
 				-o-transform: rotate(0deg) scale(0.8);
 				-moz-transform: rotate(0deg) scale(0.8);
 				-webkit-transform: rotate(0deg) scale(0.8);
+				transform: rotate(0deg) scale(0.8);
 				left: -350px;
 				z-index: 300;
 			}
 			.small {
-				transform: rotate(60deg) scale(0.4);
 				-o-transform: rotate(60deg) scale(0.4);
 				-moz-transform: rotate(60deg) scale(0.4);
 				-webkit-transform: rotate(60deg) scale(0.4);
+				transform: rotate(60deg) scale(0.4);
 				left: 53px;
 				z-index: 400;
 			}
@@ -100,16 +101,16 @@ include('_header.php');
 		}
 		@media (orientation: landscape) and (device-width: 768px) {
 			.big {
-				transform: rotate(60deg) scale(0.8);
 				-o-transform: rotate(60deg) scale(0.8);
 				-moz-transform: rotate(60deg) scale(0.8);
 				-webkit-transform: rotate(60deg) scale(0.8);
+				transform: rotate(60deg) scale(0.8);
 			}
 			.small {
-				transform: rotate(-60deg) scale(0.4);
 				-o-transform: rotate(-60deg) scale(0.4);
 				-moz-transform: rotate(-60deg) scale(0.4);
 				-webkit-transform: rotate(-60deg) scale(0.4);
+				transform: rotate(-60deg) scale(0.4);
 			}
 			p.skinny {
 				opacity: 0;
@@ -122,18 +123,18 @@ include('_header.php');
 		/* -- iPhone -- */
 		@media (orientation: portrait) and (min-width: 320px) {
 			.big {
-				transform: rotate(0deg) scale(0.8);
 				-o-transform: rotate(0deg) scale(0.8);
 				-moz-transform: rotate(0deg) scale(0.8);
 				-webkit-transform: rotate(0deg) scale(0.8);
+				transform: rotate(0deg) scale(0.8);
 				left: -350px;
 				z-index: 300;
 			}
 			.small {
-				transform: rotate(50deg) scale(0.4);
 				-o-transform: rotate(50deg) scale(0.4);
 				-moz-transform: rotate(50deg) scale(0.4);
 				-webkit-transform: rotate(50deg) scale(0.4);
+				transform: rotate(50deg) scale(0.4);
 				left: 53px;
 				z-index: 400;
 			}
@@ -146,16 +147,16 @@ include('_header.php');
 		}
 		@media (orientation: landscape) and (min-width: 321px) {
 			.big {
-				transform: rotate(60deg) scale(0.8);
 				-o-transform: rotate(60deg) scale(0.8);
 				-moz-transform: rotate(60deg) scale(0.8);
 				-webkit-transform: rotate(60deg) scale(0.8);
+				transform: rotate(60deg) scale(0.8);
 			}
 			.small {
-				transform: rotate(-70deg) scale(0.4);
 				-o-transform: rotate(-70deg) scale(0.4);
 				-moz-transform: rotate(-70deg) scale(0.4);
 				-webkit-transform: rotate(-70deg) scale(0.4);
+				transform: rotate(-70deg) scale(0.4);
 			}
 			p.skinny {
 				opacity: 0;
