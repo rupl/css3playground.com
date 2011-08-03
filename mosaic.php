@@ -3,7 +3,7 @@ $title = 'Mosaic';
 include('_header.php');
 ?>
 
-	<style type="text/css">
+	<style>
 		#container {
 			width: 960px;
 		}
@@ -28,7 +28,7 @@ include('_header.php');
 			width: 100px;
 			height: 100px;
 			border: 0px solid #ccc;
-			background: url('images/blues-brothers.jpg') no-repeat -100px 100px fixed;
+			background: url('images/pink-sky.jpg') no-repeat -100px -100px fixed;
 
 			box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 			-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
@@ -51,7 +51,19 @@ include('_header.php');
 			-moz-box-shadow: 0 15px 15px rgba(0,0,0,0);
 			-webkit-box-shadow: 0 15px 15px rgba(0,0,0,0);
 		}
+		
+		.bg2 .hover {background-image: url('images/tree-sky.jpg'); }
 	</style>
+	<!-- script src="/js/jquery.sloweach.js"></script>
+	<script>
+    // switch bg every once in a while
+    $(document).ready(function(){
+      $('.panel').each(function(){
+        $(this).addClass('bg2');
+        console.log('FIRE!');
+      },100);
+    });
+	</script -->
 </head>
 
 <body>
