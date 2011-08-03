@@ -83,7 +83,10 @@ include('_header.php');
 
 <body>
 
-	<? include('_intro.php') ?>
+  <div class="intro">
+  	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
+  	<? include('_browsers.php') ?>
+  </div>
 	
 	<p class="skinny instructions">Resize your window, enlarging it horizontally until the gears gradually appear.<br /> Or on a mobile device, rotate it to landscape mode.</p>
 	<p class="wide instructions">Resize your window, reducing it horizontally until the gears gradually disappear.<br /> Or on a mobile device, rotate it to portrait mode.</p>
