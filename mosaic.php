@@ -27,17 +27,18 @@ include('_header.php');
 			z-index: 100;
 			width: 100px;
 			height: 100px;
-			border: 0px solid #ccc;
-			background: url('images/pink-sky.jpg') no-repeat -100px -100px fixed;
+			border: 1px solid rgba(255,255,255,0);
+			background: url('images/leaf-drop.jpg') no-repeat 0 100px fixed;
 
-			box-shadow: 0 1px 5px rgba(0,0,0,0.9);
-			-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
-			-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+			-moz-box-shadow: 0 1px 6px rgba(0,0,0,.9);
+			-webkit-box-shadow: 0 1px 6px rgba(0,0,0,.9);
+			box-shadow: 0 1px 6px rgba(0,0,0,.9);
 
 			/* -- transition is the magic sauce for animation -- */
-			transition: all .3s ease-out;
+			-o-transition: all .3s ease-out;
 			-moz-transition: all .3s ease-out;
 			-webkit-transition: all .3s ease-out;
+			transition: all .3s ease-out;
 		}
 		.panel .hover:hover {
 			top: -50px;
@@ -45,11 +46,11 @@ include('_header.php');
 			z-index: 200;
 			width: 200px;
 			height: 200px;
-			border: 0;
+			border: 1px solid rgba(255,255,255,.1);
 
-			box-shadow: 0 15px 15px rgba(0,0,0,0);
-			-moz-box-shadow: 0 15px 15px rgba(0,0,0,0);
-			-webkit-box-shadow: 0 15px 15px rgba(0,0,0,0);
+			box-shadow: 0 15px 15px rgba(0,0,0,.1);
+			-moz-box-shadow: 0 15px 15px rgba(0,0,0,.1);
+			-webkit-box-shadow: 0 15px 15px rgba(0,0,0,.1);
 		}
 		
 		.bg2 .hover {background-image: url('images/tree-sky.jpg'); }
