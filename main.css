@@ -19,11 +19,25 @@ abbr {cursor:help; }
 .intro .info .close {opacity: 0; display: block; width: auto; padding: 2px 6px; background: rgba(200,200,200,0.4); color: #fff; font-size: smaller; position: absolute; top: -1px; z-index: 700; }
 .intro .info.open .close {opacity: 1; }
 
-#other {clear:both; position:fixed; bottom:20px; left:0px; z-index:1001; }
+#other {clear:both; position:fixed; top:4%; right:2%; z-index:1001; text-align: right; }
 #other ul {}
-#other ul li {float:left; padding:0 10px; list-style-type:none; text-shadow:-1px -1px 1px rgba(0,0,0,0.3); }
-#other ul li a {color:#def; text-shadow:0 1px 0px rgba(0,0,0,0.3); }
-#other .credit {position:relative; left:2em; }
+#other ul li {list-style-type:none; color: #000; text-shadow:1px 1px 1px rgba(255,255,255,0.4); opacity: .8;
+  -webkit-transition: all .15s ease-out;
+  -moz-transition: all .15s ease-out;
+  -o-transition: all .15s ease-out;
+  -ms-transition: all .15s ease-out;
+  transition: all .15s ease-out;
+  }
+#other ul li:hover {opacity: 1; }
+#other ul li a {display: block; width: 100%; margin-right: 5px; padding: 5px 10px 5px 0; background: transparent; color:#ddd; text-shadow:0 1px 0px rgba(0,0,0,0.3);
+  -webkit-transition: all .15s ease-out;
+  -moz-transition: all .15s ease-out;
+  -o-transition: all .15s ease-out;
+  -ms-transition: all .15s ease-out;
+  transition: all .15s ease-out;
+  }
+#other ul li:hover a {background: #000; color:#fff; }
+#other .credit {padding-top: 1em; }
 
 .warning {font-size:1.2em; color:#fff; text-shadow: 1px 1px 0 rgba(0,0,0,0.3); }
 .warning a {color:#fff; text-shadow: 0 1px 0 rgba(0,0,0,0.4); }
