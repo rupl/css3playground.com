@@ -29,18 +29,20 @@ include('_header.php');
 			background: #777;
 			text-align: center;
 
-			box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 			-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 			-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+			box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 			
 			-webkit-transform: rotateY(0deg);
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: hidden;
 
 			/* -- transition is the magic sauce for animation -- */
-			transition: all .4s ease-in-out;
+			-o-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
 			-moz-transition: all .4s ease-in-out;
 			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
 		}
 		.panel.flip .front {
 			z-index: 900;
@@ -48,9 +50,9 @@ include('_header.php');
 
 			-webkit-transform: rotateY(180deg);
 			
-			box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 			-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 			-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+			box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 		}
 		
 		.panel .back {
@@ -70,9 +72,11 @@ include('_header.php');
 			-webkit-backface-visibility: hidden;
 
 			/* -- transition is the magic sauce for animation -- */
-			transition: all .4s ease-in-out;
+			-o-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
 			-moz-transition: all .4s ease-in-out;
 			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
 		}
 		
 		.panel.flip .back {
