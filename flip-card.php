@@ -26,7 +26,7 @@ include('_header.php');
 			width: inherit;
 			height: inherit;
 			border: 1px solid #ccc;
-			background: #777;
+			background: #6b7077;
 			text-align: center;
 
 			-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
@@ -64,7 +64,7 @@ include('_header.php');
 			width: inherit;
 			height: inherit;
 			border: 1px solid #ccc;
-			background: #888;
+			background: #80868d;
 			text-shadow: 1px  1px 1px rgba(0,0,0,0.6); 
 			
 			-webkit-transform: rotateY(-180deg);
@@ -183,8 +183,8 @@ include('_header.php');
 
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
 	<p class="warning">
-		As of <abbr title="<?= date("Y-m-d") ?>"><?= date("F jS, Y") ?></abbr> the 3D transforms in this demo only work using <a href="http://www.apple.com/safari/">Safari 5</a> or the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>.
-		Chrome supports 3D transforms, but only after you type "about:flags" in the address bar and enable "GPU Accelerated Compositing." Browsers without 3D acceleration just switch the z-index. You won't lose any functionality!
+		As of <?= date("F jS, Y") ?> the 3D transforms in this demo only work using <a href="http://www.apple.com/safari/">Safari 5</a>, <a href="http://www.google.com/chrome">Chrome</a> 10+ or the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>.
+		Browsers without 3D acceleration just switch the z-index. You won't lose any functionality!
 	</p>
 	
 	<p class="instructions">These cards are using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code> </p>
@@ -200,7 +200,31 @@ include('_header.php');
 			</div>
 		</div>
 	</div>
-	
+
+	<div class="contact panel" style="width: 360px; height: 240px; ">
+		<div class="front">
+			<h3>Contact Us</h3>
+			<address>
+				Acme, Co.<br />
+				123 Easy St.<br />
+				Dallas, TX 75248
+			</address>
+			<p>Or <a class="action" href="#form">send us a message</a>
+		</div>
+		<div class="back" id="contact">
+			<div class="pad">
+				<h3>Send us a Fake Message</h3>
+				<form action="###" method="post">
+					<p><label for="f-name">Name:</label><input id="f-name" name="f-name" type="text" /></p>
+					<p><label for="f-email">Email:</label><input id="f-email" name="f-email" type="text" /></p>
+					<p><label for="f-how">How did you find us?</label><select id="f-how" name="f-how"><option value="">- Pick an Option -</option><option value="internet">Internet</option></select></p>
+					<p><label for="f-msg">Message:</label><textarea id="f-msg" name="f-msg"></textarea></p>
+					<input type="submit" class="edit-submit" value="Fake Send Message" />
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<div class="click panel circle">
 		<div class="front">
 			<h2>Click or tap this circle!</h2>
@@ -227,29 +251,6 @@ include('_header.php');
 					<p><input type="text" name="form_title" id="form_title" value="Top Sellers" /></p>
 					<p>Display <select name="form_items" id="form_items"><option value="1">1</option><option value="2">2</option><option value="3" selected="selected">3</option><option value="4">4</option><option value="5">5</option></select> items</p>
 					<input type="submit" class="edit-submit" value="Save Changes" />
-				</form>
-			</div>
-		</div>
-	</div>
-	<div class="contact panel" style="width: 360px; height: 240px; ">
-		<div class="front">
-			<h3>Contact Us</h3>
-			<address>
-				Acme, Co.<br />
-				123 Easy St.<br />
-				Dallas, TX 75248
-			</address>
-			<p>Or <a class="action" href="#form">send us a message</a>
-		</div>
-		<div class="back" id="contact">
-			<div class="pad">
-				<h3>Send us a Fake Message</h3>
-				<form action="###" method="post">
-					<p><label for="f-name">Name:</label><input id="f-name" name="f-name" type="text" /></p>
-					<p><label for="f-email">Email:</label><input id="f-email" name="f-email" type="text" /></p>
-					<p><label for="f-how">How did you find us?</label><select id="f-how" name="f-how"><option value="">- Pick an Option -</option><option value="internet">Internet</option></select></p>
-					<p><label for="f-msg">Message:</label><textarea id="f-msg" name="f-msg"></textarea></p>
-					<input type="submit" class="edit-submit" value="Fake Send Message" />
 				</form>
 			</div>
 		</div>
