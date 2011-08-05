@@ -14,7 +14,7 @@ include('_header.php');
 			overflow: hidden;
 			position: relative;
 			border: 1px solid #888;
-			background: rgb(36,36,36);
+			background: rgb(60,60,60);
 			box-shadow: inset 0 0 20px rgba(0,0,0,.6);
 		}
 		#text {
@@ -101,7 +101,7 @@ include('_header.php');
 
   				if ($('#lightType').val() == 'flashlight') {
   				  var spotlight;
-  				  spotlight = '-webkit-gradient(radial, 350 150, 110, '+ XX +' '+ YY +', '+ spotSize +', from(rgba(36,36,36,0)), to(rgba(255,255,255,'+fade+')))';
+  				  spotlight = '-webkit-gradient(radial, 350 150, 110, '+ XX +' '+ YY +', '+ spotSize +', from(rgba(60,60,60,0)), to(rgba(255,255,255,'+fade+')))';
   				} else {
   				  spotlight = '';
   				}
