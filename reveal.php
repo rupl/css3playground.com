@@ -9,18 +9,8 @@ include('_header.php');
 			position: relative;
 		}
 		/* -- make sure to declare a default for every property that you want animated -- */
-		.gear {
-			float: left;
-			width: 200px;
-			height: 181px;
-			margin: 1em;
-			background: url('images/spur-gear-8.png') no-repeat 0 0;
-			opacity: 0;
-			
-			background-size: 100%;
-			-o-background-size: 100%;
-			-moz-background-size: 100%;
-			-webkit-background-size: 100%;
+		.reveal {
+			opacity: 1;
 			
 			/* -- transition is the magic sauce for animation -- */
 			transition: all .2s linear;
@@ -42,34 +32,34 @@ include('_header.php');
 		}
 
 		@media (min-width: 0px) {
-			p.skinny {opacity: 1; }
-			p.wide {opacity: 0; }
-		}
-		@media (min-width: 1000px) {.gear {opacity: 0.1; }}
-		@media (min-width: 1050px) {.gear {opacity: 0.2; }}
-		@media (min-width: 1100px) {.gear {opacity: 0.3; }}
-		@media (min-width: 1150px) {.gear {opacity: 0.4; }}
-		@media (min-width: 1200px) {.gear {opacity: 0.5; }
 			p.skinny {opacity: 0; }
 			p.wide {opacity: 1; }
 		}
-		@media (min-width: 1250px) {.gear {opacity: 0.6; }}
-		@media (min-width: 1300px) {.gear {opacity: 0.7; }}
-		@media (min-width: 1350px) {.gear {opacity: 0.8; }}
-		@media (min-width: 1400px) {.gear {opacity: 0.9; }}
-		@media (min-width: 1450px) {.gear {opacity: 1.0; }}
+		@media (min-width: 900px) {.reveal {opacity: 0.9; }}
+		@media (min-width: 1000px) {.reveal {opacity: 0.8; }}
+		@media (min-width: 1050px) {.reveal {opacity: 0.7; }}
+		@media (min-width: 1100px) {.reveal {opacity: 0.6; }}
+		@media (min-width: 1150px) {.reveal {opacity: 0.5; }
+			p.skinny {opacity: 1; }
+			p.wide {opacity: 0; }
+		}
+		@media (min-width: 1200px) {.reveal {opacity: 0.4; }}
+		@media (min-width: 1250px) {.reveal {opacity: 0.3; }}
+		@media (min-width: 1300px) {.reveal {opacity: 0.2; }}
+		@media (min-width: 1350px) {.reveal {opacity: 0.1; }}
+		@media (min-width: 1400px) {.reveal {opacity: 0.0; }}
 
 
 
 		@media (orientation: portrait) and (device-width: 768px) {
-			.gear {opacity: 0; }
-			p.skinny {opacity: 1; }
-			p.wide {opacity: 0; }
-		}
-		@media (orientation: landscape) and (device-width: 768px) {
-			.gear {opacity: 1; }
+			.reveal {opacity: 1; }
 			p.skinny {opacity: 0; }
 			p.wide {opacity: 1; }
+		}
+		@media (orientation: landscape) and (device-width: 768px) {
+			.reveal {opacity: 0; }
+			p.skinny {opacity: 1; }
+			p.wide {opacity: 0; }
 		}
 		
 		
@@ -88,11 +78,10 @@ include('_header.php');
   	<? include('_browsers.php') ?>
   </div>
 	
-	<p class="skinny instructions">Resize your window, enlarging it horizontally until the gears gradually appear.<br /> Or on a mobile device, rotate it to landscape mode.</p>
-	<p class="wide instructions">Resize your window, reducing it horizontally until the gears gradually disappear.<br /> Or on a mobile device, rotate it to portrait mode.</p>
+	<p>This effect makes use of CSS3 @media queries, which is the most prominent method of creating a <a href="http://www.alistapart.com/articles/responsive-web-design/">responsive layout</a>. This basic example should <a href="/gears.php">get your gears turning</a>.</p>
+	<p class="skinny instructions">Resize your window, enlarging it horizontally until the message gradually appears.<br /> Or on a mobile device, rotate it to landscape mode.</p>
+	<p class="wide instructions">Resize your window, reducing it horizontally until the message gradually disappears.<br /> Or on a mobile device, rotate it to portrait mode.</p>
 	
-	<div class="gear"></div>
-	<div class="gear"></div>
-	<div class="gear"></div>
+	<div class="reveal"><h2><img src="/images/portal-cake.jpg" alt="This was a triumph." /></h2></div>
 
 <? include('_footer.php') ?>
