@@ -7,8 +7,8 @@
 		<li><a href="mosaic.php">mosaic</a></li>
 		<li><a href="flashlight.php">flashlight shadow</a></li>
 		<li><a href="flip-card.php">flip cards</a></li>
-		<li><a href="gears.php">gears</a></li>
 		<li><a href="reveal.php">reveal</a></li>
+		<li><a href="gears.php">gears</a></li>
 		<li><a href="slinky.php">slinky</a></li>
 		<li class="credit vcard">say hi to:</li>
 		<li><a href="http://chrisruppel.com" title="Chris Ruppel" rel="me" class="fn url">chris ruppel</a></li>

@@ -78,10 +78,10 @@ include('_header.php');
   	<? include('_browsers.php') ?>
   </div>
 	
-	<p>This effect makes use of CSS3 @media queries, which is the most prominent method of creating a <a href="http://www.alistapart.com/articles/responsive-web-design/">responsive layout</a>. This basic example should <a href="/gears.php">get your gears turning</a>.</p>
 	<p class="skinny instructions">Resize your window, enlarging it horizontally until the message gradually appears.<br /> Or on a mobile device, rotate it to landscape mode.</p>
 	<p class="wide instructions">Resize your window, reducing it horizontally until the message gradually disappears.<br /> Or on a mobile device, rotate it to portrait mode.</p>
 	
 	<div class="reveal"><h2><img src="/images/portal-cake.jpg" alt="This was a triumph." /></h2></div>
+	<p>This effect makes use of CSS3 @media queries, which is the most prominent method of creating a <a href="http://www.alistapart.com/articles/responsive-web-design/">responsive layout</a>. This basic example should <a href="/gears.php">get your gears turning</a>.</p>
 
 <? include('_footer.php') ?>
