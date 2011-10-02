@@ -55,16 +55,6 @@ include('_header.php');
 		
 		.bg2 .hover {background-image: url('images/tree-sky.jpg'); }
 	</style>
-	<!-- script src="/js/jquery.sloweach.js"></script>
-	<script>
-    // switch bg every once in a while
-    $(document).ready(function(){
-      $('.panel').each(function(){
-        $(this).addClass('bg2');
-        console.log('FIRE!');
-      },100);
-    });
-	</script -->
 </head>
 
 <body>

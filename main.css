@@ -23,7 +23,7 @@ abbr {cursor:help; }
 ::-moz-selection{background: #555; color: #fff; }
 ::-webkit-selection{background: #555; color: #fff; }
 
-.intro {position: relative; }
+.intro {position: relative; max-width: 720px; }
 .intro .info {width: 2em; height: 12px; margin: 0 4px 0 0; padding: 4px 4px 2px 4px; font-weight: 700; color: #333; position: absolute; right: 0; top: 0; z-index: 500; cursor: pointer; }
 .intro .info.open {color: #fff; }
 .intro .info .about {opacity: 0; width: 400px; padding: 1.5em 1em 0 1em; color: #fff; border: 1px solid rgba(255,255,255,0.6); border-radius: 3px; background: rgba(35,35,35,0.8); -moz-transition: all .2s linear; -webkit-transition: all .2s linear; position: absolute; right: -160px; top: -18px; z-index: 400; }
