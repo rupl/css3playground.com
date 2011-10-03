@@ -18,7 +18,8 @@ include('_header.php');
 		}
 		
 		/* Match the photograph's perspective */
-		div#floor {
+		html.csstransforms3d div#fallback {display: none; }
+		html.csstransforms3d div#floor {
 			width: 1776px;
 			height: 387px;
 			margin-left: -1200px;
@@ -28,7 +29,7 @@ include('_header.php');
 			left: 0;
 			top: 180px;
 
-			-webkit-transform: rotateX(73deg) rotateY(0deg) rotateZ(.3deg) translate3d(788px, -362px, -30px);
+			-webkit-transform: rotateX(73deg) rotateY(0deg) rotateZ(.3deg) translate3d(790px, -360px, -30px);
 			-webkit-transform-style: preserve-3d;
 		}
 		
@@ -50,8 +51,8 @@ include('_header.php');
 		div.panel:hover {
 			-webkit-transform: translate3d(0,0,18px) rotateY(3deg);
 		}
-		div.panel:nth-child(4n+2),
-		div.panel:nth-child(4n+1) {
+		div.panel:nth-child(4n+1),
+		div.panel:nth-child(4n+2) {
 			-webkit-transform-origin: bottom left;
 		}
 		div.panel:nth-child(4n+2):hover,
@@ -118,6 +119,15 @@ include('_header.php');
 		body.wireframe div#floor {
 			background: #f00; 
 		}
+
+		/* Fallback styles */
+		html.no-csstransforms3d div#floor {
+			display: none;
+		}
+		html.no-csstransforms3d div#fallback {
+			display: block; width: 800px; padding: 2em; background: rgba(0,0,0,0.2); text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+		}
+
 	</style>
 </head>
 
@@ -144,6 +154,8 @@ include('_header.php');
 			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
 		</div>
 	</div><!-- #floor -->
+
+	<div id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b> There's no good fallback behavior, so I put this message here to let you know what happened.</div>
 </div>
 
 <? include('_footer.php') ?>
