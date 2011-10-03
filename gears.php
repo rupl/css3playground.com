@@ -175,8 +175,8 @@ include('_header.php');
   	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
   </div>
 	
-	<p class="skinny instructions">Resize your window, <strong>enlarging</strong> it horizontally until the gears start rotating.<br /> Or on a mobile device, rotate it to <strong>landscape</strong> orientation.</p>
-	<p class="wide instructions">Resize your window, <strong>reducing</strong> it horizontally until the gears start rotating.<br /> Or on a mobile device, rotate it to <strong>portrait</strong> orientation.</p>
+	<p class="skinny instructions">Resize your window <b>wider</b> until the gears start rotating.<br /> Or on a mobile device, rotate it to <strong>landscape</strong> orientation.</p>
+	<p class="wide instructions">Resize your window <b>skinnier</b> until the gears start rotating.<br /> Or on a mobile device, rotate it to <strong>portrait</strong> orientation.</p>
 	
 	<div class="small gear"></div>
 	<div class="big gear"></div>

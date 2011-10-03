@@ -16,7 +16,8 @@ h2 {text-shadow:1px 1px 1px rgba(0,0,0,0.3); }
 a {color:inherit; }
 p {text-shadow:1px 1px 1px rgba(0,0,0,0.3); }
 p a {color:#fff; }
-p strong {color:#fff; }
+p strong,
+p b {color:#fff; }
 abbr {cursor:help; }
 
 ::selection {background: #555; color: #fff; }
