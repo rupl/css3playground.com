@@ -25,7 +25,7 @@ include('_header.php');
 			width: 1776px;
 			height: 387px;
 			margin-left: -1200px;
-/* 			background: #333; */
+			background: #333;
 
 			position: absolute;
 			left: 0;
@@ -34,6 +34,18 @@ include('_header.php');
 			-webkit-transform: rotateX(73deg) rotateY(0deg) rotateZ(.3deg) translate3d(790px, -360px, -30px);
 			-webkit-transform-style: preserve-3d;
 		}
+    html.csstransforms3d div#base {
+      width: inherit;
+      height: inherit;
+      background: #333;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 15;
+
+      -webkit-transform: translate3d(0, -30px, 0);
+      -webkit-transform-style: preserve-3d;
+    }
 		
 		/* These are the individual tiles, which are rectangular prisms */
 		div.panel {
@@ -155,7 +167,8 @@ include('_header.php');
 			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
 			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
 			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-		</div>
+
+			<div id="base"></div>
 	</div><!-- #floor -->
 
 	<div id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b> There's no good fallback behavior, so I put this message here to let you know what happened.</div>
