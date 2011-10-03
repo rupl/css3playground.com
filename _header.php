@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us" dir="ltr" class="no-js">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?= $title ?> // CSS3 Playground</title>
 <link rel="stylesheet" href="/main.css" />
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
