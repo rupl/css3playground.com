@@ -69,7 +69,7 @@ include('_header.php');
 			box-shadow: 0 0 4px #444;
 
 			-webkit-transform-origin: bottom left;
-			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(-5px, 0, 0);
+			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(-7px, 0, 0);
 		}
 		div.panel div.right {
 			width: 126px;
