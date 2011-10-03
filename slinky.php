@@ -1,5 +1,5 @@
 <?
-$title = 'Slinky';
+$title = '3D Slinky';
 include('_header.php');
 ?>
 
@@ -7,6 +7,8 @@ include('_header.php');
 		#container {
 			width: 720px;
 		}
+
+		/* Base for the slinky */
 		.panel {
 			float: left;
 			width: 200px;
@@ -25,6 +27,7 @@ include('_header.php');
 			-webkit-perspective: 500;
 
 		}
+
 		/* -- make sure to declare a default for every property that you want animated -- */
 		.panel .segment {
 			float: none;
@@ -54,22 +57,26 @@ include('_header.php');
 				translateX(0) translateY(0) translateZ(0);
 				
 			/* shadows really help define the layers */
-			-moz-box-shadow: 0 0 3px #000;
 			-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+			-moz-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+			-ms-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+			-o-box-shadow: 0 0 3px rgba(0,0,0,0.5);
 			box-shadow: 0 0 3px rgba(0,0,0,0.5);
 			
 			/* -- transition is the magic sauce for animation -- */
-			-moz-transition: all .5s ease-in-out;
 			-webkit-transition: all .5s ease-in-out;
+			-moz-transition: all .5s ease-in-out;
 			transition: all .5s ease-in-out;
 		}
-		.panel:hover .segment {
-		}
+
+		/* This is the slinky at rest */
 		.panel .segment .segment {
 			-webkit-transform:
 				rotateX(0) rotateY(0) rotateZ(0)
 				translateX(0) translateY(0) translateZ(-1px);
 		}
+
+		/* This is the slinky extended approx 180 degrees */
 		.panel:hover .segment .segment {
 			-o-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
 			-moz-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
@@ -80,21 +87,31 @@ include('_header.php');
 
 		}
 		
-		#rotate .slider {display: inline-block; width: 200px; margin-right: 16px; position: relative; top: 3px; left: 12px; }
+		/* Auto-rotate control for slinky */
+		#rotate .slider {
+			display: inline-block;
+			width: 200px;
+			margin-right: 16px;
+			position: relative;
+			top: 3px;
+			left: 12px;
+		}
 		
-		.panel .rotate {
+		/* Rotate the sliny automatically */
+		.panel > .segment.rotate {
 			-webkit-animation-name: rotate;
 			-webkit-animation-duration: 4s;
 			-webkit-animation-iteration-count: 10;
-			-webkit-animation-direction: alternate;
+			-webkit-animation-direction: normal;
 		}
-		
+
+		/* Animation keyframes */
 		@-webkit-keyframes rotate {
 			0% {
-				-webkit-transform: rotateZ(0deg);
+				-webkit-transform: rotateX(-105deg) rotateY(0) rotateZ(0deg) translateX(0) translateY(0) translateZ(2px);
 			}
 			100% {
-				-webkit-transform: rotateZ(360deg);
+				-webkit-transform: rotateX(-105deg) rotateY(0) rotateZ(360deg) translateX(0) translateY(0) translateZ(2px);
 			}
 		}
 	</style>
@@ -187,12 +204,10 @@ include('_header.php');
 <div id="rotate">
 	Rotate the slinky manually:
 	<div class="slider"></div>
-	<!--
-	<input type="checkbox" name="auto" /> Auto-rotate
-	-->
+	<input type="checkbox" name="auto" id="auto-rotate" /> <label for="auto-rotate">Auto-rotate</label>
 </div>
 
-<script type="text/javascript">
+<script>
 	$(document).ready(function(){
 		$('#rotate .slider').slider({
 			animate: 'fast',
@@ -201,11 +216,12 @@ include('_header.php');
 			orientation: 'horizontal',
 			value: 30,
 			slide: function(e, ui){
-				// console.log(ui);
 				$('.panel > .segment').css('-webkit-transform','rotateX(-105deg) rotateY(0) rotateZ('+ui.value+'deg) translateX(0) translateY(0) translateZ(2px)');
 			}
-		}).find('input[name=auto]').change(function(){
-			if ($(this).checked()){
+		});
+
+		$('#rotate input[name=auto]').change(function(){
+			if ($(this).is(':checked')){
 				$('.panel > .segment').addClass('rotate');
 			} else {
 				$('.panel > .segment').removeClass('rotate');
