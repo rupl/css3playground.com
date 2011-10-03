@@ -25,7 +25,7 @@ include('_header.php');
 			width: 1776px;
 			height: 387px;
 			margin-left: -1200px;
-			background: #333;
+/* 			background: #333; */
 
 			position: absolute;
 			left: 0;
@@ -47,19 +47,6 @@ include('_header.php');
 			-webkit-transform-style: preserve-3d;
 			-webkit-transform-origin: bottom right;
 			-webkit-transform: translate3d(0,0,2px);
-		}
-		
-		/* These rules make the tiles move on mouseover. I set the nth-child() rules to make it visually symmetrical. */
-		div.panel:hover {
-			-webkit-transform: translate3d(0,0,18px) rotateY(3deg);
-		}
-		div.panel:nth-child(4n+1),
-		div.panel:nth-child(4n+2) {
-			-webkit-transform-origin: bottom left;
-		}
-		div.panel:nth-child(4n+2):hover,
-		div.panel:nth-child(4n+1):hover {
-			-webkit-transform: translate3d(0,0,18px) rotateY(-3deg);
 		}
 		
 		/* These are the sides of the tiles */
@@ -112,9 +99,23 @@ include('_header.php');
 			height: inherit;
 			background: url('/images/tile-3.jpg');
 		}
+
 		/* Give some tiles a different background to make it look more real */
 		div.panel:nth-child(3n) div.top {
 			background: url('/images/tile-4.jpg');
+		}
+
+		/* These rules make the tiles move on mouseover. I set the nth-child() rules to make it visually symmetrical. */
+		div.panel:hover {
+			-webkit-transform: translate3d(0,0,25px) rotateY(3deg);
+		}
+		div.panel:nth-child(4n+1),
+		div.panel:nth-child(4n+2) {
+			-webkit-transform-origin: bottom left;
+		}
+		div.panel:nth-child(4n+2):hover,
+		div.panel:nth-child(4n+1):hover {
+			-webkit-transform: translate3d(0,0,25px) rotateY(-3deg);
 		}
 		
 		/* debugging styles */
