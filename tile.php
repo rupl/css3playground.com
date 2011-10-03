@@ -5,9 +5,11 @@ include('_header.php');
 
 	<style>
 		/* This page uses a big photograph as the bg instead of the normal style */
-		body {background: url('/images/tile-bg.jpg') no-repeat -10px top; color: #000; width: 1420px; }
-		a, p, #other ul li a {color: #000; text-shadow: 1px 1px 1px rgba(255,255,255,0.5); }
-		#other ul li a:hover {color: #fff; }
+		body {background: #000 url('/images/tile-bg.jpg') no-repeat -10px top; color: #000; width: 1420px; }
+		a, p, #other ul li a {color: #fff; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); }
+		h1 a {color: #000; text-shadow: 1px 1px 1px rgba(255,255,255,0.5); }
+		#other ul li.more,
+		#other ul li.credit {padding: .5em; margin-right: -.5em; background: rgba(255,255,255,0.5); }
 		p.intro {max-width: 1000px; }
 		
 		/* Set a base element for arranging all the 3D elements */
@@ -125,7 +127,7 @@ include('_header.php');
 			display: none;
 		}
 		html.no-csstransforms3d div#fallback {
-			display: block; width: 800px; padding: 2em; background: rgba(0,0,0,0.2); text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+			display: block; width: 800px; padding: 2em; background: rgba(255,255,255,0.5); text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
 		}
 
 	</style>
