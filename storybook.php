@@ -27,7 +27,7 @@ include('_header.php');
 		section .cover .pages {}
 		
 		/* Shared Pop-up pieces */
-		.page 
+		.pages {}
 		
 		/* -- Seriously... Go Download Chrome - http://www.google.com/chrome -- */
 		html.no-csstransforms3d div#fallback {
