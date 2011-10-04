@@ -135,7 +135,7 @@ include('_header.php');
 			background: #f00; 
 		}
 
-		/* Fallback styles */
+		/* -- Go Download Chrome - http://www.google.com/chrome -- */
 		html.no-csstransforms3d div#floor {
 			display: none;
 		}

@@ -56,7 +56,7 @@ abbr {cursor:help; }
   border-width: 0 1px 1px 0;
   color:#ddd;
   text-shadow:0 1px 0px rgba(0,0,0,0.4);
-  -webkit-transition: all .5s ease-out;
+  -webkit-transition: all .2s ease-out;
   -moz-transition: all .1s ease-out;
   -o-transition: all .1s ease-out;
   -ms-transition: all .1s ease-out;
