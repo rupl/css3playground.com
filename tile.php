@@ -22,8 +22,8 @@ include('_header.php');
 		/* Match the photograph's perspective */
 		html.csstransforms3d div#fallback {display: none; }
 		html.csstransforms3d div#floor {
-			width: 1776px;
-			height: 387px;
+			width: 1792px;
+			height: 380px;
 			margin-left: -1200px;
 			background: #333;
 
@@ -31,34 +31,34 @@ include('_header.php');
 			left: 0;
 			top: 180px;
 
-			-webkit-transform: rotateX(73deg) rotateY(0deg) rotateZ(.3deg) translate3d(790px, -360px, -30px);
+			-webkit-transform: rotateX(73deg) rotateY(0deg) rotateZ(.3deg) translate3d(779px, -372px, -46px);
 			-webkit-transform-style: preserve-3d;
 		}
-    html.csstransforms3d div#base {
-      width: inherit;
-      height: inherit;
-      background: #333;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 15;
-
-      -webkit-transform: translate3d(0, -30px, 0);
-      -webkit-transform-style: preserve-3d;
-    }
+	    html.csstransforms3d div#base {
+	      width: inherit;
+	      height: inherit;
+	      background: #333;
+	      position: absolute;
+	      top: 0;
+	      left: 0;
+	      z-index: 15;
+	
+	      -webkit-transform: translate3d(0, -30px, -10px);
+	      -webkit-transform-style: preserve-3d;
+	    }
 		
 		/* These are the individual tiles, which are rectangular prisms */
 		div.panel {
 			float: left; 
-			width: 434px;
-			height: 125px;
+			width: 438px;
+			height: 123px;
 			margin: 2px 5px;
 			background: #333;
 
 			-webkit-transition: .3s all ease-in-out;
 			-webkit-transform-style: preserve-3d;
 			-webkit-transform-origin: bottom right;
-			-webkit-transform: translate3d(0,0,2px);
+			-webkit-transform: translate3d(0,0,7px);
 		}
 		
 		/* These are the sides of the tiles */
@@ -71,7 +71,7 @@ include('_header.php');
 			box-shadow: 0 0 4px #444;
 
 			-webkit-transform-origin: bottom left;
-			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(-7px, 0, 0);
+			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(-9px, 0, 0);
 		}
 		div.panel div.right {
 			width: 126px;
@@ -82,7 +82,7 @@ include('_header.php');
 			box-shadow: 0 0 4px #444;
 
 			-webkit-transform-origin: bottom right;
-			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(120px, 0, 0);
+			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(116px, 0, 0);
 		}
 		div.panel div.front {
 			width: inherit;
