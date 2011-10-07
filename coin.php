@@ -87,6 +87,7 @@ include('_header.php');
 			background-position-y: -100px;
 			-webkit-mask: url('/images/coin-mask-heads.png') left top;
 			-webkit-transition: all .5s ease-in-out;
+			-webkit-transition-delay: .25s;
 		}
 		.coin.flip .heads .reflection {
 			background-position-y: 200px;
