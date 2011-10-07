@@ -5,6 +5,13 @@ include('_header.php');
 
 	<style type="text/css">
 		body {width: 720px; }
+		
+		/* -- fallback behavior -- */
+		html.no-csstransforms3d p#fallback {display: block; float: right; width: 500px; padding-top: 20px; }
+
+		/* -- The fun stuff -- */		
+		html.csstransforms3d p#fallback {display: none; }
+		
 		.coin {
 			float: left;
 			width: 143px;
@@ -96,8 +103,8 @@ include('_header.php');
 		.coin .tails .reflection {
 			background-position-y: 200px;
 			-webkit-mask: url('/images/coin-mask-tails.png') left top;
-			-webkit-transition: all .5s ease-in-out;
-			-webkit-transition-delay: .6s;
+			-webkit-transition: all .35s ease-in-out;
+			-webkit-transition-delay: .65s;
 		}
 		.coin.flip .tails .reflection {
 			background-position-y: -100px;
@@ -118,10 +125,6 @@ include('_header.php');
 <body>
 
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
-	<p class="warning">
-		As of <?= date("F jS, Y") ?> the 3D transforms in this demo only work using <a href="http://www.apple.com/safari/">Safari 5</a>, <a href="http://www.google.com/chrome">Chrome</a> 10+ or the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>.
-		Browsers without 3D acceleration just switch the z-index. You won't lose any functionality!
-	</p>
 	
 	<p class="instructions"><b>Click or tap the coin.</b> It is using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code></p>
 	<p class="instructions">The reflections use plain ol' <code>background-position</code> along with <code>-webkit-transition</code> and <code>-webkit-mask</code> to give the reflection some texture.</p>
@@ -131,5 +134,7 @@ include('_header.php');
 		<aside class="heads"><div class="reflection"></div></aside>
 		<aside class="tails"><div class="reflection"></div></aside>
 	</div>
+
+	<p class="instructions" id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b> The coin will switch faces with no visual transition.<br><br>If you want to see the goods, download <a href="http://www.apple.com/safari/">Safari 5</a>, <a href="http://www.google.com/chrome">Chrome</a> 10+ or the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>.</p>
 	
 <? include('_footer.php') ?>
