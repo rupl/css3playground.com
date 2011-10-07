@@ -14,7 +14,7 @@ include('_header.php');
 		
 		/* Set a base element for arranging all the 3D elements */
 		div#container {
-			-webkit-perspective: 470;
+			-webkit-perspective: 450;
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: visible;
 		}
@@ -22,22 +22,21 @@ include('_header.php');
 		/* Match the photograph's perspective */
 		html.csstransforms3d div#fallback {display: none; }
 		html.csstransforms3d div#floor {
-			width: 1792px;
-			height: 380px;
+			width: 1812px;
+			height: 383px;
 			margin-left: -1200px;
-			background: #333;
+			background: #222;
 
 			position: absolute;
 			left: 0;
 			top: 180px;
 
-			-webkit-transform: rotateX(73deg) rotateY(0deg) rotateZ(.3deg) translate3d(779px, -372px, -46px);
+			-webkit-transform: rotateX(73deg) rotateY(0deg) rotateZ(.4deg) translate3d(769px, -124px, -46px);
 			-webkit-transform-style: preserve-3d;
 		}
 	    html.csstransforms3d div#base {
 	      width: inherit;
 	      height: inherit;
-	      background: #333;
 	      position: absolute;
 	      top: 0;
 	      left: 0;
@@ -50,9 +49,9 @@ include('_header.php');
 		/* These are the individual tiles, which are rectangular prisms */
 		div.panel {
 			float: left; 
-			width: 438px;
-			height: 123px;
-			margin: 2px 5px;
+			width: 445px;
+			height: 124px;
+			margin: 2px 4px;
 			background: #333;
 
 			-webkit-transition: .3s all ease-in-out;
@@ -63,26 +62,26 @@ include('_header.php');
 		
 		/* These are the sides of the tiles */
 		div.panel div.left {
-			width: 126px;
+			width: 124px;
 			height: 6px;
 			background: #444;
 			position: absolute;
 			left: 0;
-			box-shadow: 0 0 4px #444;
+			box-shadow: 0 0 2px #444;
 
 			-webkit-transform-origin: bottom left;
-			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(-9px, 0, 0);
+			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(-6px, 0, 0);
 		}
 		div.panel div.right {
-			width: 126px;
+			width: 124px;
 			height: 6px;
 			background: #444;
 			position: absolute;
 			right: 0;
-			box-shadow: 0 0 4px #444;
+			box-shadow: 0 0 2px #444;
 
 			-webkit-transform-origin: bottom right;
-			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(116px, 0, 0);
+			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(118px, 0, 0);
 		}
 		div.panel div.front {
 			width: inherit;
