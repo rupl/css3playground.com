@@ -54,10 +54,13 @@ include('_header.php');
 			margin: 2px 4px;
 			background: #333;
 
-			-webkit-transition: .3s all ease-in-out;
 			-webkit-transform-style: preserve-3d;
 			-webkit-transform-origin: bottom right;
 			-webkit-transform: translate3d(0,0,7px);
+		}
+		div.panel,
+		div.panel div.shadow {
+			-webkit-transition: .3s all ease-in-out;
 		}
 		
 		/* These are the sides of the tiles */
@@ -112,6 +115,14 @@ include('_header.php');
 
 			-webkit-transform: translate3d(0, 0, 1px);
 		}
+		body.shadows div.panel div.shadow {
+			width: inherit;
+			height: inherit;
+			position: absolute;
+
+			-webkit-transform: translate3d(0, -122px, -5px);
+			box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+		}
 
 		/* Give some tiles a different background to make it look more real */
 		div.panel:nth-child(3n) div.top {
@@ -122,6 +133,10 @@ include('_header.php');
 		div.panel:hover {
 			-webkit-transform: translate3d(0,0,25px) rotateY(3deg);
 		}
+		body.shadows div.panel:hover div.shadow {
+			-webkit-transform: translate3d(0, -122px,-25px) rotateY(-3deg);
+			box-shadow: 0 0 25px 20px rgba(0,0,0,0.25);
+		}
 		div.panel:nth-child(4n+1),
 		div.panel:nth-child(4n+2) {
 			-webkit-transform-origin: bottom left;
@@ -129,6 +144,11 @@ include('_header.php');
 		div.panel:nth-child(4n+2):hover,
 		div.panel:nth-child(4n+1):hover {
 			-webkit-transform: translate3d(0,0,25px) rotateY(-3deg);
+		}
+		body.shadows div.panel:nth-child(4n+2):hover div.shadow,
+		body.shadows div.panel:nth-child(4n+1):hover div.shadow {
+			-webkit-transform: translate3d(0, -122px,-25px) rotateY(3deg);
+			box-shadow: 0 0 25px 20px rgba(0,0,0,0.25);
 		}
 		
 		/* debugging styles */
@@ -154,20 +174,20 @@ include('_header.php');
 	<p class="intro">This page uses CSS3 3D Transforms to composite elements over a photograph. <code>-webkit-perspective</code>, <code>-webkit-transform-style: preserve3d</code>, <code>-webkit-transform: rotate3d(), transform3d()</code>, and <code>-webkit-transition</code> for animation.</p>
 	
 	<div id="floor">
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
 
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
 
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
 
 			<div id="base"></div>
 	</div><!-- #floor -->
