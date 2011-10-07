@@ -11,8 +11,15 @@ include('_header.php');
 			height: 143px;
 			margin: 0;
 			position: relative;
+			top: 25px;
+			left: 50px;
 			
 			-webkit-perspective: 600;
+		}
+
+		.coin aside {
+			background-image: url('/images/coin-sides-24.png');
+			background-position: left top;
 		}
 
 		/* -- make sure to declare a default for every property that you want animated -- */
@@ -25,27 +32,23 @@ include('_header.php');
 			z-index: 900;
 			width: inherit;
 			height: inherit;
-			
-			-webkit-transform: rotateY(0deg);
+
+			-webkit-transform: rotateX(0deg);
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: hidden;
 
-			-o-transition: all .4s ease-in-out;
-			-ms-transition: all .4s ease-in-out;
-			-moz-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
+			-webkit-transition: all .8s ease-in-out;
+			-moz-transition: all .8s ease-in-out;
+			-ms-transition: all .8s ease-in-out;
+			-o-transition: all .8s ease-in-out;
+			transition: all .8s ease-in-out;
 		}
 		/* Heads facing backward (flipped) */
-		.coin.flip .heads {
+		.coin:hover .heads {
 			z-index: 900;
 			border-color: #eee;
 
-			-webkit-transform: rotateY(180deg);
-			
-			-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-			-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-			box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+			-webkit-transform: rotateX(180deg);
 		}
 		/* Tails facing backward (default) */
 		.coin .tails {
@@ -57,26 +60,33 @@ include('_header.php');
 			width: inherit;
 			height: inherit;
 			
-			-webkit-transform: rotateY(-180deg);
+			background-position: left -143px;
+
+			-webkit-transform: rotateX(-180deg);
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: hidden;
 
-			-o-transition: all .4s ease-in-out;
-			-ms-transition: all .4s ease-in-out;
-			-moz-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
+			-webkit-transition: all .8s ease-in-out;
+			-moz-transition: all .8s ease-in-out;
+			-ms-transition: all .8s ease-in-out;
+			-o-transition: all .8s ease-in-out;
+			transition: all .8s ease-in-out;
 		}
 		/* Tails facing forward (flipped) */
-		.coin.flip .tails {
+		.coin:hover .tails {
 			z-index: 1000;
 			
-			-webkit-transform: rotateY(0deg);
-			box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-			-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-			-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+			-webkit-transform: rotateX(0deg);
 		}
-		
+
+		/* reflections for heads */
+		.heads .reflection {
+
+		}
+		.heads:hover .reflection {
+
+		}
+
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function(){
