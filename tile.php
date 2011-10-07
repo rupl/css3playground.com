@@ -109,6 +109,8 @@ include('_header.php');
 			width: inherit;
 			height: inherit;
 			background: url('/images/tile-3.jpg');
+
+			-webkit-transform: translate3d(0, 0, 1px);
 		}
 
 		/* Give some tiles a different background to make it look more real */
@@ -170,7 +172,7 @@ include('_header.php');
 			<div id="base"></div>
 	</div><!-- #floor -->
 
-	<div id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b> There's no good fallback behavior, so I put this message here to let you know what happened.</div>
+	<div id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b><br> There's no good fallback behavior, so I put this message here to let you know what happened.</div>
 </div>
 
 <? include('_footer.php') ?>
