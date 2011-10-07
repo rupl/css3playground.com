@@ -16,10 +16,18 @@ include('_header.php');
 			
 			-webkit-perspective: 600;
 		}
-
 		.coin aside {
 			background-image: url('/images/coin-sides-24.png');
 			background-position: left top;
+
+			-webkit-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+
+			-webkit-transition: all 1.2s ease-in-out;
+			-moz-transition: all 1.2s ease-in-out;
+			-ms-transition: all 1.2s ease-in-out;
+			-o-transition: all 1.2s ease-in-out;
+			transition: all 1.2s ease-in-out;
 		}
 
 		/* -- make sure to declare a default for every property that you want animated -- */
@@ -34,17 +42,9 @@ include('_header.php');
 			height: inherit;
 
 			-webkit-transform: rotateX(0deg);
-			-webkit-transform-style: preserve-3d;
-			-webkit-backface-visibility: hidden;
-
-			-webkit-transition: all .8s ease-in-out;
-			-moz-transition: all .8s ease-in-out;
-			-ms-transition: all .8s ease-in-out;
-			-o-transition: all .8s ease-in-out;
-			transition: all .8s ease-in-out;
 		}
 		/* Heads facing backward (flipped) */
-		.coin:hover .heads {
+		.coin.flip .heads {
 			z-index: 900;
 			border-color: #eee;
 
@@ -59,38 +59,57 @@ include('_header.php');
 			z-index: 800;
 			width: inherit;
 			height: inherit;
-			
 			background-position: left -143px;
 
 			-webkit-transform: rotateX(-180deg);
-			-webkit-transform-style: preserve-3d;
-			-webkit-backface-visibility: hidden;
-
-			-webkit-transition: all .8s ease-in-out;
-			-moz-transition: all .8s ease-in-out;
-			-ms-transition: all .8s ease-in-out;
-			-o-transition: all .8s ease-in-out;
-			transition: all .8s ease-in-out;
 		}
 		/* Tails facing forward (flipped) */
-		.coin:hover .tails {
+		.coin.flip .tails {
 			z-index: 1000;
 			
 			-webkit-transform: rotateX(0deg);
 		}
 
 		/* reflections for heads */
-		.heads .reflection {
-
+		.reflection {
+			position: absolute;
+			width: inherit;
+			height: inherit;
+			opacity: .6;
+			background-image: url('/images/reflection.png');
+			background-position-x: 0;
+			
+			-webkit-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
 		}
-		.heads:hover .reflection {
-
+		
+		.coin .heads .reflection {
+			background-position-y: -100px;
+			-webkit-mask: url('/images/coin-mask-heads.png') left top;
+			-webkit-transition: all .5s ease-in-out;
+		}
+		.coin.flip .heads .reflection {
+			background-position-y: 200px;
 		}
 
+		.coin .tails .reflection {
+			background-position-y: 200px;
+			-webkit-mask: url('/images/coin-mask-tails.png') left top;
+			-webkit-transition: all .5s ease-in-out;
+			-webkit-transition-delay: .6s;
+		}
+		.coin.flip .tails .reflection {
+			background-position-y: -100px;
+		}
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			// do stuff
+			// Use an event listener to flip the coin so it works on touch
+			$('.coin').toggle(function() {
+				$(this).addClass('flip');
+			}, function() {
+				$(this).removeClass('flip');
+			});
 		});
 	</script>
 </head>
@@ -103,7 +122,8 @@ include('_header.php');
 		Browsers without 3D acceleration just switch the z-index. You won't lose any functionality!
 	</p>
 	
-	<p class="instructions">This coin using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code> </p>
+	<p class="instructions"><b>Click or tap the coin.</b> It is using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code></p>
+	<p class="instructions">The reflections use plain ol' <code>background-position</code> along with <code>-webkit-transition</code> and <code>-webkit-mask</code> to give the reflection some texture.</p>
 
 	<div class="coin">
 		<!-- Each element is a side of the coin. Semantic. -->
