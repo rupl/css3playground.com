@@ -23,7 +23,7 @@ include('_header.php');
 		html.csstransforms3d div#fallback {display: none; }
 		html.csstransforms3d div#floor {
 			width: 1812px;
-			height: 383px;
+			height: 385px;
 			margin-left: -1200px;
 			background: #222;
 
@@ -31,7 +31,7 @@ include('_header.php');
 			left: 0;
 			top: 180px;
 
-			-webkit-transform: rotateX(73deg) rotateY(0deg) rotateZ(.4deg) translate3d(769px, -124px, -46px);
+			-webkit-transform: rotateX(71deg) rotateY(0deg) rotateZ(.4deg) translate3d(769px, -124px, -46px);
 			-webkit-transform-style: preserve-3d;
 		}
 	    html.csstransforms3d div#base {
@@ -121,7 +121,7 @@ include('_header.php');
 			position: absolute;
 
 			-webkit-transform: translate3d(0, -122px, -5px);
-			box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+			box-shadow: 0 0 5px 5px rgba(0,0,0,0.6);
 		}
 
 		/* Give some tiles a different background to make it look more real */
@@ -135,7 +135,7 @@ include('_header.php');
 		}
 		body.shadows div.panel:hover div.shadow {
 			-webkit-transform: translate3d(0, -122px,-25px) rotateY(-3deg);
-			box-shadow: 0 0 25px 20px rgba(0,0,0,0.25);
+			box-shadow: 0 0 25px 20px rgba(0,0,0,0.3);
 		}
 		div.panel:nth-child(4n+1),
 		div.panel:nth-child(4n+2) {
@@ -148,7 +148,7 @@ include('_header.php');
 		body.shadows div.panel:nth-child(4n+2):hover div.shadow,
 		body.shadows div.panel:nth-child(4n+1):hover div.shadow {
 			-webkit-transform: translate3d(0, -122px,-25px) rotateY(3deg);
-			box-shadow: 0 0 25px 20px rgba(0,0,0,0.25);
+			box-shadow: 0 0 25px 20px rgba(0,0,0,0.3);
 		}
 		
 		/* debugging styles */
@@ -193,6 +193,21 @@ include('_header.php');
 	</div><!-- #floor -->
 
 	<div id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b><br> There's no good fallback behavior, so I put this message here to let you know what happened.</div>
+
+	<!-- this p tag seems to mess up the perspective since I added it after building the tiles. happens even when I place it after tiles in document -->
+	<p class="instructions" id="toggle-shadows"><input type="checkbox" name="shadows" id="shadows"> <label for="shadows">Toggle shadows (buggy in Chrome)</label></p>
 </div>
+
+<script>
+$(document).ready(function(){
+	$('#shadows').click(function(){
+		if ($(this).is(':checked')){
+			$('body').addClass('shadows');
+		} else {
+			$('body').removeClass('shadows');
+		}
+	});
+});
+</script>
 
 <? include('_footer.php') ?>
