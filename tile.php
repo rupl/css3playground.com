@@ -14,7 +14,7 @@ include('_header.php');
 		
 		/* Set a base element for arranging all the 3D elements */
 		div#container {
-			-webkit-perspective: 470;
+			-webkit-perspective: 450;
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: visible;
 		}
@@ -22,22 +22,21 @@ include('_header.php');
 		/* Match the photograph's perspective */
 		html.csstransforms3d div#fallback {display: none; }
 		html.csstransforms3d div#floor {
-			width: 1792px;
-			height: 380px;
+			width: 1812px;
+			height: 385px;
 			margin-left: -1200px;
-			background: #333;
+			background: #222;
 
 			position: absolute;
 			left: 0;
 			top: 180px;
 
-			-webkit-transform: rotateX(73deg) rotateY(0deg) rotateZ(.3deg) translate3d(779px, -372px, -46px);
+			-webkit-transform: rotateX(71deg) rotateY(0deg) rotateZ(.4deg) translate3d(769px, -124px, -46px);
 			-webkit-transform-style: preserve-3d;
 		}
 	    html.csstransforms3d div#base {
 	      width: inherit;
 	      height: inherit;
-	      background: #333;
 	      position: absolute;
 	      top: 0;
 	      left: 0;
@@ -50,39 +49,42 @@ include('_header.php');
 		/* These are the individual tiles, which are rectangular prisms */
 		div.panel {
 			float: left; 
-			width: 438px;
-			height: 123px;
-			margin: 2px 5px;
+			width: 445px;
+			height: 124px;
+			margin: 2px 4px;
 			background: #333;
 
-			-webkit-transition: .3s all ease-in-out;
 			-webkit-transform-style: preserve-3d;
 			-webkit-transform-origin: bottom right;
 			-webkit-transform: translate3d(0,0,7px);
 		}
+		div.panel,
+		div.panel div.shadow {
+			-webkit-transition: .3s all ease-in-out;
+		}
 		
 		/* These are the sides of the tiles */
 		div.panel div.left {
-			width: 126px;
+			width: 124px;
 			height: 6px;
 			background: #444;
 			position: absolute;
 			left: 0;
-			box-shadow: 0 0 4px #444;
+			box-shadow: 0 0 2px #444;
 
 			-webkit-transform-origin: bottom left;
-			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(-9px, 0, 0);
+			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(-6px, 0, 0);
 		}
 		div.panel div.right {
-			width: 126px;
+			width: 124px;
 			height: 6px;
 			background: #444;
 			position: absolute;
 			right: 0;
-			box-shadow: 0 0 4px #444;
+			box-shadow: 0 0 2px #444;
 
 			-webkit-transform-origin: bottom right;
-			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(116px, 0, 0);
+			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(118px, 0, 0);
 		}
 		div.panel div.front {
 			width: inherit;
@@ -110,6 +112,16 @@ include('_header.php');
 			width: inherit;
 			height: inherit;
 			background: url('/images/tile-3.jpg');
+
+			-webkit-transform: translate3d(0, 0, 1px);
+		}
+		body.shadows div.panel div.shadow {
+			width: inherit;
+			height: inherit;
+			position: absolute;
+
+			-webkit-transform: translate3d(0, -122px, -5px);
+			box-shadow: 0 0 5px 5px rgba(0,0,0,0.6);
 		}
 
 		/* Give some tiles a different background to make it look more real */
@@ -121,6 +133,10 @@ include('_header.php');
 		div.panel:hover {
 			-webkit-transform: translate3d(0,0,25px) rotateY(3deg);
 		}
+		body.shadows div.panel:hover div.shadow {
+			-webkit-transform: translate3d(0, -122px,-25px) rotateY(-3deg);
+			box-shadow: 0 0 25px 20px rgba(0,0,0,0.3);
+		}
 		div.panel:nth-child(4n+1),
 		div.panel:nth-child(4n+2) {
 			-webkit-transform-origin: bottom left;
@@ -128,6 +144,11 @@ include('_header.php');
 		div.panel:nth-child(4n+2):hover,
 		div.panel:nth-child(4n+1):hover {
 			-webkit-transform: translate3d(0,0,25px) rotateY(-3deg);
+		}
+		body.shadows div.panel:nth-child(4n+2):hover div.shadow,
+		body.shadows div.panel:nth-child(4n+1):hover div.shadow {
+			-webkit-transform: translate3d(0, -122px,-25px) rotateY(3deg);
+			box-shadow: 0 0 25px 20px rgba(0,0,0,0.3);
 		}
 		
 		/* debugging styles */
@@ -150,28 +171,43 @@ include('_header.php');
 
 <div id="container">
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
-	<p class="intro">This page uses CSS3 3D Transforms to composite elements over a photograph. <code>-webkit-perspective</code>, <code>-webkit-transform-style: preserve3d</code>, <code>-webkit-transform: rotate3d(), transform3d()</code>, and <code>-webkit-transition</code> for animation.</p>
+	<p class="intro">This page uses CSS3 3D Transforms to composite elements over a photograph. It uses <code>-webkit-perspective</code>, <code>-webkit-transform-style: preserve3d</code>, <code>-webkit-transform: rotate3d(), transform3d()</code>, and <code>-webkit-transition</code> for animation.</p>
 	
 	<div id="floor">
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
 
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
 
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
-			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
+			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
 
 			<div id="base"></div>
 	</div><!-- #floor -->
 
-	<div id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b> There's no good fallback behavior, so I put this message here to let you know what happened.</div>
+	<div id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b><br> There's no good fallback behavior, so I put this message here to let you know what happened.</div>
+
+	<!-- this p tag seems to mess up the perspective since I added it after building the tiles. happens even when I place it after tiles in document -->
+	<p class="instructions" id="toggle-shadows"><input type="checkbox" name="shadows" id="shadows"> <label for="shadows">Toggle shadows (buggy in Chrome)</label></p>
 </div>
+
+<script>
+$(document).ready(function(){
+	$('#shadows').click(function(){
+		if ($(this).is(':checked')){
+			$('body').addClass('shadows');
+		} else {
+			$('body').removeClass('shadows');
+		}
+	});
+});
+</script>
 
 <? include('_footer.php') ?>
