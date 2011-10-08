@@ -38,7 +38,8 @@ include('_header.php');
 			width: 100px;
 			height: 100px;
 			border: 5px solid #bbb;
-			
+/* 			border-image: url('/images/slinky-border.png') 20 20 20 20 stretch stretch; */
+
 			-o-transform-origin: 0 80%;
 			-moz-transform-origin: 0 80%;
 			-webkit-transform-origin: 0 85%;
@@ -57,15 +58,16 @@ include('_header.php');
 				translateX(0) translateY(0) translateZ(0);
 				
 			/* shadows really help define the layers */
-			-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
-			-moz-box-shadow: 0 0 3px rgba(0,0,0,0.5);
-			-ms-box-shadow: 0 0 3px rgba(0,0,0,0.5);
-			-o-box-shadow: 0 0 3px rgba(0,0,0,0.5);
-			box-shadow: 0 0 3px rgba(0,0,0,0.5);
+			-webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,1);
+			-moz-box-shadow: 0 0 1px 1px rgba(0,0,0,1);
+			-ms-box-shadow: 0 0 1px 1px rgba(0,0,0,1);
+			-o-box-shadow: 0 0 1px 1px rgba(0,0,0,1);
+			box-shadow: 0 0 1px 1px rgba(0,0,0,1);
 			
 			/* -- transition is the magic sauce for animation -- */
 			-webkit-transition: all .5s ease-in-out;
 			-moz-transition: all .5s ease-in-out;
+			-o-transition: all .5s ease-in-out;
 			transition: all .5s ease-in-out;
 		}
 
@@ -73,17 +75,17 @@ include('_header.php');
 		.panel .segment .segment {
 			-webkit-transform:
 				rotateX(0) rotateY(0) rotateZ(0)
-				translateX(0) translateY(0) translateZ(-1px);
+				translateX(0) translateY(0) translateZ(-1.5px);
 		}
 
 		/* This is the slinky extended approx 180 degrees */
 		.panel:hover .segment .segment {
+			transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
 			-o-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
 			-moz-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
 			-webkit-transform:
-				rotateX(0) rotateY(5.1deg) rotateZ(0)
-				translateX(-1px) translateY(0) translateZ(-1px);
-			transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
+				rotateX(0) rotateY(5deg) rotateZ(0)
+				translateX(0px) translateY(0px) translateZ(-1px);
 
 		}
 		
@@ -163,7 +165,9 @@ include('_header.php');
 																																	<div class="segment">
 																																		<div class="segment">
 																																			<div class="segment">
-																																				<div class="segment"></div>
+																																				<div class="segment">
+																																					<div class="segment"></div>
+																																				</div>
 																																			</div>
 																																		</div>
 																																	</div>
