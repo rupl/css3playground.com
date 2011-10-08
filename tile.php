@@ -131,10 +131,10 @@ include('_header.php');
 		}
 
 		/* These rules make the tiles move on mouseover. I set the nth-child() rules to make it visually symmetrical. */
-		div.panel:hover {
+		div.panel.hover {
 			-webkit-transform: translate3d(0,0,25px) rotateY(3deg);
 		}
-		body.shadows div.panel:hover div.shadow {
+		body.shadows div.panel.hover div.shadow {
 			-webkit-transform: translate3d(0, -122px,-25px) rotateY(-3deg);
 			box-shadow: 0 0 25px 20px rgba(0,0,0,.5);
 		}
@@ -142,12 +142,12 @@ include('_header.php');
 		div.panel:nth-child(4n+2) {
 			-webkit-transform-origin: bottom left;
 		}
-		div.panel:nth-child(4n+2):hover,
-		div.panel:nth-child(4n+1):hover {
+		div.panel:nth-child(4n+2).hover,
+		div.panel:nth-child(4n+1).hover {
 			-webkit-transform: translate3d(0,0,25px) rotateY(-3deg);
 		}
-		body.shadows div.panel:nth-child(4n+2):hover div.shadow,
-		body.shadows div.panel:nth-child(4n+1):hover div.shadow {
+		body.shadows div.panel:nth-child(4n+2).hover div.shadow,
+		body.shadows div.panel:nth-child(4n+1).hover div.shadow {
 			-webkit-transform: translate3d(0, -122px,-25px) rotateY(3deg);
 		}
 		
@@ -207,6 +207,12 @@ $(document).ready(function(){
 		} else {
 			$('body').removeClass('shadows');
 		}
+	});
+
+	$('.panel').toggle(function(){
+		$(this).addClass('hover');
+	}, function() {
+		$(this).removeClass('hover');
 	});
 });
 </script>
