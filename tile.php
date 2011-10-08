@@ -162,6 +162,7 @@ include('_header.php');
 		html.no-csstransforms3d div#fallback {
 			display: block; width: 800px; padding: 2em; background: rgba(255,255,255,0.5); text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
 		}
+		html.no-csstransforms3d p#toggle-shadows {display: none; }
 
 	</style>
 </head>
