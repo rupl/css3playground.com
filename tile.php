@@ -135,7 +135,7 @@ include('_header.php');
 		}
 		body.shadows div.panel:hover div.shadow {
 			-webkit-transform: translate3d(0, -122px,-25px) rotateY(-3deg);
-			box-shadow: 0 0 25px 20px rgba(0,0,0,0.3);
+			box-shadow: 0 0 25px 20px rgba(0,0,0,.5);
 		}
 		div.panel:nth-child(4n+1),
 		div.panel:nth-child(4n+2) {
@@ -148,7 +148,6 @@ include('_header.php');
 		body.shadows div.panel:nth-child(4n+2):hover div.shadow,
 		body.shadows div.panel:nth-child(4n+1):hover div.shadow {
 			-webkit-transform: translate3d(0, -122px,-25px) rotateY(3deg);
-			box-shadow: 0 0 25px 20px rgba(0,0,0,0.3);
 		}
 		
 		/* debugging styles */
@@ -194,7 +193,6 @@ include('_header.php');
 
 	<div id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b><br> There's no good fallback behavior, so I put this message here to let you know what happened.</div>
 
-	<!-- this p tag seems to mess up the perspective since I added it after building the tiles. happens even when I place it after tiles in document -->
 	<p class="instructions" id="toggle-shadows"><input type="checkbox" name="shadows" id="shadows"> <label for="shadows">Toggle shadows (buggy in Chrome)</label></p>
 </div>
 
