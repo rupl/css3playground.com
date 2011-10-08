@@ -119,6 +119,7 @@ include('_header.php');
 			width: inherit;
 			height: inherit;
 			position: absolute;
+			background: rgba(0,0,0,0.6);
 
 			-webkit-transform: translate3d(0, -122px, -5px);
 			box-shadow: 0 0 5px 5px rgba(0,0,0,0.6);
