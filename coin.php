@@ -1,5 +1,5 @@
 <?
-$title = '3D Flip Cards';
+$title = 'Reflective Coin';
 include('_header.php');
 ?>
 
@@ -32,11 +32,11 @@ include('_header.php');
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: hidden;
 
-			-webkit-transition: all .6s ease-in-out;
-			-moz-transition: all .6s ease-in-out;
-			-ms-transition: all .6s ease-in-out;
-			-o-transition: all .6s ease-in-out;
-			transition: all .6s ease-in-out;
+			-webkit-transition: all 1.2s ease-in-out;
+			-moz-transition: all 1.2s ease-in-out;
+			-ms-transition: all 1.2s ease-in-out;
+			-o-transition: all 1.2s ease-in-out;
+			transition: all 1.2s ease-in-out;
 		}
 
 		/* -- make sure to declare a default for every property that you want animated -- */
@@ -95,8 +95,8 @@ include('_header.php');
 		.coin .heads .reflection {
 			background-position-y: -100px;
 			-webkit-mask: url('/images/coin-mask-heads.png') left top;
-			-webkit-transition: all .25s ease-in-out;
-			-webkit-transition-delay: .125s;
+			-webkit-transition: all .5s ease-in-out;
+			-webkit-transition-delay: .25s;
 		}
 		.coin.flip .heads .reflection {
 			background-position-y: 200px;
@@ -105,8 +105,8 @@ include('_header.php');
 		.coin .tails .reflection {
 			background-position-y: 200px;
 			-webkit-mask: url('/images/coin-mask-tails.png') left top;
-			-webkit-transition: all .175s ease-in-out;
-			-webkit-transition-delay: .325s;
+			-webkit-transition: all .35s ease-in-out;
+			-webkit-transition-delay: .65s;
 		}
 		.coin.flip .tails .reflection {
 			background-position-y: -100px;
@@ -145,7 +145,7 @@ include('_header.php');
 			min: 1,
 			max: 10,
 			orientation: 'horizontal',
-			value: 1,
+			value: 2,
 			slide: function(e, ui){
 				var multi = ui.value;
 				$('.coin aside')
