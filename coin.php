@@ -8,10 +8,12 @@ include('_header.php');
 		
 		/* -- fallback behavior -- */
 		html.no-csstransforms3d p#fallback {display: block; float: right; width: 500px; padding-top: 20px; }
+		html.no-csstransforms3d div#speed {display: none; }
 
 		/* -- The fun stuff -- */		
 		html.csstransforms3d p#fallback {display: none; }
-		
+		html.csstransforms3d div#speed {width: 200px; }
+
 		.coin {
 			float: left;
 			width: 143px;
@@ -21,7 +23,7 @@ include('_header.php');
 			top: 25px;
 			left: 50px;
 			
-			-webkit-perspective: 600;
+			-webkit-perspective: 500;
 		}
 		.coin aside {
 			background-image: url('/images/coin-sides-24.png');
@@ -30,11 +32,11 @@ include('_header.php');
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: hidden;
 
-			-webkit-transition: all 1.2s ease-in-out;
-			-moz-transition: all 1.2s ease-in-out;
-			-ms-transition: all 1.2s ease-in-out;
-			-o-transition: all 1.2s ease-in-out;
-			transition: all 1.2s ease-in-out;
+			-webkit-transition: all .6s ease-in-out;
+			-moz-transition: all .6s ease-in-out;
+			-ms-transition: all .6s ease-in-out;
+			-o-transition: all .6s ease-in-out;
+			transition: all .6s ease-in-out;
 		}
 
 		/* -- make sure to declare a default for every property that you want animated -- */
@@ -47,7 +49,7 @@ include('_header.php');
 			z-index: 900;
 			width: inherit;
 			height: inherit;
-
+			
 			-webkit-transform: rotateX(0deg);
 		}
 		/* Heads facing backward (flipped) */
@@ -93,8 +95,8 @@ include('_header.php');
 		.coin .heads .reflection {
 			background-position-y: -100px;
 			-webkit-mask: url('/images/coin-mask-heads.png') left top;
-			-webkit-transition: all .5s ease-in-out;
-			-webkit-transition-delay: .25s;
+			-webkit-transition: all .25s ease-in-out;
+			-webkit-transition-delay: .125s;
 		}
 		.coin.flip .heads .reflection {
 			background-position-y: 200px;
@@ -103,8 +105,8 @@ include('_header.php');
 		.coin .tails .reflection {
 			background-position-y: 200px;
 			-webkit-mask: url('/images/coin-mask-tails.png') left top;
-			-webkit-transition: all .35s ease-in-out;
-			-webkit-transition-delay: .65s;
+			-webkit-transition: all .175s ease-in-out;
+			-webkit-transition-delay: .325s;
 		}
 		.coin.flip .tails .reflection {
 			background-position-y: -100px;
@@ -125,16 +127,41 @@ include('_header.php');
 <body>
 
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
-	
-	<p class="instructions"><b>Click or tap the coin.</b> It is using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code></p>
-	<p class="instructions">The reflections use plain ol' <code>background-position</code> along with <code>-webkit-transition</code> and <code>-webkit-mask</code> to give the reflection some texture.</p>
 
+	<p class="instructions"><b>Click or tap the coin. Control the speed of the coin with the slider.</b></p>	
+	<p class="instructions">The coin is using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code></p>
+	<p class="instructions">The reflections use <code>background-position</code> along with <code>-webkit-transition</code> and <code>-webkit-mask</code> to give the reflection some texture. I haven't figured out how to make it work for both flips.</p>
+	<div id="speed"></div>
+	<p class="instructions" id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b> The coin will switch faces with no visual transition.<br><br>If you want to see the goods, download <a href="http://www.apple.com/safari/">Safari 5</a>, <a href="http://www.google.com/chrome">Chrome</a> 10+ or the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>.</p>
 	<div class="coin">
 		<!-- Each element is a side of the coin. Semantic. -->
 		<aside class="heads"><div class="reflection"></div></aside>
 		<aside class="tails"><div class="reflection"></div></aside>
 	</div>
 
-	<p class="instructions" id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b> The coin will switch faces with no visual transition.<br><br>If you want to see the goods, download <a href="http://www.apple.com/safari/">Safari 5</a>, <a href="http://www.google.com/chrome">Chrome</a> 10+ or the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>.</p>
-	
+	<script>
+		$('#speed').slider({
+			animate: 'fast',
+			min: 1,
+			max: 10,
+			orientation: 'horizontal',
+			value: 1,
+			slide: function(e, ui){
+				var multi = ui.value;
+				$('.coin aside')
+					.css('-webkit-transition', 'all '+(multi * 0.6)+'s ease-in-out')
+					.css('-moz-transition', 'all '+(multi * 0.6)+'s ease-in-out')
+					.css('-ms-transition', 'all '+(multi * 0.6)+'s ease-in-out')
+					.css('-o-transition', 'all '+(multi * 0.6)+'s ease-in-out')
+					.css('transition', 'all '+(multi * 0.6)+'s ease-in-out');
+				$('.coin .heads .reflection')
+					.css('-webkit-transition', 'all '+(multi * 0.25)+'s ease-in-out')
+					.css('-webkit-transition-delay', (multi * 0.125)+'s');
+				$('.coin .tails .reflection')
+					.css('-webkit-transition', 'all '+(multi * 0.175)+'s ease-in-out')
+					.css('-webkit-transition-delay', (multi * 0.325)+'s');
+			}
+		});
+	</script>
+
 <? include('_footer.php') ?>
