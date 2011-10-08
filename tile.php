@@ -171,7 +171,7 @@ include('_header.php');
 
 <div id="container">
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
-	<p class="intro">This page uses CSS3 3D Transforms to composite elements over a photograph. <code>-webkit-perspective</code>, <code>-webkit-transform-style: preserve3d</code>, <code>-webkit-transform: rotate3d(), transform3d()</code>, and <code>-webkit-transition</code> for animation.</p>
+	<p class="intro">This page uses CSS3 3D Transforms to composite elements over a photograph. It uses <code>-webkit-perspective</code>, <code>-webkit-transform-style: preserve3d</code>, <code>-webkit-transform: rotate3d(), transform3d()</code>, and <code>-webkit-transition</code> for animation.</p>
 	
 	<div id="floor">
 			<div class="panel"><div class="left"></div><div class="right"></div><div class="front"></div><div class="back"></div><div class="top"></div><div class="shadow"></div></div>
