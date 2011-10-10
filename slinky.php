@@ -75,7 +75,7 @@ include('_header.php');
 		.panel .segment .segment {
 			-webkit-transform:
 				rotateX(0) rotateY(0) rotateZ(0)
-				translateX(0) translateY(0) translateZ(-1.5px);
+				translateX(0) translateY(0) translateZ(-1px);
 		}
 
 		/* This is the slinky extended approx 180 degrees */
