@@ -14,6 +14,7 @@ include('_header.php');
 			font-size: .8em;
 			
 			-webkit-perspective: 600;
+			-moz-perspective: 600;
 		}
 		/* -- make sure to declare a default for every property that you want animated -- */
 		/* -- general styles, including Y axis rotation -- */
@@ -37,6 +38,10 @@ include('_header.php');
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: hidden;
 
+			-moz-transform: rotateY(0deg);
+			-moz-transform-style: preserve-3d;
+			-moz-backface-visibility: hidden;
+
 			/* -- transition is the magic sauce for animation -- */
 			-o-transition: all .4s ease-in-out;
 			-ms-transition: all .4s ease-in-out;
@@ -49,6 +54,7 @@ include('_header.php');
 			border-color: #eee;
 
 			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
 			
 			-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 			-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
@@ -71,6 +77,10 @@ include('_header.php');
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: hidden;
 
+			-moz-transform: rotateY(-180deg);
+			-moz-transform-style: preserve-3d;
+			-moz-backface-visibility: hidden;
+
 			/* -- transition is the magic sauce for animation -- */
 			-o-transition: all .4s ease-in-out;
 			-ms-transition: all .4s ease-in-out;
@@ -83,6 +93,8 @@ include('_header.php');
 			z-index: 1000;
 			
 			-webkit-transform: rotateY(0deg);
+			-moz-transform: rotateY(0deg);
+
 			box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 			-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 			-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
@@ -92,30 +104,38 @@ include('_header.php');
 		.click .front {
 			cursor: pointer;
 			-webkit-transform: rotateX(0deg);
+			-moz-transform: rotateX(0deg);
 		}
 		.click.flip .front {
 			-webkit-transform: rotateX(180deg);
+			-moz-transform: rotateX(180deg);
 		}
 		.click .back {
 			cursor: pointer;
 			-webkit-transform: rotateX(-180deg);
+			-moz-transform: rotateX(-180deg);
 		}
 		.click.flip .back {
 			-webkit-transform: rotateX(0deg);
+			-moz-transform: rotateX(0deg);
 		}
 		
 		/* -- diagonal axis rotation -- */
 		.diagonal .front {
 			-webkit-transform: rotate3d(45,45,0,0deg);
+			-moz-transform: rotate3d(45,45,0,0deg);
 		}
 		.diagonal.flip .front {
 			-webkit-transform: rotate3d(45,45,0,180deg);
+			-moz-transform: rotate3d(45,45,0,180deg);
 		}
 		.diagonal .back {
 			-webkit-transform: rotate3d(45,45,0,-180deg);
+			-moz-transform: rotate3d(45,45,0,-180deg);
 		}
 		.diagonal.flip .back {
 			-webkit-transform: rotate3d(45,45,0,0deg);
+			-moz-transform: rotate3d(45,45,0,0deg);
 		}
 		
 		
@@ -183,7 +203,7 @@ include('_header.php');
 
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
 	<p class="warning">
-		As of <?= date("F jS, Y") ?> the 3D transforms in this demo only work using <a href="http://www.apple.com/safari/">Safari 5</a>, <a href="http://www.google.com/chrome">Chrome</a> 10+ or the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>.
+		As of <?= date("F jS, Y") ?> the 3D transforms in this demo only work using <a href="http://www.apple.com/safari/">Safari 5</a>, <a href="http://www.google.com/chrome">Chrome</a> 10+, the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>, and <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox 10+</a>.
 		Browsers without 3D acceleration just switch the z-index. You won't lose any functionality!
 	</p>
 	
