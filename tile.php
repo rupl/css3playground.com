@@ -5,7 +5,7 @@ include('_header.php');
 
 	<style>
 		/* This page uses a big photograph as the bg instead of the normal style */
-		body {background: #000 url('/images/tile-bg.jpg') no-repeat -10px top; color: #000; width: 1420px; }
+		body {background: #000 url('/images/tile-bg.jpg') no-repeat -10px top; color: #000; width: 1420px; overflow: hidden; }
 		a, p, #other ul li a {color: #fff; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); }
 		h1 a {color: #000; text-shadow: 1px 1px 1px rgba(255,255,255,0.5); }
 		#other ul li.more,
@@ -14,25 +14,31 @@ include('_header.php');
 		
 		/* Set a base element for arranging all the 3D elements */
 		div#container {
-			-webkit-perspective: 450;
+			-webkit-perspective: 500px;
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: visible;
+
+			-moz-perspective: 500px;
+			-moz-perspective-origin: 38% 20%;
+			-moz-transform-style: preserve-3d;
 		}
 		
 		/* Match the photograph's perspective */
 		html.csstransforms3d div#fallback {display: none; }
 		html.csstransforms3d div#floor {
-			width: 1812px;
-			height: 385px;
-			margin-left: -1200px;
+			width: 1860px;
+			height: 436px;
 			background: #222;
 
 			position: absolute;
 			left: 0;
-			top: 180px;
+			top: 0;
 
-			-webkit-transform: rotateX(71deg) rotateY(0deg) rotateZ(.4deg) translate3d(769px, -124px, -46px);
+			-webkit-transform: rotateX(71deg) rotateY(0deg) rotateZ(0deg) translate3d(-460px, -97px, -210px);
 			-webkit-transform-style: preserve-3d;
+
+			-moz-transform: rotateX(71deg) rotateY(0deg) rotateZ(0deg) translate3d(-460px, -97px, -210px);
+			-moz-transform-style: preserve-3d;
 		}
 	    html.csstransforms3d div#base {
 	      width: inherit;
@@ -44,23 +50,34 @@ include('_header.php');
 	
 	      -webkit-transform: translate3d(0, -30px, -10px);
 	      -webkit-transform-style: preserve-3d;
+
+	      -moz-transform: translate3d(0, -30px, -10px);
+	      -moz-transform-style: preserve-3d;
 	    }
 		
 		/* These are the individual tiles, which are rectangular prisms */
 		div.panel {
 			float: left; 
-			width: 445px;
-			height: 124px;
+			width: 457px;
+			height: 141px;
 			margin: 2px 4px;
 			background: #333;
 
 			-webkit-transform-style: preserve-3d;
 			-webkit-transform-origin: bottom right;
 			-webkit-transform: translate3d(0,0,7px);
+
+			-moz-transform-style: preserve-3d;
+			-moz-transform-origin: bottom right;
+			-moz-transform: translate3d(0,0,7px);
 		}
 		div.panel,
 		div.panel div.shadow {
 			-webkit-transition: .3s all ease-in-out;
+			-moz-transition: .3s all ease-in-out;
+			-ms-transition: .3s all ease-in-out;
+			-o-transition: .3s all ease-in-out;
+			transition: .3s all ease-in-out;
 		}
 		
 		/* These are the sides of the tiles */
@@ -74,6 +91,9 @@ include('_header.php');
 
 			-webkit-transform-origin: bottom left;
 			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(-6px, 0, 0);
+
+			-moz-transform-origin: bottom left;
+			-moz-transform: rotateX(90deg) rotateY(90deg) translate3d(-6px, 0, 0);
 		}
 		div.panel div.right {
 			width: 124px;
@@ -85,6 +105,9 @@ include('_header.php');
 
 			-webkit-transform-origin: bottom right;
 			-webkit-transform: rotateX(90deg) rotateY(90deg) translate3d(118px, 0, 0);
+
+			-moz-transform-origin: bottom right;
+			-moz-transform: rotateX(90deg) rotateY(90deg) translate3d(118px, 0, 0);
 		}
 		div.panel div.front {
 			width: inherit;
@@ -96,6 +119,9 @@ include('_header.php');
 
 			-webkit-transform-origin: bottom center;
 			-webkit-transform: rotateX(90deg) translate3d(0, 0, 0);
+
+			-moz-transform-origin: bottom center;
+			-moz-transform: rotateX(90deg) translate3d(0, 0, 0);
 		}
 		div.panel div.back {
 			width: inherit;
@@ -107,6 +133,9 @@ include('_header.php');
 
 			-webkit-transform-origin: top center;
 			-webkit-transform: rotateX(90deg) translate3d(0, -6px, 0);
+
+			-moz-transform-origin: top center;
+			-moz-transform: rotateX(90deg) translate3d(0, -6px, 0);
 		}
 		div.panel div.top {
 			width: inherit;
@@ -114,15 +143,17 @@ include('_header.php');
 			background: url('/images/tile-3.jpg');
 
 			-webkit-transform: translate3d(0, 0, 1px);
+			-moz-transform: translate3d(0, 0, 1px);
 		}
 		body.shadows div.panel div.shadow {
 			width: inherit;
 			height: inherit;
 			position: absolute;
-			background: rgba(0,0,0,0.6);
+			background: rgba(0,0,0,0);
 
 			-webkit-transform: translate3d(0, -122px, -5px);
-			box-shadow: 0 0 5px 5px rgba(0,0,0,0.6);
+			-moz-transform: translate3d(0, -122px, -5px);
+			box-shadow: 0 0 5px 5px rgba(0,0,0,0);
 		}
 
 		/* Give some tiles a different background to make it look more real */
@@ -130,25 +161,34 @@ include('_header.php');
 			background: url('/images/tile-4.jpg');
 		}
 
-		/* These rules make the tiles move on mouseover. I set the nth-child() rules to make it visually symmetrical. */
+		/*
+		 * These rules make the tiles move on mouseover.
+		 * I set the nth-child() rules to make it visually symmetrical.
+		 */
 		div.panel.hover {
 			-webkit-transform: translate3d(0,0,25px) rotateY(3deg);
+			-moz-transform: translate3d(0,0,25px) rotateY(3deg);
 		}
 		body.shadows div.panel.hover div.shadow {
+		  background: rgba(0,0,0,0.5);
 			-webkit-transform: translate3d(0, -122px,-25px) rotateY(-3deg);
-			box-shadow: 0 0 25px 20px rgba(0,0,0,.5);
+			-moz-transform: translate3d(0, -122px,-25px) rotateY(-3deg);
+			box-shadow: 0 0 25px 15px rgba(0,0,0,.5);
 		}
 		div.panel:nth-child(4n+1),
 		div.panel:nth-child(4n+2) {
 			-webkit-transform-origin: bottom left;
+			-moz-transform-origin: bottom left;
 		}
 		div.panel:nth-child(4n+2).hover,
 		div.panel:nth-child(4n+1).hover {
 			-webkit-transform: translate3d(0,0,25px) rotateY(-3deg);
+			-moz-transform: translate3d(0,0,25px) rotateY(-3deg);
 		}
 		body.shadows div.panel:nth-child(4n+2).hover div.shadow,
 		body.shadows div.panel:nth-child(4n+1).hover div.shadow {
 			-webkit-transform: translate3d(0, -122px,-25px) rotateY(3deg);
+			-moz-transform: translate3d(0, -122px,-25px) rotateY(3deg);
 		}
 		
 		/* debugging styles */
@@ -161,9 +201,15 @@ include('_header.php');
 			display: none;
 		}
 		html.no-csstransforms3d div#fallback {
-			display: block; width: 800px; padding: 2em; background: rgba(255,255,255,0.5); text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
+			display: block;
+			width: 800px;
+			padding: 2em;
+			background: rgba(255,255,255,0.5);
+			text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
 		}
-		html.no-csstransforms3d p#toggle-shadows {display: none; }
+		html.no-csstransforms3d p#toggle-shadows {
+		  display: none;
+		}
 
 	</style>
 </head>
@@ -172,7 +218,10 @@ include('_header.php');
 
 <div id="container">
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
-	<p class="intro">This page uses CSS3 3D Transforms to composite elements over a photograph. It uses <code>-webkit-perspective</code>, <code>-webkit-transform-style: preserve3d</code>, <code>-webkit-transform: rotate3d(), transform3d()</code>, and <code>-webkit-transition</code> for animation.</p>
+	<p class="intro">
+	 This page uses CSS3 3D Transforms to composite elements over a photograph. It uses <code>-webkit-perspective</code>, <code>-webkit-transform-style: preserve3d</code>, <code>-webkit-transform: rotate3d(), transform3d()</code>, and <code>-webkit-transition</code> for animation.<br>
+	 Gecko browsers use the -moz equivalents, of course.
+  </p>
 	<!-- I took the tile photo right here :) http://j.mp/tile-aic -->
 	
 	<div id="floor">
