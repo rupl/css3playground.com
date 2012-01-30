@@ -13,8 +13,8 @@ include('_header.php');
 			position: relative;
 			font-size: .8em;
 			
-			-webkit-perspective: 600;
-			-moz-perspective: 600;
+			-webkit-perspective: 600px;
+			-moz-perspective: 600px;
 		}
 		/* -- make sure to declare a default for every property that you want animated -- */
 		/* -- general styles, including Y axis rotation -- */
