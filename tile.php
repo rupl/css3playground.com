@@ -170,10 +170,10 @@ include('_header.php');
 			-moz-transform: translate3d(0,0,25px) rotateY(3deg);
 		}
 		body.shadows div.panel.hover div.shadow {
-		  background: rgba(0,0,0,0.5);
+		  background: rgba(0,0,0,0.6);
 			-webkit-transform: translate3d(0, -122px,-25px) rotateY(-3deg);
 			-moz-transform: translate3d(0, -122px,-25px) rotateY(-3deg);
-			box-shadow: 0 0 25px 15px rgba(0,0,0,.5);
+			box-shadow: 0 0 25px 15px rgba(0,0,0,0.6);
 		}
 		div.panel:nth-child(4n+1),
 		div.panel:nth-child(4n+2) {
@@ -245,11 +245,16 @@ include('_header.php');
 
 	<div id="fallback"><b>If you can read this, it means your browser cannot process the 3D transforms on this page.</b><br> There's no good fallback behavior, so I put this message here to let you know what happened.</div>
 
-	<p class="instructions" id="toggle-shadows"><input type="checkbox" name="shadows" id="shadows"> <label for="shadows">Toggle shadows (buggy in Chrome)</label></p>
+	<p class="instructions" id="toggle-shadows"><input type="checkbox" name="shadows" id="shadows" checked> <label for="shadows">Toggle shadows</label></p>
 </div>
 
 <script>
 $(document).ready(function(){
+
+  // Show shadows immediately
+  $('body').addClass('shadows');
+
+  // Toggle shadows
 	$('#shadows').click(function(){
 		if ($(this).is(':checked')){
 			$('body').addClass('shadows');
@@ -258,11 +263,13 @@ $(document).ready(function(){
 		}
 	});
 
+  // Add these events so touch events bubble up
 	$('.panel').toggle(function(){
 		$(this).addClass('hover');
 	}, function() {
 		$(this).removeClass('hover');
 	});
+
 });
 </script>
 
