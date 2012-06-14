@@ -114,6 +114,12 @@ include('_header.php');
 			-webkit-animation-iteration-count: infinite;
 			-webkit-animation-direction: normal;
 			-webkit-animation-timing-function: linear;
+
+			-moz-animation-name: rotate;
+			-moz-animation-duration: 4s;
+			-moz-animation-iteration-count: infinite;
+			-moz-animation-direction: normal;
+			-moz-animation-timing-function: linear;
 		}
 
 		/* Animation keyframes */
@@ -123,6 +129,14 @@ include('_header.php');
 			}
 			100% {
 				-webkit-transform: rotateX(-105deg) rotateY(0) rotateZ(360deg) translateX(0) translateY(0) translateZ(2px);
+			}
+		}
+		@-moz-keyframes rotate {
+			0% {
+				-moz-transform: rotateX(-105deg) rotateY(0) rotateZ(0deg) translateX(0) translateY(0) translateZ(2px);
+			}
+			100% {
+				-moz-transform: rotateX(-105deg) rotateY(0) rotateZ(360deg) translateX(0) translateY(0) translateZ(2px);
 			}
 		}
 	</style>
