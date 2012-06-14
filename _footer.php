@@ -12,8 +12,8 @@
 <?php /*  <li><a href="coin.php">coin</a></li> */ ?>
 		<li><a href="slinky.php">slinky</a></li>
 		<li><a href="tile.php">tile</a></li>
-		<li class="credit vcard">say hi to:</li>
-		<li><a href="http://chrisruppel.com" title="Chris Ruppel" rel="me" class="fn url">chris ruppel</a></li>
+		<li class="credit">say hi to:</li>
+		<li class="vcard"><a href="http://chrisruppel.com" title="Chris Ruppel" rel="me" class="fn url">chris ruppel</a></li>
 	</ul>
 </div>
 
