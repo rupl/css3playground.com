@@ -87,7 +87,7 @@ include('_header.php');
 <div id="container">
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
 
-	<p class="instructions">Move your cursor around and watch the depth of field change.<br>
+	<p class="instructions">Move your cursor up and down to watch the depth of field change.<br>
 	This demo uses <code>-webkit-filter: blur()</code> and a dash of JS to track your cursor.</p>
 
   <div class="back layer"><span>Back</span></div>
