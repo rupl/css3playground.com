@@ -23,7 +23,7 @@ include('_header.php');
       position: absolute;
       border: 10px solid #333;
       border-radius: 20px;
-      
+
       -webkit-transform: rotateY(0deg);
       -moz-transform: rotateY(0deg);
     }

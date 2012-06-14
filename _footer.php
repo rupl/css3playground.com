@@ -10,6 +10,7 @@
 <?php /*  <li><a href="reveal.php">reveal</a></li> */ ?>
 		<li><a href="gears.php">gears</a></li>
 <?php /*  <li><a href="coin.php">coin</a></li> */ ?>
+		<li><a href="blur-filter.php">blur filter</a></li>
 		<li><a href="slinky.php">slinky</a></li>
 		<li><a href="tile.php">tile</a></li>
 		<li class="credit">say hi to:</li>
