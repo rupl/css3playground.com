@@ -7,7 +7,6 @@ include('_header.php');
     body {
       padding: 0;
       overflow: hidden;
-      background: #012;
     }
     #other li.more,
     #other li.credit {
@@ -16,61 +15,71 @@ include('_header.php');
 
     #container {
       padding: 0 2em;
+      position: relative;
     }
-    div.test {
+    div.layer {
       background: #fff;
       color: #000;
-      width: 720px;
-      height: 400px;
+      position: absolute;
+      border: 10px solid #333;
+      border-radius: 20px;
       
-      -webkit-filter: blur(10px);
+      -webkit-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+    }
+    div.layer span {
+      display: block;
+      width: 100px;
+      margin: 20px auto 0;
+      font-size: 2em;
     }
 
-		/* -- for debugging -- */
-		#data {
-			display: block;
-			
-			width: 1000px;
-			font-size: .9em;
-			position: absolute;
-			bottom: 60px;
-			right: 20px;
-			
-			background: rgba(0,0,0,0.3);
-			border: 1px solid rgba(0,0,0,0.3);
-		}
+    div.back {
+      width: 400px;
+      height: 200px;
+      top: 150px;
+      left: 200px;
+      z-index: 1;
+    }
+    div.middle {
+      width: 580px;
+      height: 240px;
+      top: 250px;
+      left: 100px;
+      z-index: 2;
+    }
+    div.front {
+      width: 720px;
+      height: 280px;
+      top: 350px;
+      z-index: 3;
+    }
 	</style>
-	<script>
+  <script>
 
     $(document).ready(function(){
       $('html').mousemove(function(e){
-		    
-		    	// calculate the shadow
-		    	var offset = $('html').offset();
-			    var XX = e.clientX - offset.left;
-			    var YY = e.clientY - offset.top;
-			    var hyp = Math.sqrt(XX*XX+YY*YY);
-			    var size = Math.ceil(hyp/100);
 
-  				// debug
-  	    		$('#data .xx .val').text(XX);
-  	    		$('#data .yy .val').text(YY);
-  	    		$('#data .hyp .val').text(hyp);
-  		    	$('#data .size .val').text(size);
-  				//*/
+        // calculate the shadow
+        var offset = $('html').offset();
+        var YY = e.clientY - offset.top;
+        // @TODO: percentage based points to signify top, middle, bottom of browser window.
+        var back = 0;
+        var middle = 300;
+        var front = 500;
+        var sizeBack   = Math.abs(back-YY)/40;
+        var sizeMiddle = Math.abs(middle-YY)/40;
+        var sizeFront  = Math.abs(front-YY)/40;
 
-  				// apply spotlight CSS
-  				$('.test').css('-webkit-filter', 'blur('+size+'px)');
+        // apply blur
+        $('.back').css('-webkit-filter',    'blur('+ (sizeBack) +'px)');
+        $('.middle').css('-webkit-filter',  'blur('+ (sizeMiddle) +'px)');
+        $('.front').css('-webkit-filter',   'blur('+ (sizeFront) +'px)');
 
-  				/*
-  				// debug
-  				$('#data .spotlight .val').text(spotlight);
-  				//*/
+      });
+    });
 
-		    });
-		  });
-
-	</script>
+  </script>
 </head>
 
 <body>
@@ -78,18 +87,11 @@ include('_header.php');
 <div id="container">
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
 
-	<p class="instructions">This demo uses -webkit-filter: blur</p>
+	<p class="instructions">Move your cursor around and watch the depth of field change.<br>
+	This demo uses <code>-webkit-filter: blur()</code> and a dash of JS to track your cursor.</p>
 
-  <div class="test">Hello</div>
-
-	<div id="data">
-	  <ul>
-	    <li class="xx">x: <span class="val"></span></li>
-	    <li class="yy">y: <span class="val"></span></li>
-	    <li class="hyp">hypotenuse: <span class="val"></span></li>
-	    <li class="size">size: <span class="val"></span></li>
-	  </ul>
-	</div>
-
+  <div class="back layer"><span>Back</span></div>
+  <div class="middle layer"><span>Middle</span></div>
+  <div class="front layer"><span>Front</span></div>
 
 <? include('_footer.php') ?>
