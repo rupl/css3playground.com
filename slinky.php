@@ -113,6 +113,7 @@ include('_header.php');
 			-webkit-animation-duration: 4s;
 			-webkit-animation-iteration-count: infinite;
 			-webkit-animation-direction: normal;
+			-webkit-animation-timing-function: linear;
 		}
 
 		/* Animation keyframes */
