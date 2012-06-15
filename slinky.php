@@ -7,6 +7,17 @@ include('_header.php');
     body {overflow: hidden; }
 		#container {width: 720px; }
 
+    #add {
+      text-decoration: underline;
+      margin-left: 2em;
+      cursor: pointer;
+
+      -webkit-transition: all .04s ease-in-out;
+    }
+    #add:active {
+      color: #456;
+    }
+
 		/* Base for the slinky */
 		.panel {
 			float: left;
@@ -148,14 +159,18 @@ include('_header.php');
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
 	<p class="warning">
 		As of <?= date("F jS, Y") ?> the 3D transforms in this demo only work using <a href="http://www.apple.com/safari/">Safari 5</a>, <a href="http://www.google.com/chrome">Chrome</a> 10+, the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>, and <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox 10+</a>.
-		Browsers without 3D Transforms just make a circular pattern. Not as fun :(
 	</p>
 
-	<p class="instructions">This slinky uses <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>. It also uses <code>-webkit-animation</code> and <code>-webkit-keyframe</code>. Gecko browsers use their <code>-moz</code> equivalents of course. I have reduced the number of slinky segments temporarily so Firefox can process this demo.</p>
+	<p class="instructions">
+	This slinky uses <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>. It also uses <code>-webkit-animation</code> and <code>-webkit-keyframe</code>.
+	Gecko browsers use their <code>-moz</code> equivalents of course.<br><br>
+	The number of segments starts small to accomodate the less performant browsers, but add as many segments as you want.
+	</p>
 
   <div id="rotate">Rotate the slinky manually:
     <div class="slider"></div>
     <input type="checkbox" name="auto" id="auto-rotate" /> <label for="auto-rotate">Auto-rotate</label>
+    <a id="add">Add 5 segments</a>
   </div>
 
 	<div class="panel">
@@ -171,56 +186,6 @@ include('_header.php');
 											<div class="segment">
 												<div class="segment">
 													<div class="segment">
-<!--
-														<div class="segment">
-															<div class="segment">
-																<div class="segment">
-																	<div class="segment">
-																		<div class="segment">
-																			<div class="segment">
-																				<div class="segment">
-																					<div class="segment">
-																						<div class="segment">
-																							<div class="segment">
-																								<div class="segment">
-																									<div class="segment">
-																										<div class="segment">
-																											<div class="segment">
-																												<div class="segment">
-																													<div class="segment">
-																														<div class="segment">
-																															<div class="segment">
-																																<div class="segment">
-																																	<div class="segment">
-																																		<div class="segment">
-																																			<div class="segment">
-																																				<div class="segment">
-																																					<div class="segment">
-																																					</div>
-																																				</div>
-																																			</div>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																														</div>
-																													</div>
-																												</div>
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
--->
 													</div>
 												</div>
 											</div>
@@ -238,6 +203,8 @@ include('_header.php');
 
 <script>
 	$(document).ready(function(){
+
+    // initialize slider to rotate slinky
 		$('#rotate .slider').slider({
 			animate: 'fast',
 			min: 0,
@@ -251,6 +218,7 @@ include('_header.php');
 			}
 		});
 
+    // Toggle auto-rotation
 		$('#rotate input[name=auto]').change(function(){
 			if ($(this).is(':checked')){
 				$('.panel > .segment').addClass('rotate');
@@ -258,6 +226,20 @@ include('_header.php');
 				$('.panel > .segment').removeClass('rotate');
 			}
 		});
+
+    // Adds 5 segments
+    $('#add').click(function(){
+      // Deepest child selection came from https://gist.github.com/1014671
+      var $target = $('.panel').children(),
+          $last;
+
+      while( $target.length ) {
+        $target = $target.children();
+      }
+      $last = $target.end();
+
+      $last.append('<div class="segment"><div class="segment"><div class="segment"><div class="segment"><div class="segment"></div></div></div></div></div>');
+    });
 	});
 </script>
 
