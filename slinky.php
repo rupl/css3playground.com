@@ -96,8 +96,10 @@ include('_header.php');
 				translateX(0) translateY(0) translateZ(-1px);
 		}
 
-		/* This is the slinky extended approx 180 degrees */
-		.panel:hover .segment .segment {
+		/* This is the slinky extended
+		 * A .hover class is used with jQuery instead of a plain :hover
+		 */
+		.panel.hover .segment .segment {
 			transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
 			-o-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
 			-moz-transform:
@@ -151,6 +153,21 @@ include('_header.php');
 			}
 		}
 	</style>
+	<script>
+    // This can be done using the :hover pseudo-class,
+    // but using jQuery allows the effect to appear on
+    // touch devices.
+    $(document).ready(function(){
+      $('.panel').hover(
+        function(){
+          $(this).addClass('hover');
+        },
+        function(){
+          $(this).removeClass('hover');
+        }
+      );
+    });
+	</script>
 </head>
 
 <body>
