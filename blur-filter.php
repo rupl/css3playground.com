@@ -58,18 +58,26 @@ include('_header.php');
   <script>
 
     $(document).ready(function(){
+
+      var back = 0;
+      var middle = 300;
+      var front = 500;
+      var YY,
+          offset,
+          sizeBack,
+          sizeMiddle,
+          sizeFront;
+
+      // For mouse users
       $('html').mousemove(function(e){
 
         // calculate the shadow
-        var offset = $('html').offset();
-        var YY = e.clientY - offset.top;
-        // @TODO: percentage based points to signify top, middle, bottom of browser window.
-        var back = 0;
-        var middle = 300;
-        var front = 500;
-        var sizeBack   = Math.abs(back-YY)/40;
-        var sizeMiddle = Math.abs(middle-YY)/40;
-        var sizeFront  = Math.abs(front-YY)/40;
+        offset = $('html').offset();
+        YY = e.clientY - offset.top;
+
+        sizeBack   = Math.abs(back-YY)/40;
+        sizeMiddle = Math.abs(middle-YY)/40;
+        sizeFront  = Math.abs(front-YY)/40;
 
         // apply blur
         $('.back').css('-webkit-filter',    'blur('+ (sizeBack) +'px)');
