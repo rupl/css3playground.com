@@ -8,15 +8,11 @@ include('_header.php');
       padding: 0;
       overflow: hidden;
     }
-    #other li.more,
-    #other li.credit {
-      color: #999;
-    }
-
     #container {
       padding: 0 2em;
       position: relative;
     }
+
     div.layer {
       background: #fff;
       color: #000;
