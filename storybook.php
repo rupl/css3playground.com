@@ -41,7 +41,7 @@ include('_header.php');
 
 <div id="container">
 	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
-	<p class="intro">This page uses CSS3 3D Transforms to composite elements over a photograph. <code>-webkit-perspective</code>, <code>-webkit-transform-style: preserve3d</code>, <code>-webkit-transform: rotate3d(), transform3d()</code>, and <code>-webkit-transition</code> for animation.</p>
+	<p class="intro">This page needs a description.</p>
 
 	<div id="book">
 		<!-- Instead of pages, our book only has two halves. CSS voxels due in 2018 :p -->
