@@ -119,6 +119,12 @@ include('_header.php');
 			-webkit-transform: rotateX(0deg);
 			-moz-transform: rotateX(0deg);
 		}
+
+    /* -- contact panel -- */
+    .contact {
+      width: 290px;
+      height: 240px;
+    }
 		
 		/* -- diagonal axis rotation -- */
 		.diagonal .front {
@@ -269,7 +275,7 @@ include('_header.php');
 		</div>
 	</div>
 
-	<div class="contact panel" style="width: 290px; height: 240px; ">
+	<div class="contact panel">
 		<div class="front">
 			<h3>Contact Us</h3>
 			<address>
