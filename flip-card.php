@@ -52,6 +52,7 @@ include('_header.php');
 		.panel.flip .front {
 			z-index: 900;
 			border-color: #eee;
+			background: #333;
 
 			-webkit-transform: rotateY(180deg);
 			-moz-transform: rotateY(180deg);
@@ -70,7 +71,7 @@ include('_header.php');
 			width: inherit;
 			height: inherit;
 			border: 1px solid #ccc;
-			background: #80868d;
+			background: #333;
 			text-shadow: 1px  1px 1px rgba(0,0,0,0.6); 
 			
 			-webkit-transform: rotateY(-180deg);
@@ -91,7 +92,8 @@ include('_header.php');
 		
 		.panel.flip .back {
 			z-index: 1000;
-			
+			background: #80868d;
+
 			-webkit-transform: rotateX(0deg) rotateY(0deg);
 			-moz-transform: rotateX(0deg) rotateY(0deg);
 
