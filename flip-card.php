@@ -162,25 +162,33 @@ include('_header.php');
     /* -- swing like a gate -- */
     .swing .front,
     .swing .back {
+      width: 140px;
       -webkit-backface-visibility: visible;
+         -moz-backface-visibility: visible;
       -webkit-transition-duration: 1s;
-      -webkit-transform-origin: 232px 0;
+         -moz-transition-duration: 1s;
+      -webkit-transform-origin: 170px 0;
+         -moz-transform-origin: 170px 0;
     }
     .swing .front {
       -webkit-transform: rotateY(0deg);
+         -moz-transform: rotateY(0deg);
     }
     .swing .back {
-      -webkit-transform: rotateY(-180deg) translateX(262px);
       background-color: #555; /* hiding this side, so get darker */
+      -webkit-transform: rotateY(-180deg) translateX(198px);
+         -moz-transform: rotateY(-180deg) translateX(198px);
     }
 
     .swing.flip .front {
-      -webkit-transform: rotateY(180deg);
       background-color: #222; /* hiding this side, so get darker */
+      -webkit-transform: rotateY(180deg);
+         -moz-transform: rotateY(180deg);
     }
     .swing.flip .back {
-      -webkit-transform: rotateY(0deg) translateX(262px);
       background-color: #80888f;
+      -webkit-transform: rotateY(0deg) translateX(198px);
+         -moz-transform: rotateY(0deg) translateX(198px);
     }
 		
 		
