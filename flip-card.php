@@ -139,6 +139,7 @@ include('_header.php');
 			-webkit-transform: rotate3d(45,45,0,-36deg);
 			-moz-transform: rotate3d(45,45,0,-36deg);
 		}
+
 		.diagonal.flip .front,
 		.diagonal.flip .front:hover {
 			-webkit-transform: rotate3d(-45,-45,0,150deg);
@@ -150,6 +151,22 @@ include('_header.php');
 			-webkit-transition: all .4s ease-in-out;
 			transition: all .4s ease-in-out;
 		}
+
+		.diagonal .front .message {
+		  opacity: 0;
+			font-size: 1.4em;
+		}
+		.diagonal .front:hover .message {
+			-webkit-transition-duration: 12s;
+			-webkit-transition-delay: 4s;
+			-webkit-transform: translateX(-30px) translateZ(40px) scale(1.4);
+			opacity: .4;
+		}
+		.diagonal.flip .front .message {
+			-webkit-transition-duration: 1s;
+		  -webkit-transform: translateZ(0px) scale(.5);
+		}
+
 		.diagonal .back {
 			-webkit-transform: rotate3d(45,45,0,-180deg);
 			-moz-transform: rotate3d(45,45,0,-180deg);
@@ -343,6 +360,7 @@ include('_header.php');
 			<h2><br>
 			Click or tap for<br>
 			Diagonal Rotation</h2>
+			<p class="message">woahdude</p>
 		</div>
 		<div class="back">
 			<div class="pad">
