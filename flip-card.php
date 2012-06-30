@@ -33,12 +33,12 @@ include('_header.php');
 			-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 			-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 			box-shadow: 0 1px 5px rgba(0,0,0,0.9);
-			
-			-webkit-transform: rotateY(0deg);
+
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
 			-webkit-transform-style: preserve-3d;
 			-webkit-backface-visibility: hidden;
 
-			-moz-transform: rotateY(0deg);
+			-moz-transform: rotateX(0deg) rotateY(0deg);
 			-moz-transform-style: preserve-3d;
 			-moz-backface-visibility: hidden;
 
@@ -92,8 +92,8 @@ include('_header.php');
 		.panel.flip .back {
 			z-index: 1000;
 			
-			-webkit-transform: rotateY(0deg);
-			-moz-transform: rotateY(0deg);
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			-moz-transform: rotateX(0deg) rotateY(0deg);
 
 			box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 			-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
@@ -125,18 +125,57 @@ include('_header.php');
 			-webkit-transform: rotate3d(45,45,0,0deg);
 			-moz-transform: rotate3d(45,45,0,0deg);
 		}
-		.diagonal.flip .front {
-			-webkit-transform: rotate3d(45,45,0,180deg);
-			-moz-transform: rotate3d(45,45,0,180deg);
+		.diagonal .front:hover {
+			/* for the patient :) */
+			-webkit-transition-duration: 10s;
+			-webkit-transition-delay: 0s;
+
+			-webkit-transform: rotate3d(45,45,0,-36deg);
+			-moz-transform: rotate3d(45,45,0,-36deg);
+		}
+		.diagonal.flip .front,
+		.diagonal.flip .front:hover {
+			-webkit-transform: rotate3d(-45,-45,0,150deg);
+			-moz-transform: rotate3d(-45,-45,0,150deg);
+
+			-o-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
+			-moz-transition: all .4s ease-in-out;
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
 		}
 		.diagonal .back {
 			-webkit-transform: rotate3d(45,45,0,-180deg);
 			-moz-transform: rotate3d(45,45,0,-180deg);
 		}
 		.diagonal.flip .back {
-			-webkit-transform: rotate3d(45,45,0,0deg);
-			-moz-transform: rotate3d(45,45,0,0deg);
+			-webkit-transform: rotate3d(45,45,0,-30deg);
+			-moz-transform: rotate3d(45,45,0,-30deg);
 		}
+
+    /* -- swing like a gate -- */
+    .swing .front,
+    .swing .back {
+      -webkit-backface-visibility: visible;
+      -webkit-transition-duration: 1s;
+      -webkit-transform-origin: 232px 0;
+    }
+    .swing .front {
+      -webkit-transform: rotateY(0deg);
+    }
+    .swing .back {
+      -webkit-transform: rotateY(-180deg) translateX(262px);
+      background-color: #555; /* hiding this side, so get darker */
+    }
+
+    .swing.flip .front {
+      -webkit-transform: rotateY(180deg);
+      background-color: #222; /* hiding this side, so get darker */
+    }
+    .swing.flip .back {
+      -webkit-transform: rotateY(0deg) translateX(262px);
+      background-color: #80888f;
+    }
 		
 		
 		/* -- cosmetics -- */
@@ -207,12 +246,21 @@ include('_header.php');
 		Browsers without 3D acceleration just switch the z-index. You won't lose any functionality!
 	</p>
 	
-	<p class="instructions">These cards are using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code> </p>
+	<p class="instructions">
+	 These cards are using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings:
+	 <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>.<br>
+	 Mozilla browsers are using the <code>-moz-transform</code> equivalents.
+	</p>
 
 	<div class="hover panel">
 		<div class="front">
-			<h2>Mouse Over Me!</h2>
-			<p>This can be done using 100% CSS. Most of this other stuff requires some Javascript, although the animation is CSS.</p>
+		  <div class="pad">
+        <h2>Mouse Over Me!</h2>
+        <p>
+          The effect on this box can be done using 100% CSS.<br><br>
+          The other boxes all require some Javascript, but the animation is driven by CSS3.
+        </p>
+			</div>
 		</div>
 		<div class="back">
 			<div class="pad">
@@ -227,7 +275,7 @@ include('_header.php');
 			<address>
 				Acme, Co.<br />
 				123 Easy St.<br />
-				Dallas, TX 75248
+				Austin, TX 78731
 			</address>
 			<p>Or <a class="action" href="#form">send us a message</a>
 		</div>
@@ -278,13 +326,27 @@ include('_header.php');
 
 	<div class="click diagonal panel">
 		<div class="front">
-			<h2>Click/Tap<br />Diagonal Rotation</h2>
+			<h2><br>
+			Click or tap for<br>
+			Diagonal Rotation</h2>
 		</div>
 		<div class="back">
 			<div class="pad">
-				<h2>Told you!</h2>
+				<h2>like a diamond in the rough</h2>
+				<p><small>yes, I'm a little crooked</small></p>
 			</div>
 		</div>
 	</div>
-	
+
+  <div class="click swing panel">
+    <div class="front">
+      <h2>Swing like a gate</h2>
+    </div>
+    <div class="back">
+      <div class="pad">
+      <h2>Any axis is possible</h2>
+      </div>
+    </div>
+  </div>
+
 <? include('_footer.php') ?>
