@@ -198,8 +198,8 @@ include('_header.php');
     }
     .swing .back {
       background-color: #555; /* hiding this side, so get darker */
-      -webkit-transform: rotateY(-180deg) translateX(198px);
-         -moz-transform: rotateY(-180deg) translateX(198px);
+      -webkit-transform: rotateY(-180deg) translateX(198px) translateZ(2px);
+         -moz-transform: rotateY(-180deg) translateX(198px) translateZ(2px);
     }
 
     .swing.flip .front {
@@ -209,8 +209,8 @@ include('_header.php');
     }
     .swing.flip .back {
       background-color: #80888f;
-      -webkit-transform: rotateY(0deg) translateX(198px);
-         -moz-transform: rotateY(0deg) translateX(198px);
+      -webkit-transform: rotateY(0deg) translateX(198px) translateZ(2px);
+         -moz-transform: rotateY(0deg) translateX(198px) translateZ(2px);
     }
 		
 		
