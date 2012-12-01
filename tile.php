@@ -19,7 +19,6 @@ include('_header.php');
 			-webkit-backface-visibility: visible;
 
 			-moz-perspective: 500px;
-			-moz-perspective-origin: 38% 20%;
 			-moz-transform-style: preserve-3d;
 		}
 		
