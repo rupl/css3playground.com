@@ -30,14 +30,17 @@ include('_header.php');
 			font-family: "Courier New", monospace;
 			font-weight: 700;
 			color: #333;
+			text-align: center;
 			/*text-shadow: 1px 1px 0 rgba(0,0,0,0.5);*/
 
 			border-radius: 7px;
 			box-shadow:
 				/* drop-shadow */
-				0 0 12px rgba(0,0,0,0.2),
-				/* bevel */
+				0 -4px 12px rgba(0,0,0,0.1),
+				/* upper bevel */
 				inset 0 2px 2px rgba(255,255,255,0.4),
+				/* lower bevel */
+				inset 0 -2px 2px rgba(0,0,0,0.3),
 				/* inner glow */
 				inset 0 0 150px rgba(0,0,0,0.4);
 
@@ -47,8 +50,8 @@ include('_header.php');
 			-webkit-transform-style: preserve-3d;
 			-moz-transform-style: preserve-3d;
 
-			-webkit-transform: rotateX(30deg) translateY(-10px);
-			-moz-transform: rotateX(30deg) translateY(-10px);
+			-webkit-transform: rotateX(30deg) translateY(-20px);
+			-moz-transform: rotateX(30deg) translateY(-20px);
 
 			-webkit-transition: all .4s ease-in-out;
 			-moz-transition: all .4s ease-in-out;
@@ -63,8 +66,8 @@ include('_header.php');
 
 		/* Currently selected card */
 		.rolodex .vcard:focus {
-			-webkit-transform: rotateX(0deg) translateY(-30px);
-			-moz-transform: rotateX(0deg) translateY(-30px);
+			-webkit-transform: rotateX(0deg) translateY(-40px);
+			-moz-transform: rotateX(0deg) translateY(-40px);
 
 			background: #fff; /* Old browsers */
 			background: -moz-linear-gradient(top,  #fff 0%, #939393 100%); /* FF3.6+ */
