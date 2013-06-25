@@ -313,11 +313,11 @@
 		<div class='pad'>
 			<h3>Send us a Fake Message</h3>
 			<form method='post'>
-				<p><input type='text' placeholder='name' id='f-name' name='f-name' /></p>
-				<p><input type='text' placeholder='email' id='f-email' name='f-email' /></p>
-				<p><select id='f-how' name='f-how'><option value=''>How did you find us?</option><option value='internet'>Internet</option></select></p>
-				<p><textarea placeholder='Enter your message' id='f-msg' name='f-msg'> </textarea></p>
-				<input type='submit' class='edit-submit' value='Fake Send Message' />
+				<p><input name='f-name' id='f-name' type='text' placeholder='name' /></p>
+				<p><input name='f-email' id='f-email' type='text' placeholder='email' /></p>
+				<p><select name='f-how' id='f-how'><option value=''>How did you find us?</option><option value='internet'>Internet</option></select></p>
+				<p><textarea name='f-msg' id='f-msg' placeholder='Enter your message'> </textarea></p>
+				<input class='edit-submit' value='Fake Send Message' type='submit' />
 			</form>
 		</div>
 	</div>
@@ -340,11 +340,11 @@
 	</div>
 	<div class='back'>
 		<div class='pad'>
-			<form action='###' method='post'>
+			<form method='post' action='###'>
 				<h3>Edit List</h3>
-				<p><input type='text' value='Top Sellers' id='form_title' name='form_title' /></p>
-				<p>Display <select id='form_items' name='form_items'><option value='1'>1</option><option value='2'>2</option><option value='3' selected='selected'>3</option><option value='4'>4</option><option value='5'>5</option></select> items</p>
-				<input type='submit' class='edit-submit' value='Save Changes' />
+				<p><input name='form_title' value='Top Sellers' id='form_title' type='text' /></p>
+				<p>Display <select name='form_items' id='form_items'><option value='1'>1</option><option value='2'>2</option><option value='3' selected='selected'>3</option><option value='4'>4</option><option value='5'>5</option></select> items</p>
+				<input class='edit-submit' value='Save Changes' type='submit' />
 			</form>
 		</div>
 	</div>
