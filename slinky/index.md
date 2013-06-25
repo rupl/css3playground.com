@@ -175,7 +175,7 @@ features:
   });
 </script>
 
-<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
+<h1><a href="http://css3playground.com">css3</a> // {{ page.title }}</h1>
 <p class="warning">
 	The 3D transforms in this demo work in latest <a href="http://www.apple.com/safari/">Safari</a>, latest <a href="http://www.google.com/chrome">latest Chrome</a>, latest <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox</a>, and versions of <a href="http://www.opera.com/developer/next">Opera</a> running the <a href="http://www.chromium.org/blink">Blink rendering engine</a>.
 </p>
