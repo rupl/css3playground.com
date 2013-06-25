@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en-us" dir="ltr" class="no-js">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3D Flip Cards // CSS3 Playground</title>
+<link rel="stylesheet" href="/main.css" />
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
+<script src="/js/modernizr.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+</head>
+<body>
+	<style type='text/css'>
+	body {width: 720px; }
+	.panel {
+		float: left;
+		width: 200px;
+		height: 200px;
+		margin: 20px;
+		position: relative;
+		font-size: .8em;
+
+		-webkit-perspective: 600px;
+		-moz-perspective: 600px;
+	}
+	/* -- make sure to declare a default for every property that you want animated -- */
+	/* -- general styles, including Y axis rotation -- */
+	.panel .front {
+		float: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 900;
+		width: inherit;
+		height: inherit;
+		border: 1px solid #ccc;
+		background: #6b7077;
+		text-align: center;
+
+		-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+		-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+		box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+
+		-webkit-transform: rotateX(0deg) rotateY(0deg);
+		-webkit-transform-style: preserve-3d;
+		-webkit-backface-visibility: hidden;
+
+		-moz-transform: rotateX(0deg) rotateY(0deg);
+		-moz-transform-style: preserve-3d;
+		-moz-backface-visibility: hidden;
+
+		/* -- transition is the magic sauce for animation -- */
+		-o-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+		-moz-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
+	.panel.flip .front {
+		z-index: 900;
+		border-color: #eee;
+		background: #333;
+
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+
+		-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+		-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+		box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+	}
+
+	.panel .back {
+		float: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 800;
+		width: inherit;
+		height: inherit;
+		border: 1px solid #ccc;
+		background: #333;
+		text-shadow: 1px  1px 1px rgba(0,0,0,0.6);
+
+		-webkit-transform: rotateY(-180deg);
+		-webkit-transform-style: preserve-3d;
+		-webkit-backface-visibility: hidden;
+
+		-moz-transform: rotateY(-180deg);
+		-moz-transform-style: preserve-3d;
+		-moz-backface-visibility: hidden;
+
+		/* -- transition is the magic sauce for animation -- */
+		-o-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+		-moz-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
+
+	.panel.flip .back {
+		z-index: 1000;
+		background: #80868d;
+
+		-webkit-transform: rotateX(0deg) rotateY(0deg);
+		-moz-transform: rotateX(0deg) rotateY(0deg);
+
+		box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+		-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+		-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+	}
+
+	/* -- X axis rotation for click panel -- */
+	.click .front {
+		cursor: pointer;
+		-webkit-transform: rotateX(0deg);
+		-moz-transform: rotateX(0deg);
+	}
+	.click.flip .front {
+		-webkit-transform: rotateX(180deg);
+		-moz-transform: rotateX(180deg);
+	}
+	.click .back {
+		cursor: pointer;
+		-webkit-transform: rotateX(-180deg);
+		-moz-transform: rotateX(-180deg);
+	}
+	.click.flip .back {
+		-webkit-transform: rotateX(0deg);
+		-moz-transform: rotateX(0deg);
+	}
+
+  /* -- contact panel -- */
+  .contact {
+    width: 290px;
+    height: 240px;
+  }
+
+	/* -- diagonal axis rotation -- */
+	.diagonal .front {
+		-webkit-transform: rotate3d(45,45,0,0deg);
+		-moz-transform: rotate3d(45,45,0,0deg);
+	}
+	.diagonal .front:hover {
+		/* for the patient :) */
+		-webkit-transition-duration: 10s;
+		   -moz-transition-duration: 10s;
+		-webkit-transition-delay: 0s;
+		   -moz-transition-delay: 0s;
+
+		-webkit-transform: rotate3d(45,45,0,-36deg);
+		-moz-transform: rotate3d(45,45,0,-36deg);
+	}
+
+	.diagonal.flip .front,
+	.diagonal.flip .front:hover {
+		-webkit-transform: rotate3d(-45,-45,0,150deg);
+		-moz-transform: rotate3d(-45,-45,0,150deg);
+
+		-o-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+		-moz-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
+
+	.diagonal .front .message {
+	  opacity: 0;
+		font-size: 1.4em;
+	}
+	.diagonal .front:hover .message {
+		opacity: .4;
+		-webkit-transition-duration: 12s;
+		   -moz-transition-duration: 12s;
+		-webkit-transition-delay: 4s;
+		   -moz-transition-delay: 4s;
+		-webkit-transform: translateX(-30px) translateZ(40px) scale(1.4);
+		   -moz-transform: translateX(-30px) translateZ(40px) scale(1.4);
+	}
+	.diagonal.flip .front .message {
+		-webkit-transition-duration: 1s;
+	  -webkit-transform: translateZ(0px) scale(.5);
+	}
+
+	.diagonal .back {
+		-webkit-transform: rotate3d(45,45,0,-180deg);
+		-moz-transform: rotate3d(45,45,0,-180deg);
+	}
+	.diagonal.flip .back {
+		-webkit-transform: rotate3d(45,45,0,-30deg);
+		-moz-transform: rotate3d(45,45,0,-30deg);
+	}
+
+  /* -- swing like a gate -- */
+  .swing .front,
+  .swing .back {
+    width: 140px;
+    -webkit-backface-visibility: visible;
+       -moz-backface-visibility: visible;
+    -webkit-transition-duration: 1s;
+       -moz-transition-duration: 1s;
+    -webkit-transform-origin: 170px 0;
+       -moz-transform-origin: 170px 0;
+  }
+  .swing .front {
+    -webkit-transform: rotateY(0deg);
+       -moz-transform: rotateY(0deg);
+  }
+  .swing .back {
+    background-color: #555; /* hiding this side, so get darker */
+    -webkit-transform: rotateY(-180deg) translateX(198px) translateZ(2px);
+       -moz-transform: rotateY(-180deg) translateX(198px) translateZ(2px);
+  }
+
+  .swing.flip .front {
+    background-color: #222; /* hiding this side, so get darker */
+    -webkit-transform: rotateY(180deg);
+       -moz-transform: rotateY(180deg);
+  }
+  .swing.flip .back {
+    background-color: #80888f;
+    -webkit-transform: rotateY(0deg) translateX(198px) translateZ(2px);
+       -moz-transform: rotateY(0deg) translateX(198px) translateZ(2px);
+  }
+
+
+	/* -- cosmetics -- */
+	.panel .pad {padding: 0 15px; }
+	.panel.flip .action {display: none; }
+	.block ol li {text-align: left; margin: 0 0 0 28px; }
+	.block .action {display: block; padding: 3px; background: #333; text-align: right; font-size: .8em; opacity: 0; position: absolute; cursor: pointer; -webkit-transition: opacity .2s linear; }
+	.block:hover .action {opacity: .7; }
+	.circle div {border-radius: 100px; }
+	.circle div h2 {padding-top: 3em; text-align: center; }
+
+</style><script>
+	$(document).ready(function(){
+
+		// set up hover panels
+		// although this can be done without JavaScript, we've attached these events
+		// because it causes the hover to be triggered when the element is tapped on a touch device
+		$('.hover').hover(function(){
+			$(this).addClass('flip');
+		},function(){
+			$(this).removeClass('flip');
+		});
+
+		// set up click/tap panels
+		$('.click').toggle(function(){
+			$(this).addClass('flip');
+		},function(){
+			$(this).removeClass('flip');
+		});
+
+		// set up block configuration
+		$('.block .action').click(function(){
+			$('.block').addClass('flip');
+		});
+		$('.block .edit-submit').click(function(e){
+			$('.block').removeClass('flip');
+
+			// why not update that list for fun?
+			$('#list-title').text($('#form_title').val());
+			$('#list-items').empty();
+			for (var num = $('#form_items').val(); num >= 1; num--) {
+				$('#list-items').append('<li>Super seller</li>');
+			}
+			e.preventDefault();
+		});
+
+		// set up contact form link
+		$('.contact .action').click(function(e){
+			$('.contact').addClass('flip');
+			e.preventDefault();
+		});
+		$('.contact .edit-submit').click(function(e){
+			$('.contact').removeClass('flip');
+			e.preventDefault();
+		});
+
+	});
+</script><h1><a href='http://css3playground.com'>css3</a> // 3D Flip Cards</h1><p class='warning'>
+	The 3D transforms in this demo work in latest <a href='http://www.apple.com/safari/'>Safari</a>, latest <a href='http://www.google.com/chrome'>latest Chrome</a>, latest <a href='http://www.mozilla.org/en-US/firefox/channel/'>Firefox</a>, and versions of <a href='http://www.opera.com/developer/next'>Opera</a> running the <a href='http://www.chromium.org/blink'>Blink rendering engine</a>.
+	Browsers without 3D acceleration just switch the z-index, so you won't lose any functionality.
+</p><p class='instructions'>
+ These cards are using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings:
+ <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>.<br />
+ Mozilla browsers are using the <code>-moz-transform</code> equivalents.
+</p><div class='hover panel'>
+	<div class='front'>
+	  <div class='pad'>
+      <h2>Mouse Over Me!</h2>
+      <p>
+        The effect on this box can be done using 100% CSS.<br /><br />
+        The other boxes all require some Javascript, but the animation is driven by CSS3.
+      </p>
+		</div>
+	</div>
+	<div class='back'>
+		<div class='pad'>
+			<h2>check you on the flip side</h2>
+		</div>
+	</div>
+</div><div class='contact panel'>
+	<div class='front'>
+		<h3>Contact Us</h3>
+		Acme, Co.<br />
+		123 Easy St.<br />
+		Austin, TX 78731
+		<p>Or <a href='#form' class='action'>send us a message</a></p>
+	</div>
+	<div class='back' id='contact'>
+		<div class='pad'>
+			<h3>Send us a Fake Message</h3>
+			<form method='post'>
+				<p><input type='text' placeholder='name' id='f-name' name='f-name' /></p>
+				<p><input type='text' placeholder='email' id='f-email' name='f-email' /></p>
+				<p><select id='f-how' name='f-how'><option value=''>How did you find us?</option><option value='internet'>Internet</option></select></p>
+				<p><textarea placeholder='Enter your message' id='f-msg' name='f-msg'> </textarea></p>
+				<input type='submit' class='edit-submit' value='Fake Send Message' />
+			</form>
+		</div>
+	</div>
+</div><div class='click panel circle'>
+	<div class='front'>
+		<h2>Click or tap this circle!</h2>
+	</div>
+	<div class='back'>
+		<h2>Tap Again!</h2>
+	</div>
+</div><div class='block panel'>
+	<div class='front'>
+		<a class='action'>Configure Block</a>
+		<h2 id='list-title'>Top Sellers</h2>
+		<ol id='list-items'>
+			<li>Super seller</li>
+			<li>Super seller</li>
+			<li>Super seller</li>
+		</ol>
+	</div>
+	<div class='back'>
+		<div class='pad'>
+			<form action='###' method='post'>
+				<h3>Edit List</h3>
+				<p><input type='text' value='Top Sellers' id='form_title' name='form_title' /></p>
+				<p>Display <select id='form_items' name='form_items'><option value='1'>1</option><option value='2'>2</option><option value='3' selected='selected'>3</option><option value='4'>4</option><option value='5'>5</option></select> items</p>
+				<input type='submit' class='edit-submit' value='Save Changes' />
+			</form>
+		</div>
+	</div>
+</div><div class='click diagonal panel'>
+	<div class='front'>
+		<h2><br />
+		Click or tap for<br />
+		Diagonal Rotation</h2>
+		<p class='message'>woahdude</p>
+	</div>
+	<div class='back'>
+		<div class='pad'>
+			<h2>like a diamond in the rough</h2>
+			<p><small>yes, I'm a little crooked</small></p>
+		</div>
+	</div>
+</div><div class='click swing panel'>
+  <div class='front'>
+    <h2>Swing like a gate</h2>
+  </div>
+  <div class='back'>
+    <div class='pad'>
+    <h2>Any axis is possible</h2>
+    </div>
+  </div>
+</div>
+
+	<div id="other">
+		<ul>
+			<li class="more">css3 examples:</li>
+			<li><a href="/hover/">hover panels</a></li>
+	
+			<li><a href="/mosaic/">mosaic</a></li>
+			<li><a href="/flashlight/">flashlight shadow</a></li>
+			<li><a href="/3d-flip-cards/">3D flip cards</a></li>
+	
+			<li><a href="/gears/">gears</a></li>
+	
+			<li><a href="/blur-filter/">blur filter</a></li>
+			<li><a href="/slinky/">slinky</a></li>
+			<li><a href="/tile/">tile</a></li>
+			<li class="credit">say hi to:</li>
+			<li class="vcard"><a href="http://chrisruppel.com" title="Chris Ruppel" rel="me" class="fn url">chris ruppel</a></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			//
+			//
+			//
+			//
+			//
+			//
+			// PLEASE, PLEASE, STOP TAKING MY GOOGLE ANALYTICS NUMBER. STOP!!!!!!!!!!!!!!!
+			// TAKE ALL THE CODE YOU WANT, JUST NOT MY GA NUMBER!!!!!!!!!!!!!!!!!!!!!!!!!!
+			//
+			//
+			//
+			//
+			//
+			//
+			var pageTracker = _gat._getTracker("UA-432773-11");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+
+</body>
+</html>

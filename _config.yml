@@ -1,0 +1,5 @@
+exclude: [CONTRIBUTING.md, README.md, carousel.php, coin.php, hover-card.php, mosaic-approach.php, orientation.php, portholes.php, reveal.php, rolodex.php, storybook.php]
+include: []
+permalink: pretty
+debug: false
+relative_permalinks: false

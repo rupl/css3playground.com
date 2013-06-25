@@ -1,0 +1,179 @@
+---
+title: Responsive gears
+layout: default
+
+permalink: /gears/
+original: /gears.php
+---
+
+<style type="text/css">
+	body {
+		width: 720px;
+		position: relative;
+	}
+	.instructions {
+		position: absolute;
+		top: 3em;
+	}
+	/* -- make sure to declare a default for every property that you want animated -- */
+	.gear {
+		float: none;
+		position: absolute;
+		top: 90px;
+		width: 800px;
+		height: 724px;
+		background: url('/images/spur-gear-8.png') no-repeat 0 0;
+		text-align: center;
+
+		/* -- transition is the magic sauce for animation -- */
+		-o-transition: all 3s ease-in-out;
+		-moz-transition: all 3s ease-in-out;
+		-webkit-transition: all 3s ease-in-out;
+		transition: all 3s ease-in-out;
+	}
+
+	p.skinny {
+		-o-transition: all .7s linear;
+		-moz-transition: all .7s linear;
+		-webkit-transition: all .7s linear;
+		transition: all .7s linear;
+	}
+	p.wide {
+		-o-transition: all .7s linear;
+		-moz-transition: all .7s linear;
+		-webkit-transition: all .7s linear;
+		transition: all .7s linear;
+	}
+
+	/* -- Desktops -- */
+	@media (min-width: 0px) {
+		.big {
+			left: -350px;
+			z-index: 300;
+		}
+		.small {
+			left: 53px;
+			z-index: 400;
+		}
+		p.skinny {
+			opacity: 1;
+		}
+		p.wide {
+			opacity: 0;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.big {
+		}
+		.small {
+		}
+		p.skinny {
+			opacity: 0;
+		}
+		p.wide {
+			opacity: 1;
+		}
+	}
+
+
+	/* -- iPad -- */
+	@media (orientation: portrait) and (device-width: 768px) {
+		.big {
+			-o-transform: rotate(0deg) scale(0.8);
+			-moz-transform: rotate(0deg) scale(0.8);
+			-webkit-transform: rotate(0deg) scale(0.8);
+			transform: rotate(0deg) scale(0.8);
+			left: -350px;
+			z-index: 300;
+		}
+		.small {
+			-o-transform: rotate(60deg) scale(0.4);
+			-moz-transform: rotate(60deg) scale(0.4);
+			-webkit-transform: rotate(60deg) scale(0.4);
+			transform: rotate(60deg) scale(0.4);
+			left: 53px;
+			z-index: 400;
+		}
+		p.skinny {
+			opacity: 1;
+		}
+		p.wide {
+			opacity: 0;
+		}
+	}
+	@media (orientation: landscape) and (device-width: 768px) {
+		.big {
+			-o-transform: rotate(60deg) scale(0.8);
+			-moz-transform: rotate(60deg) scale(0.8);
+			-webkit-transform: rotate(60deg) scale(0.8);
+			transform: rotate(60deg) scale(0.8);
+		}
+		.small {
+			-o-transform: rotate(-60deg) scale(0.4);
+			-moz-transform: rotate(-60deg) scale(0.4);
+			-webkit-transform: rotate(-60deg) scale(0.4);
+			transform: rotate(-60deg) scale(0.4);
+		}
+		p.skinny {
+			opacity: 0;
+		}
+		p.wide {
+			opacity: 1;
+		}
+	}
+
+	/* -- iPhone -- */
+	@media (orientation: portrait) and (min-width: 320px) {
+		.big {
+			-o-transform: rotate(0deg) scale(0.8);
+			-moz-transform: rotate(0deg) scale(0.8);
+			-webkit-transform: rotate(0deg) scale(0.8);
+			transform: rotate(0deg) scale(0.8);
+			left: -350px;
+			z-index: 300;
+		}
+		.small {
+			-o-transform: rotate(50deg) scale(0.4);
+			-moz-transform: rotate(50deg) scale(0.4);
+			-webkit-transform: rotate(50deg) scale(0.4);
+			transform: rotate(50deg) scale(0.4);
+			left: 53px;
+			z-index: 400;
+		}
+		p.skinny {
+			opacity: 1;
+		}
+		p.wide {
+			opacity: 0;
+		}
+	}
+	@media (orientation: landscape) and (min-width: 321px) {
+		.big {
+			-o-transform: rotate(60deg) scale(0.8);
+			-moz-transform: rotate(60deg) scale(0.8);
+			-webkit-transform: rotate(60deg) scale(0.8);
+			transform: rotate(60deg) scale(0.8);
+		}
+		.small {
+			-o-transform: rotate(-70deg) scale(0.4);
+			-moz-transform: rotate(-70deg) scale(0.4);
+			-webkit-transform: rotate(-70deg) scale(0.4);
+			transform: rotate(-70deg) scale(0.4);
+		}
+		p.skinny {
+			opacity: 0;
+		}
+		p.wide {
+			opacity: 1;
+		}
+	}
+</style>
+
+<h1><a href="http://css3playground.com">css3</a> // {{ page.title }}</h1>
+
+<p class="skinny instructions">Resize your window <b>wider</b> until the gears start rotating.<br> Or on a mobile device, rotate it to <strong>landscape</strong> orientation.</p>
+<p class="wide instructions">Resize your window <b>skinnier</b> until the gears start rotating.<br> Or on a mobile device, rotate it to <strong>portrait</strong> orientation.</p>
+
+<div class="small gear"> </div>
+<div class="big gear"> </div>
