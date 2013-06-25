@@ -1,1 +1,14 @@
 DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /
+
+
+RewriteRule ^tile.php /tile/ [R=301,L]
+RewriteRule ^slinky.php /slinky/ [R=301,L]
+RewriteRule ^mosaic.php /mosaic/ [R=301,L]
+RewriteRule ^hover.php /hover/ [R=301,L]
+RewriteRule ^gears.php /gears/ [R=301,L]
+RewriteRule ^flashlight.php /flashlight/ [R=301,L]
+RewriteRule ^blur-filter.php /blur-filter/ [R=301,L]
+RewriteRule ^flip-card.php /3d-flip-cards/ [R=301,L]

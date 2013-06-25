@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	<style type='text/css'>
+	<style type="text/css">
 	body {
 		width: 720px;
 	}
@@ -57,7 +57,8 @@
 		border: 1px solid rgba(0,0,0,0.3);
 	}
 
-</style><script>
+</style>
+<script>
 	// thanks for the math, Zach!
 	// http://www.zachstronaut.com/lab/text-shadow-box/text-shadow-box.html
 
@@ -126,26 +127,37 @@
 	    	$('#text').text($(this).val());
 	    });
 	});
-</script><h1><a href='http://css3playground.com'>css3</a> // Flashlight Shadow</h1><p>This CSS3 flashlight demo uses a combination of <code>text-shadow</code> and <code>-webkit-gradient</code> along with some JavaScript for mouse tracking. It uses an <em>old syntax</em> to achieve the flashlight effect.</p><div id='sandbox'>
-	<h2 id='text'>CSS3 Rocks!</h2>
-	<div id='spot'> </div>
-</div><div id='controls'>
-	<select name='lightType' id='lightType'>
-		<option value='flashlight'>Flashlight</option>
-		<option value='bevel'>Bevel</option>
+</script>
+
+<h1><a href="http://css3playground.com">css3</a> // Flashlight Shadow</h1>
+
+
+<p>This CSS3 flashlight demo uses a combination of <code>text-shadow</code> and <code>-webkit-gradient</code> along with some JavaScript for mouse tracking. It uses an <em>old syntax</em> to achieve the flashlight effect.</p>
+
+<div id="sandbox">
+	<h2 id="text">CSS3 Rocks!</h2>
+	<div id="spot"> </div>
+</div>
+<div id="controls">
+	<select id="lightType" name="lightType">
+		<option value="flashlight">Flashlight</option>
+		<option value="bevel">Bevel</option>
 	</select>
-	<input name='textInput' size='25' id='textInput' maxlength='23' value='CSS3 Rocks!' />
-</div><div id='data'>
+	<input id="textInput" name="textInput" value="CSS3 Rocks!" size="25" maxlength="23" />
+</div>
+
+<div id="data">
   <ul>
-    <li class='xx'>x: <span class='val' /></li>
-    <li class='yy'>y: <span class='val' /></li>
-    <li class='hyp'>hypotenuse: <span class='val' /></li>
-    <li class='blur'>blur: <span class='val' /></li>
-    <li class='fade'>fade: <span class='val' /></li>
-    <li class='shadows'>shadows: <span class='val' /></li>
-    <li class='spotlight'>spotlight: <span class='val' /></li>
+    <li class="xx">x: <span class="val"></span></li>
+    <li class="yy">y: <span class="val"></span></li>
+    <li class="hyp">hypotenuse: <span class="val"></span></li>
+    <li class="blur">blur: <span class="val"></span></li>
+    <li class="fade">fade: <span class="val"></span></li>
+    <li class="shadows">shadows: <span class="val"></span></li>
+    <li class="spotlight">spotlight: <span class="val"></span></li>
   </ul>
 </div>
+
 
 	<div id="other">
 		<ul>

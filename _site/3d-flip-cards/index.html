@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	<style type='text/css'>
+	<style type="text/css">
 	body {width: 720px; }
 	.panel {
 		float: left;
@@ -233,7 +233,8 @@
 	.circle div {border-radius: 100px; }
 	.circle div h2 {padding-top: 3em; text-align: center; }
 
-</style><script>
+</style>
+<script>
 	$(document).ready(function(){
 
 		// set up hover panels
@@ -279,98 +280,116 @@
 		});
 
 	});
-</script><h1><a href='http://css3playground.com'>css3</a> // 3D Flip Cards</h1><p class='warning'>
-	The 3D transforms in this demo work in latest <a href='http://www.apple.com/safari/'>Safari</a>, latest <a href='http://www.google.com/chrome'>latest Chrome</a>, latest <a href='http://www.mozilla.org/en-US/firefox/channel/'>Firefox</a>, and versions of <a href='http://www.opera.com/developer/next'>Opera</a> running the <a href='http://www.chromium.org/blink'>Blink rendering engine</a>.
+</script>
+
+<h1><a href="http://css3playground.com">css3</a> // 3D Flip Cards</h1>
+<p class="warning">
+	The 3D transforms in this demo work in latest <a href="http://www.apple.com/safari/">Safari</a>, latest <a href="http://www.google.com/chrome">latest Chrome</a>, latest <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox</a>, and versions of <a href="http://www.opera.com/developer/next">Opera</a> running the <a href="http://www.chromium.org/blink">Blink rendering engine</a>.
 	Browsers without 3D acceleration just switch the z-index, so you won't lose any functionality.
-</p><p class='instructions'>
+</p>
+
+<p class="instructions">
  These cards are using <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings:
- <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>.<br />
+ <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>.<br>
  Mozilla browsers are using the <code>-moz-transform</code> equivalents.
-</p><div class='hover panel'>
-	<div class='front'>
-	  <div class='pad'>
+</p>
+
+<div class="hover panel">
+	<div class="front">
+	  <div class="pad">
       <h2>Mouse Over Me!</h2>
       <p>
-        The effect on this box can be done using 100% CSS.<br /><br />
+        The effect on this box can be done using 100% CSS.<br><br>
         The other boxes all require some Javascript, but the animation is driven by CSS3.
       </p>
 		</div>
 	</div>
-	<div class='back'>
-		<div class='pad'>
+	<div class="back">
+		<div class="pad">
 			<h2>check you on the flip side</h2>
 		</div>
 	</div>
-</div><div class='contact panel'>
-	<div class='front'>
+</div>
+
+<div class="contact panel">
+	<div class="front">
 		<h3>Contact Us</h3>
-		Acme, Co.<br />
-		123 Easy St.<br />
+		Acme, Co.<br>
+		123 Easy St.<br>
 		Austin, TX 78731
-		<p>Or <a href='#form' class='action'>send us a message</a></p>
+		<p>Or <a class="action" href="#form">send us a message</a></p>
 	</div>
-	<div class='back' id='contact'>
-		<div class='pad'>
+	<div class="back" id="contact">
+		<div class="pad">
 			<h3>Send us a Fake Message</h3>
-			<form method='post'>
-				<p><input name='f-name' placeholder='name' id='f-name' type='text' /></p>
-				<p><input name='f-email' placeholder='email' id='f-email' type='text' /></p>
-				<p><select name='f-how' id='f-how'><option value=''>How did you find us?</option><option value='internet'>Internet</option></select></p>
-				<p><textarea name='f-msg' placeholder='Enter your message' id='f-msg'> </textarea></p>
-				<input class='edit-submit' type='submit' value='Fake Send Message' />
+			<form method="post">
+				<p><input id="f-name" name="f-name" type="text" placeholder="name" /></p>
+				<p><input id="f-email" name="f-email" type="text" placeholder="email" /></p>
+				<p><select id="f-how" name="f-how"><option value="">How did you find us?</option><option value="internet">Internet</option></select></p>
+				<p><textarea id="f-msg" name="f-msg" placeholder="Enter your message"> </textarea></p>
+				<input type="submit" class="edit-submit" value="Fake Send Message" />
 			</form>
 		</div>
 	</div>
-</div><div class='click panel circle'>
-	<div class='front'>
+</div>
+
+<div class="click panel circle">
+	<div class="front">
 		<h2>Click or tap this circle!</h2>
 	</div>
-	<div class='back'>
+	<div class="back">
 		<h2>Tap Again!</h2>
 	</div>
-</div><div class='block panel'>
-	<div class='front'>
-		<a class='action'>Configure Block</a>
-		<h2 id='list-title'>Top Sellers</h2>
-		<ol id='list-items'>
+</div>
+
+<div class="block panel">
+	<div class="front">
+		<a class="action">Configure Block</a>
+		<h2 id="list-title">Top Sellers</h2>
+		<ol id="list-items">
 			<li>Super seller</li>
 			<li>Super seller</li>
 			<li>Super seller</li>
 		</ol>
 	</div>
-	<div class='back'>
-		<div class='pad'>
-			<form method='post' action='###'>
+	<div class="back">
+		<div class="pad">
+			<form action="###" method="post">
 				<h3>Edit List</h3>
-				<p><input name='form_title' id='form_title' type='text' value='Top Sellers' /></p>
-				<p>Display <select name='form_items' id='form_items'><option value='1'>1</option><option value='2'>2</option><option selected='selected' value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select> items</p>
-				<input class='edit-submit' type='submit' value='Save Changes' />
+				<p><input type="text" name="form_title" id="form_title" value="Top Sellers" /></p>
+				<p>Display <select name="form_items" id="form_items"><option value="1">1</option><option value="2">2</option><option value="3" selected="selected">3</option><option value="4">4</option><option value="5">5</option></select> items</p>
+				<input type="submit" class="edit-submit" value="Save Changes" />
 			</form>
 		</div>
 	</div>
-</div><div class='click diagonal panel'>
-	<div class='front'>
-		<h2><br />
-		Click or tap for<br />
+</div>
+
+<div class="click diagonal panel">
+	<div class="front">
+		<h2><br>
+		Click or tap for<br>
 		Diagonal Rotation</h2>
-		<p class='message'>woahdude</p>
+		<p class="message">woahdude</p>
 	</div>
-	<div class='back'>
-		<div class='pad'>
+	<div class="back">
+		<div class="pad">
 			<h2>like a diamond in the rough</h2>
 			<p><small>yes, I'm a little crooked</small></p>
 		</div>
 	</div>
-</div><div class='click swing panel'>
-  <div class='front'>
+</div>
+
+<div class="click swing panel">
+  <div class="front">
     <h2>Swing like a gate</h2>
   </div>
-  <div class='back'>
-    <div class='pad'>
+  <div class="back">
+    <div class="pad">
     <h2>Any axis is possible</h2>
     </div>
   </div>
 </div>
+
 
 	<div id="other">
 		<ul>
