@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en-us" dir="ltr" class="no-js">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Reveal // CSS3 Playground</title>
+<link rel="stylesheet" href="/main.css" />
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
+<script src="/js/modernizr.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+</head>
+<body>
+		<style type="text/css">
+		body {
+			width: 720px;
+			position: relative;
+		}
+		/* -- make sure to declare a default for every property that you want animated -- */
+		.reveal {
+			opacity: 1;
+
+			/* -- transition is the magic sauce for animation -- */
+			transition: all .2s linear;
+			-moz-transition: all .2s linear;
+			-webkit-transition: all .2s linear;
+		}
+
+		p.skinny {
+			transition: all .7s linear;
+			-o-transition: all .7s linear;
+			-moz-transition: all .7s linear;
+			-webkit-transition: all .7s linear;
+		}
+		p.wide {
+			transition: all .7s linear;
+			-o-transition: all .7s linear;
+			-moz-transition: all .7s linear;
+			-webkit-transition: all .7s linear;
+		}
+
+		@media (min-width: 0px) {
+			p.skinny {opacity: 0; }
+			p.wide {opacity: 1; }
+		}
+		@media (min-width: 900px) {.reveal {opacity: 0.9; }}
+		@media (min-width: 1000px) {.reveal {opacity: 0.8; }}
+		@media (min-width: 1050px) {.reveal {opacity: 0.7; }}
+		@media (min-width: 1100px) {.reveal {opacity: 0.6; }}
+		@media (min-width: 1150px) {.reveal {opacity: 0.5; }
+			p.skinny {opacity: 1; }
+			p.wide {opacity: 0; }
+		}
+		@media (min-width: 1200px) {.reveal {opacity: 0.4; }}
+		@media (min-width: 1250px) {.reveal {opacity: 0.3; }}
+		@media (min-width: 1300px) {.reveal {opacity: 0.2; }}
+		@media (min-width: 1350px) {.reveal {opacity: 0.1; }}
+		@media (min-width: 1400px) {.reveal {opacity: 0.0; }}
+
+
+
+		@media (orientation: portrait) and (device-width: 768px) {
+			.reveal {opacity: 1; }
+			p.skinny {opacity: 0; }
+			p.wide {opacity: 1; }
+		}
+		@media (orientation: landscape) and (device-width: 768px) {
+			.reveal {opacity: 0; }
+			p.skinny {opacity: 1; }
+			p.wide {opacity: 0; }
+		}
+
+
+		/*
+		 *
+		 * This is for fun. For some practical examples
+		 * of media queries please visit the internet.
+		 *
+		 */
+
+	</style>
+
+  <div class="intro">
+  	<h1><a href="http://css3playground.com">css3</a> // Reveal</h1>
+  	<p class="intro">
+		This is a demo site for <a href="http://www.w3.org/TR/#tr_CSS">CSS modules</a>. They work best in the latest <a href="http://www.apple.com/safari/">Safari</a>, latest <a href="http://www.google.com/chrome">latest Chrome</a>, latest <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox</a>, and <a href="http://www.opera.com/developer/next">Opera 10.5+</a>.
+</p>
+
+  </div>
+
+	<p class="skinny instructions">Make your window <strong>skinnier</strong> until the message gradually appears.<br /> Or on a mobile device, rotate it to landscape mode.</p>
+	<p class="wide instructions">Make your window <strong>wider</strong> until the message gradually disappears.<br /> Or on a mobile device, rotate it to portrait mode.</p>
+
+	<div class="reveal"><h2><img src="/images/portal-cake.jpg" alt="This was a triumph." /></h2></div>
+	<p>This effect makes use of CSS3 @media queries, which is the most prominent method of creating a <a href="http://www.alistapart.com/articles/responsive-web-design/">responsive layout</a>. This basic example should <a href="/gears.php">get your gears turning</a>.</p>
+
+	<div id="other">
+	<ul>
+		<li class="more">css3 examples:</li>
+		
+			
+				<li><a href="/3d-flip-cards/">3d flip cards</a></li>
+			
+		
+			
+				<li><a href="/slinky/">3d slinky</a></li>
+			
+		
+			
+				<li><a href="/tile/">tile</a></li>
+			
+		
+			
+				<li><a href="/mosaic/">mosaic</a></li>
+			
+		
+			
+				<li><a href="/blur-filter/">blur filter</a></li>
+			
+		
+			
+		
+			
+				<li><a href="/flashlight/">flashlight shadow</a></li>
+			
+		
+			
+				<li><a href="/gears/">responsive gears</a></li>
+			
+		
+			
+				<li><a href="/hover/">hover panels</a></li>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+		<li class="credit">say hi to:</li>
+		<li class="vcard"><a href="http://chrisruppel.com" title="Chris Ruppel" rel="me" class="fn url">chris ruppel</a></li>
+	</ul>
+</div>
+
+
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			//
+			//
+			//
+			//
+			//
+			//
+			// PLEASE, PLEASE, STOP TAKING MY GOOGLE ANALYTICS NUMBER. STOP!!!!!!!!!!!!!!!
+			// TAKE ALL THE CODE YOU WANT, JUST NOT MY GA NUMBER!!!!!!!!!!!!!!!!!!!!!!!!!!
+			//
+			//
+			//
+			//
+			//
+			//
+			var pageTracker = _gat._getTracker("UA-432773-11");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+
+</body>
+</html>

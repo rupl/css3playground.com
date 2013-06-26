@@ -1,0 +1,4 @@
+; .editorconfig for css3playground.com
+[*]
+indent_style = tab
+indent_size = 2
