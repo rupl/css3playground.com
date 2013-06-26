@@ -1,0 +1,22 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /
+
+
+RewriteRule ^storybook.php /storybook/ [R=301,L]
+RewriteRule ^rolodex.php /rolodex/ [R=301,L]
+RewriteRule ^reveal.php /reveal/ [R=301,L]
+RewriteRule ^portholes.php /portholes/ [R=301,L]
+RewriteRule ^orientation.php /orientation/ [R=301,L]
+RewriteRule ^mosaic-approach.php /mosiac-approach/ [R=301,L]
+RewriteRule ^hover-card.php /hover-cards/ [R=301,L]
+RewriteRule ^hover.php /hover/ [R=301,L]
+RewriteRule ^gears.php /gears/ [R=301,L]
+RewriteRule ^flashlight.php /flashlight/ [R=301,L]
+RewriteRule ^coin.php /coin/ [R=301,L]
+RewriteRule ^blur-filter.php /blur-filter/ [R=301,L]
+RewriteRule ^mosaic.php /mosaic/ [R=301,L]
+RewriteRule ^tile.php /tile/ [R=301,L]
+RewriteRule ^slinky.php /slinky/ [R=301,L]
+RewriteRule ^flip-card.php /3d-flip-cards/ [R=301,L]
