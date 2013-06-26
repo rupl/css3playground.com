@@ -1,11 +1,19 @@
-<?
-$title = 'Rolodex';
-include('_header.php');
-?>
+---
+title: Rolodex
+layout: default
+category: plaything
+
+features:
+- css3dtransforms
+- csstransitions
+
+permalink: /rolodex/
+original: rolodex.php
+---
 
 	<style type="text/css">
 		body {width: 720px; }
-		
+
 		.rolodex {
 			margin-top: 100px;
 			margin-left: 300px;
@@ -62,7 +70,7 @@ include('_header.php');
 		 * any way to simulate a "previous sibling" selector based on :focus?
 		 *
 		 */
-		
+
 
 		/* Currently selected card */
 		.rolodex .vcard:focus {
@@ -148,15 +156,12 @@ include('_header.php');
 		}
 
 	</style>
-</head>
 
-<body>
-
-	<h1><a href="http://css3playground.com">css3</a> // <?= $title ?></h1>
+	<h1><a href="http://css3playground.com">css3</a> // {{ page.title }}</h1>
 	<p class="warning">
-		As of <?= date("F jS, Y") ?> the 3D transforms in this demo only work using <a href="http://www.apple.com/safari/">Safari 5</a>, <a href="http://www.google.com/chrome">Chrome</a> 10+, the <a href="http://nightly.webkit.org/">WebKit Nightly build</a>, and <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox 10+</a>.
+		{% include browsers-3d.html %}
 	</p>
-	
+
 	<!--
 	The tabindex is "backwards" here so that the increasingly specific adjacent sibling selectors
 	listed above get activated one-by-one as the focus moves backwards over the elements.

@@ -2,7 +2,7 @@
 <html lang="en-us" dir="ltr" class="no-js">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Mosaic // CSS3 Playground</title>
+<title>Mosaic Approach // CSS3 Playground</title>
 <link rel="stylesheet" href="/main.css" />
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
 <script src="/js/modernizr.min.js"></script>
@@ -11,8 +11,8 @@
 
 </head>
 <body>
-	<style>
-	#container {
+	<style type="text/css">
+	body {
 		width: 960px;
 	}
 	.row {
@@ -35,73 +35,75 @@
 		z-index: 100;
 		width: 100px;
 		height: 100px;
-		border: 1px solid rgba(255,255,255,0);
-		background: url('/images/leaf-drop.jpg') no-repeat 0 100px fixed;
-
-		-moz-box-shadow: 0 1px 6px rgba(0,0,0,.9);
-		-webkit-box-shadow: 0 1px 6px rgba(0,0,0,.9);
-		box-shadow: 0 1px 6px rgba(0,0,0,.9);
+		border: 0px solid #ccc;
+		background: url('/images/blues-brothers.jpg') no-repeat -100px 100px fixed;
 
 		/* -- transition is the magic sauce for animation -- */
-		-o-transition: all .3s ease-out;
+		transition: all .3s ease-out;
 		-moz-transition: all .3s ease-out;
 		-webkit-transition: all .3s ease-out;
-		transition: all .3s ease-out;
-	}
-	.panel .hover:hover {
-		top: -50px;
-		left: -50px;
-		z-index: 200;
-		width: 200px;
-		height: 200px;
-		border: 1px solid rgba(255,255,255,.1);
-
-		box-shadow: 0 15px 15px rgba(0,0,0,.1);
-		-moz-box-shadow: 0 15px 15px rgba(0,0,0,.1);
-		-webkit-box-shadow: 0 15px 15px rgba(0,0,0,.1);
 	}
 
-	.bg2 .hover {background-image: url('images/tree-sky.jpg'); }
+	/*
+	.row > *:nth-child(8n+1) .hover {-webkit-transition-delay: .00s; }
+	.row > *:nth-child(8n+2) .hover {-webkit-transition-delay: .05s; }
+	.row > *:nth-child(8n+3) .hover {-webkit-transition-delay: .10s; }
+	.row > *:nth-child(8n+4) .hover {-webkit-transition-delay: .15s; }
+	.row > *:nth-child(8n+5) .hover {-webkit-transition-delay: .20s; }
+	.row > *:nth-child(8n+6) .hover {-webkit-transition-delay: .25s; }
+	.row > *:nth-child(8n+7) .hover {-webkit-transition-delay: .30s; }
+	.row > *:nth-child(8n+8) .hover {-webkit-transition-delay: .35s; }
+
+	*/
+
+
 </style>
+<script type="text/javascript" src="/js/jquery.approach.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.row .panel').approach({
+			'z-index': '200',
+			'width': '200px',
+			'height': '200px'
+		}, 10);
+	});
+</script>
 
-<div id="container">
-	<h1><a href="http://css3playground.com">css3</a> // Mosaic</h1>
-	<p class="intro">
+<h1><a href="http://css3playground.com">css3</a> // Mosaic Approach</h1>
+<p class="intro">
 		This is a demo site for <a href="http://www.w3.org/TR/#tr_CSS">CSS modules</a>. They work best in the latest <a href="http://www.apple.com/safari/">Safari</a>, latest <a href="http://www.google.com/chrome">latest Chrome</a>, latest <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox</a>, and <a href="http://www.opera.com/developer/next">Opera 10.5+</a>.
 </p>
 
-	<br />
 
-	<div class="row">
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-	</div>
-	<div class="row">
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-	</div>
-	<div class="row">
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-		<div class="panel"><div class="hover"> </div></div>
-	</div>
+<div class="row">
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+</div>
+<div class="row">
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+</div>
+<div class="row">
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
+	<div class="panel"><div class="hover"></div></div>
 </div>
 
 

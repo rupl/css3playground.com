@@ -2,7 +2,7 @@
 <html lang="en-us" dir="ltr" class="no-js">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Hover Panels // CSS3 Playground</title>
+<title>Orientation // CSS3 Playground</title>
 <link rel="stylesheet" href="/main.css" />
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
 <script src="/js/modernizr.min.js"></script>
@@ -14,79 +14,79 @@
 	<style type="text/css">
 	#container {
 		width: 720px;
-	}
-	.panel {
-		float: left;
-		width: 200px;
-		height: 200px;
-		margin: -20px;
 		position: relative;
 	}
-
 	/* -- make sure to declare a default for every property that you want animated -- */
-	.panel .hover {
-		float: none;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 100;
-		width: 200px;
-		height: 200px;
-		border: 1px solid #aaa;
-		border-top: 1px solid #888;
-		border-left: 1px solid #888;
-		background: #6b7077;
-		text-align: center;
+	.gear {
+		float: left;
+		width: 140px;
+		height: 127px;
+		margin: 1em;
+		background: url('/images/spur-gear-8.png') no-repeat 0 0;
+		opacity: 1;
 
-		-o-transform: scale(.7);
-		-moz-transform: scale(.7);
-		-webkit-transform: scale(.7);
-		transform: scale(.7);
-
-		-moz-box-shadow: inset 1px 2px 8px #222;
-		-webkit-box-shadow: inset 1px 2px 8px rgba(0,0,0,0.7);
-		box-shadow: inset 1px 2px 8px rgba(0,0,0,0.7);
-
+		background-size: 100%;
+		-o-background-size: 100%;
+		-moz-background-size: 100%;
+		-webkit-background-size: 100%;
 
 		/* -- transition is the magic sauce for animation -- */
-		-o-transition: all .15s;
-		-moz-transition: all .15s ease-out;
-		-webkit-transition: all .15s ease-out;
-		transition: all .15s ease-out;
+		transition: all .2s linear;
+		-moz-transition: all .2s linear;
+		-webkit-transition: all .2s linear;
 	}
-	.panel .hover:hover {
-		z-index: 1000;
-		border-color: #bbb;
-		border-right: 1px solid #aaa;
-		border-bottom: 1px solid #aaa;
 
-		-o-transform: scale(1);
-		-moz-transform: scale(1);
-		-webkit-transform: scale(1);
-		transform: scale(1);
-
-		-moz-box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-		-webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-		box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+	.skinny {
+		transition: all .7s linear;
+		-o-transition: all .7s linear;
+		-moz-transition: all .7s linear;
+		-webkit-transition: all .7s linear;
 	}
+	.wide {
+		transition: all .7s linear;
+		-o-transition: all .7s linear;
+		-moz-transition: all .7s linear;
+		-webkit-transition: all .7s linear;
+	}
+
+	@media (orientation: portrait) {
+		.skinny {opacity: 1; }
+		.wide {opacity: 0; }
+		.gear:nth-child(3n+2) {clear: left; }
+	}
+	@media (orientation: landscape) {
+		.skinny {opacity: 0; }
+		.wide {opacity: 1; }
+		.gear:nth-child(4n+1) {clear: left; }
+	}
+
+
 
 </style>
 
 <div id="container">
-	<h1><a href="http://css3playground.com">css3</a> // Hover Panels</h1>
+	<h1><a href="http://css3playground.com">css3</a> // Orientation</h1>
 	<p class="intro">
 		This is a demo site for <a href="http://www.w3.org/TR/#tr_CSS">CSS modules</a>. They work best in the latest <a href="http://www.apple.com/safari/">Safari</a>, latest <a href="http://www.google.com/chrome">latest Chrome</a>, latest <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox</a>, and <a href="http://www.opera.com/developer/next">Opera 10.5+</a>.
 </p>
 
 
-	<div class="panel"><div class="hover"> </div></div>
-	<div class="panel"><div class="hover"> </div></div>
-	<div class="panel"><div class="hover"> </div></div>
-	<div class="panel"><div class="hover"> </div></div>
-	<div class="panel"><div class="hover"> </div></div>
-	<div class="panel"><div class="hover"> </div></div>
-	<div class="panel"><div class="hover"> </div></div>
-	<div class="panel"><div class="hover"> </div></div>
+	<p class="instructions">Desktop users can test this CSS3 media query by resizing the browser window from a short/wide shape to a tall/skinny shape. <code>orientation: landscape|portrait</code> is only dependent on which is greater: window's width or its height.</p>
+	<p class="skinny instructions">Rotate your device to landscape mode and the rows get longer.</p>
+	<p class="wide instructions">Rotate your device to portrait mode and the rows get shorter.</p>
+
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
+	<div class="gear"></div>
 </div>
 
 
