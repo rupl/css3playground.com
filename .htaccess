@@ -5,5 +5,5 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
-{% for post in site.categories.plaything %}
-RewriteRule ^{{ post.original }} {{ post.permalink }} [R=301,L]{% endfor %}
+{% for post in site.categories.plaything %}{% if post.original != null %}
+RewriteRule ^{{ post.original }} {{ post.permalink }} [R=301,L]{% endif %}{% endfor %}
