@@ -1,12 +1,7 @@
 body {
   background-color: #3b5166;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(rgba(255,255,255,.2)), to(rgba(255,255,255,.0))); /* Saf4+, Chrome */
   background-image: -webkit-linear-gradient(left, rgba(255,255,255,.0), rgba(255,255,255,.3)); /* Chrome 10+, Saf5.1+ */
-  background-image:    -moz-linear-gradient(left, #3b5166, #758493); /* FF3.6 */
-  background-image:     -ms-linear-gradient(left, #3b5166, #758493); /* IE10 */
-  background-image:      -o-linear-gradient(left, #3b5166, #758493); /* Opera 11.10+ */
   background-image:         linear-gradient(left, #3b5166, #758493);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#3b5166', EndColorStr='#758493'); /* IE6-IE9 */
   color:#ddd;
   padding:0 2em;
   font-family: helvetica, sans-serif;
@@ -33,7 +28,6 @@ abbr {cursor:help; }
 .intro .info.open .close {opacity: 1; }
 
 #other {clear:both; position:fixed; top:4%; right:2%; z-index:1001; text-align: right; }
-#other ul {}
 #other ul li {
   list-style-type:none;
   color: #000;
