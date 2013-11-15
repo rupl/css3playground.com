@@ -1,12 +1,8 @@
 <div id="other">
-	<ul>
-		<li class="more">css3 examples:</li>
-		{% for thing in site.categories.plaything reversed %}
-			{% if thing.published == true %}
-				<li><a href="{{ thing.permalink }}">{{ thing.title | downcase }}</a></li>
-			{% endif %}
-		{% endfor %}
-		<li class="credit">say hi to:</li>
-		<li class="vcard"><a href="http://chrisruppel.com" title="Chris Ruppel" rel="me" class="fn url">chris ruppel</a></li>
-	</ul>
+  <ul>
+    <li class="more">css3 examples:</li>{% for thing in site.categories.plaything reversed %}{% if thing.published == true %}
+    <li><a href="{{ thing.permalink }}">{{ thing.title | downcase }}</a></li>{% endif %}{% endfor %}
+    <li class="credit">say hi to:</li>
+    <li class="vcard"><a href="http://chrisruppel.com" title="Chris Ruppel" rel="me" class="fn url">chris ruppel</a></li>
+  </ul>
 </div>
