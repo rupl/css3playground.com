@@ -4,12 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>3D Flip Cards // CSS3 Playground</title>
 <link rel="stylesheet" href="/main.css" />
-
+<script src="/js/modernizr.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 </head>
 <body>
-	<style type="text/css">
+	<script>
+  // For IE11. May we one day live without your BS.
+  Modernizr.addTest('preserve3d', function(){return Modernizr.testAllProps('transformStyle', 'preserve-3d');});
+</script>
+
+<style type="text/css">
 	body {
 		max-width: 800px;
 		padding-right: 60px;

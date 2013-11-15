@@ -4,7 +4,7 @@ layout: default
 category: plaything
 published: true
 
-modernizr: false
+modernizr: true
 jquery: true
 jqueryui: false
 
@@ -15,6 +15,11 @@ features:
 permalink: /3d-flip-cards/
 original: flip-card.php
 ---
+
+<script>
+  // For IE11. May we one day live without your BS.
+  Modernizr.addTest('preserve3d', function(){return Modernizr.testAllProps('transformStyle', 'preserve-3d');});
+</script>
 
 <style type="text/css">
 	body {
