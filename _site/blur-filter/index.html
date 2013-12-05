@@ -26,8 +26,14 @@
     border: 10px solid #333;
     border-radius: 20px;
 
-    -webkit-transform: rotateY(.5deg) transformZ(1px);
-    -moz-transform: rotateY(.5deg) transformZ(1px);
+    /*
+     * Transitioning the blur kicks this to the GPU, the .05s is a flood control
+     * of sorts. Without a delay you're back in the same position as before with
+     * too many paints.
+     *
+     * @see jankfree.org
+     */
+    -webkit-transition: -webkit-filter .05s linear;
 	}
   div.layer span {
     display: block;
