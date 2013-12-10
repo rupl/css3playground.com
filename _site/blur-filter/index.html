@@ -22,13 +22,24 @@
             perspective: 600px;
   }
 
+  .instructions {
+    font-size: 1.2em;
+  }
+
+  /* hide warning when browser passes the test */
+  .cssfilters .no-cssfilters {display: none; }
+
+  /* make warning more noticable when test fails */
+  .no-cssfilters .no-cssfilters {
+    color: #f99;
+  }
+
   div.layer {
     background: #fff;
     color: #000;
     position: absolute;
     border: 10px solid #333;
     border-radius: 20px;
-    transform-style: preserve-3d;
 
     /*
      * Transitioning the blur kicks this to the GPU, the .05s is a flood control
@@ -126,7 +137,11 @@
 
 <p class="instructions">
 	<strong>Move your cursor up and down</strong> to watch the depth of field change.<br>
-	This demo uses <code>-webkit-filter: blur()</code> and a dash of JS to track your cursor.
+	The effect uses <code>filter: blur()</code>, 3D transforms, and a dash of JS to track your cursor.
+</p>
+<p class="no-cssfilters instructions">
+  Unfortunately your browser doesn't support CSS filters yet,<br>
+  so this probably isn't a particularly impressive web page to you :(
 </p>
 
 <div class="back layer"><span>Back</span></div>
