@@ -44,6 +44,8 @@ original: blur-filter.php
      * @see jankfree.org
      */
     -webkit-transition: -webkit-filter .05s linear;
+       -moz-transition:    -moz-filter .05s linear;
+            transition:         filter .05s linear;
 	}
   div.layer span {
     display: block;
@@ -57,6 +59,8 @@ original: blur-filter.php
     height: 200px;
     top: 180px;
     -webkit-transform: translateX(300px);
+       -moz-transform: translateX(300px);
+            transform: translateX(300px);
     z-index: 1;
   }
   div.middle {
@@ -64,6 +68,8 @@ original: blur-filter.php
     height: 240px;
     top: 280px;
     -webkit-transform: translateX(200px);
+       -moz-transform: translateX(200px);
+            transform: translateX(200px);
     z-index: 2;
   }
   div.front {
@@ -71,6 +77,8 @@ original: blur-filter.php
     height: 280px;
     top: 420px;
     -webkit-transform: translateX(100px);
+       -moz-transform: translateX(100px);
+            transform: translateX(100px);
     z-index: 3;
   }
 </style>
