@@ -73,12 +73,11 @@ original: flip-card.php
 		z-index: 900;
 		border-color: #eee;
 		background: #333;
+		box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 
 		-webkit-transform: rotateY(180deg);
 			 -moz-transform: rotateY(180deg);
 						transform: rotateY(180deg);
-
-		box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 	}
 
 	.panel .back {
@@ -91,18 +90,18 @@ original: flip-card.php
 		height: inherit;
 		border: 1px solid #ccc;
 		background: #333;
-		text-shadow: 1px  1px 1px rgba(0,0,0,0.6);
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 
 		-webkit-transform: rotateY(-180deg);
-		-webkit-transform-style: preserve-3d;
-		-webkit-backface-visibility: hidden;
-
 			 -moz-transform: rotateY(-180deg);
-			 -moz-transform-style: preserve-3d;
-			 -moz-backface-visibility: hidden;
-
 						transform: rotateY(-180deg);
+
+		-webkit-transform-style: preserve-3d;
+			 -moz-transform-style: preserve-3d;
 						transform-style: preserve-3d;
+
+		-webkit-backface-visibility: hidden;
+			 -moz-backface-visibility: hidden;
 						backface-visibility: hidden;
 
 		/* -- transition is the magic sauce for animation -- */
