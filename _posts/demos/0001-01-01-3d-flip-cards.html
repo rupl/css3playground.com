@@ -93,8 +93,8 @@ original: flip-card.php
 		text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 
 		-webkit-transform: rotateY(-180deg);
-			 -moz-transform: rotateY(-180deg);
-						transform: rotateY(-180deg);
+			 -moz-transform: rotateY(-179deg); /* setting to 180 causes an unnatural-looking half-flip */
+						transform: rotateY(-179deg);
 
 		-webkit-transform-style: preserve-3d;
 			 -moz-transform-style: preserve-3d;
