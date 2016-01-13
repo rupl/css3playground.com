@@ -11,14 +11,20 @@ jqueryui: true
 features:
 - css3dtransforms
 - csstransitions
+- cssanimations
 
 permalink: /slinky/
 original: slinky.php
 ---
 
 <style type="text/css">
-  body {overflow: hidden; }
-  #container {width: 720px; }
+  body {
+    overflow: hidden;
+  }
+
+  #container {
+    width: 720px;
+  }
 
   #add {
     text-decoration: underline;
@@ -26,9 +32,9 @@ original: slinky.php
     cursor: pointer;
 
     -webkit-transition: all .04s ease-in-out;
-       -moz-transition: all .04s ease-in-out;
             transition: all .04s ease-in-out;
   }
+
   #add:active {
     color: #456;
   }
@@ -45,13 +51,9 @@ original: slinky.php
     font-size: .8em;
 
     -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
 
     -webkit-perspective: 500px;
-       -moz-perspective: 500px;
-         -o-perspective: 500px;
             perspective: 500px;
   }
 
@@ -65,41 +67,30 @@ original: slinky.php
     width: 100px;
     height: 100px;
     border: 5px solid #bbb;
+    border-radius: 60px;
 /*      border-image: url('/images/slinky-border.png') 20 20 20 20 stretch stretch; */
 
-    -o-transform-origin: 0 80%;
-    -moz-transform-origin: 0 80%;
     -webkit-transform-origin: 0 80%;
-    transform-origin: 0 80%;
-
-    -moz-border-radius: 60px;
-    -webkit-border-radius: 60px;
-    border-radius: 60px;
+            transform-origin: 0 80%;
 
     -webkit-transform-style: preserve-3d;
-    -webkit-backface-visibility: visible;
+            transform-style: preserve-3d;
 
-    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
 
     /* initial slinky position */
     -webkit-transform:
       rotateX(-105deg) rotateY(0) rotateZ(50deg)
       translateX(0) translateY(0) translateZ(0);
-    -moz-transform:
+    transform:
       rotateX(-105deg) rotateY(0) rotateZ(50deg)
       translateX(0) translateY(0) translateZ(0);
 
     /* shadows really help define the layers */
-    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,1);
-    -moz-box-shadow: 0 0 1px 1px rgba(0,0,0,1);
-    -ms-box-shadow: 0 0 1px 1px rgba(0,0,0,1);
-    -o-box-shadow: 0 0 1px 1px rgba(0,0,0,1);
     box-shadow: 0 0 1px 1px rgba(0,0,0,1);
 
     /* -- transition is the magic sauce for animation -- */
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
   }
 
@@ -108,7 +99,7 @@ original: slinky.php
     -webkit-transform:
       rotateX(0) rotateY(0) rotateZ(0)
       translateX(0) translateY(0) translateZ(-1px);
-    -moz-transform:
+    transform:
       rotateX(0) rotateY(0) rotateZ(0)
       translateX(0) translateY(0) translateZ(-1px);
   }
@@ -117,12 +108,10 @@ original: slinky.php
    * A .hover class is used with jQuery instead of a plain :hover
    */
   .panel.hover .segment .segment {
-    transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
-    -o-transform: rotate(6.5deg) skew(-1deg) rotate(4deg);
-    -moz-transform:
+    -webkit-transform:
       rotateX(0) rotateY(5deg) rotateZ(0)
       translateX(0px) translateY(0px) translateZ(-1px);
-    -webkit-transform:
+    transform:
       rotateX(0) rotateY(5deg) rotateZ(0)
       translateX(0px) translateY(0px) translateZ(-1px);
   }
@@ -139,34 +128,28 @@ original: slinky.php
 
   /* Rotate the sliny automatically */
   .panel > .segment.rotate {
-    -webkit-animation-name: rotate;
-    -webkit-animation-duration: 4s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: normal;
-    -webkit-animation-timing-function: linear;
-
-    -moz-animation-name: rotate;
-    -moz-animation-duration: 4s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-direction: normal;
-    -moz-animation-timing-function: linear;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
   }
 
   /* Animation keyframes */
   @-webkit-keyframes rotate {
     0% {
-      -webkit-transform: rotateX(-105deg) rotateY(0) rotateZ(0deg) translateX(0) translateY(0) translateZ(2px);
+      transform: rotateX(-105deg) rotateY(0) rotateZ(0deg) translateX(0) translateY(0) translateZ(2px);
     }
     100% {
-      -webkit-transform: rotateX(-105deg) rotateY(0) rotateZ(360deg) translateX(0) translateY(0) translateZ(2px);
+      transform: rotateX(-105deg) rotateY(0) rotateZ(360deg) translateX(0) translateY(0) translateZ(2px);
     }
   }
   @-moz-keyframes rotate {
     0% {
-      -moz-transform: rotateX(-105deg) rotateY(0) rotateZ(0deg) translateX(0) translateY(0) translateZ(2px);
+      transform: rotateX(-105deg) rotateY(0) rotateZ(0deg) translateX(0) translateY(0) translateZ(2px);
     }
     100% {
-      -moz-transform: rotateX(-105deg) rotateY(0) rotateZ(360deg) translateX(0) translateY(0) translateZ(2px);
+      transform: rotateX(-105deg) rotateY(0) rotateZ(360deg) translateX(0) translateY(0) translateZ(2px);
     }
   }
 </style>
@@ -192,8 +175,7 @@ original: slinky.php
 </p>
 
 <p class="instructions">
-  Mouseover the slinky! It uses <code>-webkit-transform: rotateY() and rotateX();</code> with some of the 3D settings: <code>-webkit-transform-style: preserve3d;</code> and <code>-webkit-transform-perspective</code>. It also uses <code>-webkit-animation</code> and <code>-webkit-keyframe</code>.
-  Gecko browsers use their <code>-moz</code> equivalents of course.<br><br>
+  Mouseover the slinky to expand it! It uses <code>transform: rotateY() | rotateX();</code> with CSS 3D Transforms: <code>transform-style: preserve3d;</code> and <code>perspective</code>. It also uses CSS Animations for auto-rotation.
 </p>
 
 <div id="rotate">Rotate the slinky manually:
