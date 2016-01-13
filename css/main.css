@@ -5,7 +5,7 @@ body {
   color:#ddd;
   padding:0 2em;
   font-family: helvetica, sans-serif;
-  }
+}
 h1 {font-size:3em; margin:.5em 0; text-transform:lowercase; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 h2 {text-shadow:1px 1px 1px rgba(0,0,0,0.3); }
 a {color:inherit; }
