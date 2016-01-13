@@ -53,8 +53,8 @@ original: flip-card.php
     text-align: center;
     box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 
-    -webkit-transform: rotateX(0deg) rotateY(0deg);
-            transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform: rotateX(0) rotateY(0);
+            transform: rotateX(0) rotateY(0);
 
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
@@ -106,8 +106,8 @@ original: flip-card.php
     z-index: 1000;
     background: #80868d;
 
-    -webkit-transform: rotateX(0deg) rotateY(0deg);
-            transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform: rotateX(0) rotateY(0);
+            transform: rotateX(0) rotateY(0);
 
     box-shadow: 0 15px 50px rgba(0,0,0,0.2);
   }
@@ -115,8 +115,8 @@ original: flip-card.php
   /* -- X axis rotation for click panel -- */
   .click .front {
     cursor: pointer;
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
   }
   .click.flip .front {
     -webkit-transform: rotateX(180deg);
@@ -128,8 +128,8 @@ original: flip-card.php
             transform: rotateX(-180deg);
   }
   .click.flip .back {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
   }
 
   /* -- contact panel -- */
@@ -205,8 +205,8 @@ original: flip-card.php
             transform-origin: 170px 0;
   }
   .swing .front {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
   }
   .swing .back {
     background-color: #555; /* hiding this side, so get darker */
@@ -221,8 +221,8 @@ original: flip-card.php
   }
   .swing.flip .back {
     background-color: #80888f;
-    -webkit-transform: rotateY(0deg) translateX(198px) translateZ(2px);
-            transform: rotateY(0deg) translateX(198px) translateZ(2px);
+    -webkit-transform: rotateY(0) translateX(198px) translateZ(2px);
+            transform: rotateY(0) translateX(198px) translateZ(2px);
   }
 
 
