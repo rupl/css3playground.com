@@ -285,14 +285,11 @@ original: flip-card.php
 </script>
 
 <h1><a href="http://css3playground.com">css3</a> // {{ page.title }}</h1>
-<p class="warning">
-  The 3D transforms in this demo work in latest <a href="http://www.apple.com/safari/">Safari</a>, latest <a href="http://www.google.com/chrome">latest Chrome</a>, latest <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox</a>, and versions of <a href="http://www.opera.com/developer/next">Opera</a> running the <a href="http://www.chromium.org/blink">Blink rendering engine</a>.
-  Browsers without 3D acceleration just switch the z-index, so you won't lose any functionality.
-</p>
+{% include browsers-3d.html %}
 
 <p class="instructions">
  These cards are using <code>transform: rotateY() and rotateX();</code> with some of the 3D settings:
- <code>transform-style: preserve3d;</code> and <code>perspective</code>.<br>
+ <code>transform-style: preserve3d;</code> and <code>perspective</code>. Browsers without 3D acceleration just switch the z-index, so you won't lose any functionality.
 </p>
 
 <div class="hover panel">
