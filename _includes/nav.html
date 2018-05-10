@@ -3,6 +3,9 @@
     <li class="more">css3 examples:</li>{% for thing in site.categories.plaything reversed %}{% if thing.published == true %}
     <li><a href="{{ thing.permalink }}">{{ thing.title | downcase }}</a></li>{% endif %}{% endfor %}
     <li class="credit">say hi to:</li>
-    <li class="vcard"><a href="https://chrisruppel.com" title="Chris Ruppel" rel="me" class="fn url">chris ruppel</a></li>
+    <li><a class="h-card" href="https://chrisruppel.com" rel="me">Chris Ruppel</a></li>
+    <li class="credit">about the code:</li>
+    <li><a href="https://creativecommons.org/publicdomain/zero/1.0/">license: CC0 1.0</a></li>
+    <li><a href="https://github.com/rupl/css3playground.com">view on GitHub</a></li>
   </ul>
 </div>
