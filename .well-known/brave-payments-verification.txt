@@ -1,0 +1,4 @@
+This is a Brave Payments publisher verification file.
+
+Domain: css3playground.com
+Token: 583a14615d0f8f2c704036fd2e44055e99a6974a78368c7d5121f085643799dd
