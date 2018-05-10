@@ -1,5 +1,10 @@
+name: CSS3 Playground
 exclude: [CONTRIBUTING.md, README.md, CNAME, Gemfile, Gemfile.lock]
 include: [.htaccess]
 permalink: pretty
 debug: false
 relative_permalinks: false
+
+matomo:
+  url: stats.css3playground.com
+  id: 4

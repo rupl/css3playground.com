@@ -9,37 +9,11 @@
 {% if page.jqueryui == true %}
   <link href="/css/jquery-ui-1.8.24.css" rel="stylesheet">
   <script src="/js/jquery-ui-1.10.3.min.js"></script>
-{% endif %}
+{%- endif -%}
+  {% include matomo.html %}
 </head>
 <body>
-	{{ content }}
-	{% include nav.html %}
-
-	<script type="text/javascript">
-		//
-		//
-		//
-		//
-		//
-		//
-		// PLEASE, PLEASE, STOP TAKING MY GOOGLE ANALYTICS NUMBER!!!!!!!!!!!!!!!!!!!
-		// TAKE ALL THE CODE YOU WANT, JUST NOT MY GA NUMBER!!!!!!!!!!!!!!!!!!!!!!!!
-		//
-		//
-		//
-		//
-		//
-		//
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-432773-11']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
+  {{ content }}
+  {% include nav.html %}
 </body>
 </html>
