@@ -1,16 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US" dir="ltr" class="no-js">
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }} // {{ site.name }}</title>
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/main.css">
 {%- if page.modernizr == true -%}  <script src="/js/modernizr.min.js"></script>{%- endif -%}
 {%- if page.jquery == true -%}  <script src="/js/jquery-1.8.3.min.js"></script>{%- endif -%}
 {%- if page.jqueryui == true -%}
   <link href="/css/jquery-ui-1.8.24.css" rel="stylesheet">
   <script src="/js/jquery-ui-1.10.3.min.js"></script>
-{%- endif -%}
-  {% include matomo.html %}
+{%- endif %}
 </head>
 <body>
   {{ content }}
